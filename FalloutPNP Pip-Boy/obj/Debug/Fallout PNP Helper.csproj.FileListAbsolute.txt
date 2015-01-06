@@ -1,0 +1,11 @@
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\bin\Debug\Fallout PNP Helper.exe
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\bin\Debug\Fallout PNP Helper.pdb
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\Fallout_PNP_Helper.Form1.resources
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\Fallout_PNP_Helper.HackingDlg.resources
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\Fallout_PNP_Helper.Properties.Resources.resources
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.csproj.GenerateResource.Cache
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.exe
+C:\Users\Reitarou\Documents\Visual Studio 2008\Projects\Fallout PNP Helper\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.pdb
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.exe
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.pdb

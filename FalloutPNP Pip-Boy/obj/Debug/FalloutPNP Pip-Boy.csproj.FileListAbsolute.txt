@@ -1,0 +1,9 @@
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\bin\Debug\Fallout PNP Helper.exe
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\bin\Debug\Fallout PNP Helper.pdb
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\ResolveAssemblyReference.cache
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout_PNP_Helper.PipBoyDlg.resources
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout_PNP_Helper.HackingDlg.resources
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout_PNP_Helper.Properties.Resources.resources
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\FalloutPNP Pip-Boy.csproj.GenerateResource.Cache
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.exe
+D:\GitHub\FalloutPNP-PipBoy\Fallout PNP Helper\obj\Debug\Fallout PNP Helper.pdb
