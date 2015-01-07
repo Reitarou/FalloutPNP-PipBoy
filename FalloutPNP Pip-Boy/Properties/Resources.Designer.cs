@@ -60,13 +60,6 @@ namespace Fallout_PNP_PipBoy.Properties {
             }
         }
         
-        internal static byte[] fixedsys {
-            get {
-                object obj = ResourceManager.GetObject("fixedsys", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
         /// <summary>
         ///   Looks up a localized string similar to ATTEMPTS LEFT: .
         /// </summary>

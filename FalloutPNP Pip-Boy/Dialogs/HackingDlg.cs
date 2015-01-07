@@ -31,7 +31,7 @@ namespace Fallout_PNP_Helper
         private Color c_HighlightBackColor = System.Drawing.Color.FromArgb(255, 30, 255, 130);
         private Color c_DefaultForeColor = System.Drawing.Color.FromArgb(255, 30, 255, 130);
         private Color c_HighlightForeColor = System.Drawing.Color.FromArgb(255, 15, 130, 65);
-        
+
         private Font m_Font;
         //private Font c_HighlightFont = new Font("Courier New", fontSize, FontStyle.Bold);
 
@@ -76,8 +76,6 @@ namespace Fallout_PNP_Helper
             this.TransparencyKey = System.Drawing.Color.FromArgb(255, 255, 0, 255);
             this.AllowTransparency = true;
             PrepareFont();
-
-            
         }
 
         #region RNG & Generations
@@ -140,7 +138,7 @@ namespace Fallout_PNP_Helper
             int index;
             while (div > 0)
             {
-                index = RNG.Next(0, fakepass.Length-1);
+                index = RNG.Next(0, fakepass.Length - 1);
                 fakepass = fakepass.Remove(index, 1);
                 div--;
             }
@@ -161,10 +159,10 @@ namespace Fallout_PNP_Helper
 
         private void NextRowCol(ref int row, ref int col)
         {
-            if (col == c_AddressCols + c_DataCols-1)
+            if (col == c_AddressCols + c_DataCols - 1)
             {
                 col = c_AddressCols;
-                if (row != c_HeaderRows + c_DataRows-1)
+                if (row != c_HeaderRows + c_DataRows - 1)
                 {
                     ++row;
                 }
@@ -177,7 +175,7 @@ namespace Fallout_PNP_Helper
             else if (col == (c_AddressCols + c_DataCols) * 2)
             {
                 col = c_AddressCols + c_DataCols + 1 + c_AddressCols;
-                if (row != c_HeaderRows + c_DataRows-1)
+                if (row != c_HeaderRows + c_DataRows - 1)
                 {
                     ++row;
                 }
@@ -210,7 +208,7 @@ namespace Fallout_PNP_Helper
                 label.Width = c_CellWidth;
 
                 label.Text = message.Substring(index, 1);
-                label.Tag = new LetterTag() { Col = col, Row = row};
+                label.Tag = new LetterTag() { Col = col, Row = row };
 
                 label.Font = m_Font;
                 label.ForeColor = c_DefaultForeColor;
@@ -220,6 +218,7 @@ namespace Fallout_PNP_Helper
 
                 label.Click += letter_Click;
                 label.MouseHover += letter_MouseHover;
+                label.UseCompatibleTextRendering = true;
 
                 if (delay)
                 {
@@ -331,7 +330,7 @@ namespace Fallout_PNP_Helper
                 }
             }
 
-            
+
 
             //for (int i = 0; i < m_VariantCount; i++)
             //{
@@ -363,26 +362,89 @@ namespace Fallout_PNP_Helper
 
         private void PrepareFont()
         {
+            //Stream fontStream = this.GetType().Assembly.GetManifestResourceStream("Fallout_PNP_PipBoy.fixedsys.ttf");
+
+
+            //var pfc = new PrivateFontCollection();
+
+            //byte[] fontdata = new byte[fontStream.Length];
+
+            //fontStream.Read(fontdata, 0, (int)fontStream.Length);
+
+            //fontStream.Close();
+
+            //unsafe
+            //{
+
+            //    fixed (byte* pFontData = fontdata)
+            //    {
+
+            //        pfc.AddMemoryFont((System.IntPtr)pFontData, fontdata.Length);
+
+            //    }
+
+            //}
+
+
+
+            //unsafe
+            //{
+            //    string resource = "Fallout_PNP_PipBoy.fixedsys.ttf";
+            //    Stream fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource);
+
+            //    // create an unsafe memory block for the font data
+            //    System.IntPtr data = Marshal.AllocCoTaskMem((int)fontStream.Length);
+
+            //    // create a buffer to read in to
+            //    byte[] fontdata = new byte[fontStream.Length];
+
+            //    // read the font data from the resource
+            //    fontStream.Read(fontdata, 0, (int)fontStream.Length);
+
+            //    // copy the bytes to the unsafe memory block
+            //    Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
+
+            //    // pass the font to the font collection
+            //    pfc.AddMemoryFont(data, (int)fontStream.Length);
+
+            //    // close the resource stream
+            //    fontStream.Close();
+
+            //    // free up the unsafe memory
+            //    Marshal.FreeCoTaskMem(data);
+            //}
+
+            //var ff = pfc.Families[0];
+            //m_Font = new Font(ff, c_FontSize);
+
+
+            //try
+            //{
             // Create the byte array and get its length
-            byte[] fontArray = Resources.fixedsys;
-            int dataLength = Resources.fixedsys.Length;
+            //byte[] fontArray = Resources.SDF;
+            //int dataLength = Resources.SDF.Length;
 
-            // ASSIGN MEMORY AND COPY  BYTE[] ON THAT MEMORY ADDRESS
-            IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
-            Marshal.Copy(fontArray, 0, ptrData, dataLength);
+            //// ASSIGN MEMORY AND COPY  BYTE[] ON THAT MEMORY ADDRESS
+            //IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
+            //Marshal.Copy(fontArray, 0, ptrData, dataLength);
 
-            uint cFonts = 0;
-            AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
+            //uint cFonts = 0;
+            //AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
 
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            //PASS THE FONT TO THE  PRIVATEFONTCOLLECTION OBJECT
-            pfc.AddMemoryFont(ptrData, dataLength);
+            //PrivateFontCollection pfc = new PrivateFontCollection();
+            ////PASS THE FONT TO THE  PRIVATEFONTCOLLECTION OBJECT
+            //pfc.AddMemoryFont(ptrData, dataLength);
 
-            //FREE THE  "UNSAFE" MEMORY
-            Marshal.FreeCoTaskMem(ptrData);
+            ////FREE THE  "UNSAFE" MEMORY
+            //Marshal.FreeCoTaskMem(ptrData);
 
-            var ff = pfc.Families[0];
-            m_Font = new Font(ff, c_FontSize, FontStyle.Regular);
+            //var ff = pfc.Families[0];
+            //m_Font = new Font(ff, c_FontSize, FontStyle.Regular);
+            //}
+            //catch
+            //{
+            m_Font = new Font("Courier New", c_FontSize, FontStyle.Bold);
+            //}
         }
 
         #region Actions
@@ -421,7 +483,7 @@ namespace Fallout_PNP_Helper
                             ++m_CommentRow;
                             return;
                         }
-                        ReplaceLetter(3, Resources.sAttempts.Length + m_TryLeft-1, "X", -1);
+                        ReplaceLetter(3, Resources.sAttempts.Length + m_TryLeft - 1, "X", -1);
                         --m_TryLeft;
                         if (m_TryLeft == 0)
                         {
