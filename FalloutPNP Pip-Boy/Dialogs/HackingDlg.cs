@@ -1,42 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Fallout_PNP_Helper.Properties;
-using System.Threading;
+using Fallout_PNP_PipBoy.Properties;
+using System.Drawing.Text;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Fallout_PNP_Helper
 {
     public partial class HackingDlg : Form
     {
-        private Color c_DefaultBackgroundColor = System.Drawing.Color.FromArgb(255, 0, 30, 0);
-        private Color c_DefaultBackColor = System.Drawing.Color.FromArgb(0, 0, 0, 0);
-        private Color c_HighlightBackColor = System.Drawing.Color.FromArgb(180, 0, 255, 0);
-        private Color c_DefaultForeColor = System.Drawing.Color.FromArgb(150, 0, 255, 0);
-        private Color c_HighlightForeColor = System.Drawing.Color.FromArgb(200, 0, 100, 0);
-        private Font c_DefaultFont = new Font("Courier New", fontSize, FontStyle.Bold);
-        private Font c_HighlightFont = new Font("Courier New", fontSize, FontStyle.Bold);
+        private class LetterTag
+        {
+            public int Row = -1;
+            public int Col = -1;
+            public int PassIndex = -1;
 
-        private const float fontSize = 14;
-        private const int c_CellSize = (int)(14 * 1.5);
+            public LetterTag()
+            {
+            }
+        }
 
-        private int c_HeaderRows = 2;
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
 
-        private Point c_DefaultOffset = new Point((int)(c_CellSize * 0.5), (int)(c_CellSize * 0.5));
+        private Color c_DefaultBackgroundColor = System.Drawing.Color.FromArgb(255, 0, 30, 15);
+        private Color c_HighlightBackColor = System.Drawing.Color.FromArgb(255, 30, 255, 130);
+        private Color c_DefaultForeColor = System.Drawing.Color.FromArgb(255, 30, 255, 130);
+        private Color c_HighlightForeColor = System.Drawing.Color.FromArgb(255, 15, 130, 65);
+        
+        private Font m_Font;
+        //private Font c_HighlightFont = new Font("Courier New", fontSize, FontStyle.Bold);
 
+        private const float c_FontSize = 13.25f;
+        private const int c_CellWidth = 11;
+        private const int c_CellHeight = 20;
+        //private const int c_CellSize = (int)(12 * 1.5);
+
+        private const int c_HeaderRows = 5;
+        private const int c_DataRows = 17;
+        private const int c_AddressCols = 7;
+        private const int c_DataCols = 12;
+
+        private Point c_TypeFieldLoc = new Point(95, 80);
 
         private const int m_VariantCount = 12;
 
-        //Total length = rowlength + 1 + 8 + 1 + 7 = 16 + 17 = 33
         private const int c_RowLength = 16;
-        private const int c_TotalLength = 33;
-        private const string c_Symbols = "!@#$%^*.<>/?-";
-        private const string c_Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        private Random rng = new Random();
+        private Random RNG = new Random();
 
         private string m_Password;
         private List<string> m_Passwords;
@@ -44,33 +58,36 @@ namespace Fallout_PNP_Helper
         private int m_AddTry = 3;
 
         private int m_Difficulty;
+        private int m_Address = 61440;
+        private int m_CommentRow = c_HeaderRows;
 
         private List<Label> ToTypeLetters = new List<Label>();
+        private List<Label> ToReplaceLetters = new List<Label>();
 
         public HackingDlg(int difficulty)
         {
             InitializeComponent();
             m_Difficulty = difficulty;
-            this.BackColor = c_DefaultBackgroundColor;
-            
         }
 
         private void HackingDlg_Load(object sender, EventArgs e)
         {
-            this.Width = c_CellSize * (c_TotalLength+1);
-            this.Height = c_CellSize * (c_HeaderRows + m_VariantCount + 2);
-            this.Left = (int)((SystemInformation.PrimaryMonitorSize.Width - this.Width) * 0.5);
-            this.Top = (int)((SystemInformation.PrimaryMonitorSize.Height - this.Height) * 0.5);
+            m_Address += RNG.Next(50, 900) * 4;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(255, 255, 0, 255);
+            this.AllowTransparency = true;
+            PrepareFont();
 
             
         }
+
+        #region RNG & Generations
 
         private string RngSymbol
         {
             get
             {
-                var ind = rng.Next(0, c_Symbols.Length - 1);
-                return c_Symbols.Substring(ind, 1);
+                var ind = RNG.Next(0, Resources.sSymbols.Length - 1);
+                return Resources.sSymbols.Substring(ind, 1);
             }
         }
 
@@ -78,8 +95,23 @@ namespace Fallout_PNP_Helper
         {
             get
             {
-                var ind = rng.Next(0, c_Letters.Length - 1);
-                return c_Letters.Substring(ind, 1);
+                var ind = RNG.Next(0, Resources.sLetters.Length - 1);
+                return Resources.sLetters.Substring(ind, 1);
+            }
+        }
+
+        private string RngDataString
+        {
+            get
+            {
+                var hexaddr = m_Address.ToString("X");
+                var symbols = string.Empty;
+                for (int i = 0; i < c_DataCols; i++)
+                {
+                    symbols += RngSymbol;
+                }
+                m_Address += 6;
+                return string.Format(Resources.sCodeString, hexaddr, symbols);
             }
         }
 
@@ -102,20 +134,20 @@ namespace Fallout_PNP_Helper
             var min = m_Difficulty + 1;
             var max = min * 2;
 
-            var div = password.Length - rng.Next(min, max);
+            var div = password.Length - RNG.Next(min, max);
 
             var fakepass = password;
             int index;
             while (div > 0)
             {
-                index = rng.Next(0, fakepass.Length-1);
+                index = RNG.Next(0, fakepass.Length-1);
                 fakepass = fakepass.Remove(index, 1);
                 div--;
             }
 
             while (fakepass.Length < password.Length)
             {
-                index = rng.Next(0, fakepass.Length);
+                index = RNG.Next(0, fakepass.Length);
 
                 var l = RngLetter;
                 if (!fakepass.Contains(l))
@@ -127,108 +159,87 @@ namespace Fallout_PNP_Helper
             return fakepass;
         }
 
-        private void typeMessage(string message, int rowIndex, int colStart, object tag)
+        private void NextRowCol(ref int row, ref int col)
         {
-            var loc = new Point(c_DefaultOffset.X + c_CellSize*colStart, c_DefaultOffset.Y + c_CellSize*rowIndex);
+            if (col == c_AddressCols + c_DataCols-1)
+            {
+                col = c_AddressCols;
+                if (row != c_HeaderRows + c_DataRows-1)
+                {
+                    ++row;
+                }
+                else
+                {
+                    row = c_HeaderRows;
+                    col = c_AddressCols + c_DataCols + 1 + c_AddressCols;
+                }
+            }
+            else if (col == (c_AddressCols + c_DataCols) * 2)
+            {
+                col = c_AddressCols + c_DataCols + 1 + c_AddressCols;
+                if (row != c_HeaderRows + c_DataRows-1)
+                {
+                    ++row;
+                }
+                else
+                {
+                    Debug.Assert(false);
+                }
+            }
+            else
+            {
+                ++col;
+            }
+        }
 
-            for (int index = 0; index<message.Length; index++)
+        #endregion
+
+        private void TypeStringMessage(string message, int row, int col)
+        {
+            TypeStringMessage(message, row, col, true);
+        }
+
+        private void TypeStringMessage(string message, int row, int col, bool delay)
+        {
+            for (int index = 0; index < message.Length; index++)
             {
                 var label = new Label();
 
                 label.AutoSize = false;
-                label.Height = c_CellSize;
-                label.Width = c_CellSize;
+                label.Height = c_CellHeight;
+                label.Width = c_CellWidth;
 
                 label.Text = message.Substring(index, 1);
-                label.Tag = tag;
+                label.Tag = new LetterTag() { Col = col, Row = row};
 
-                label.Font = c_DefaultFont;
+                label.Font = m_Font;
                 label.ForeColor = c_DefaultForeColor;
-                label.BackColor = c_DefaultBackColor;
+                label.BackColor = c_DefaultBackgroundColor;
                 label.TextAlign = ContentAlignment.TopCenter;
-                label.Location = loc;
+                label.Location = new Point(c_TypeFieldLoc.X + c_CellWidth * col, c_TypeFieldLoc.Y + c_CellHeight * row);
 
                 label.Click += letter_Click;
                 label.MouseHover += letter_MouseHover;
-                label.MouseLeave += letter_MouseLeave;
 
-                ToTypeLetters.Add(label);
-
-                loc.X += c_CellSize;
+                if (delay)
+                {
+                    ToTypeLetters.Add(label);
+                }
+                else
+                {
+                    this.Controls.Add(label);
+                    this.Controls[this.Controls.Count - 1].BringToFront();
+                }
+                ++col;
             }
         }
-
-        
-
-        private void letter_Click(object sender, EventArgs e)
+        private void ReplaceLetter(int row, int col, string newLetter, int newPassIndex)
         {
-            var lb = sender as Label;
-            if (lb != null)
-            {
-                int index, pos, cont;
-                if (int.TryParse(lb.Tag.ToString(), out index) && index >= 0)
-                {
-                    if (!AnalizePass(index, out pos, out cont))
-                    {
-                        var space = string.Empty;
-                        for (int i = 0; i <= 8 - m_Password.Length; i++)
-                        {
-                            space += " ";
-                        }
-                        typeMessage(string.Format(Resources.sTryString, m_Passwords[index], space, pos.ToString(), cont.ToString()), index+c_HeaderRows, c_RowLength+1, -1);
-                    }
-                    else
-                    {
-                        HackSuccess();
-                        return;
-                    }
-                }
-            }
-            --m_TryLeft;
-            if (m_TryLeft == 0)
-            {
-                HackFailed();
-            }
-        }
+            var lb = new Label();
+            lb.Text = newLetter;
+            lb.Tag = new LetterTag() { Col = col, Row = row, PassIndex = newPassIndex };
 
-        private void letter_MouseHover(object sender, EventArgs e)
-        {
-            var lb = sender as Label;
-            if (lb != null)
-            {
-                int index;
-                if (int.TryParse(lb.Tag.ToString(), out index) && index >= 0)
-                {
-                    int cindex;
-                    foreach (var control in this.Controls)
-                    {
-                        var clb = control as Label;
-                        if (clb != null)
-                        {
-                            if (int.TryParse(clb.Tag.ToString(), out cindex) && cindex == index)
-                            {
-                                clb.Font = c_HighlightFont;
-                                clb.ForeColor = c_HighlightForeColor;
-                                clb.BackColor = c_HighlightBackColor;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        private void letter_MouseLeave(object sender, EventArgs e)
-        {
-            foreach (var control in this.Controls)
-            {
-                var clb = control as Label;
-                if (clb != null)
-                {
-                    clb.Font = c_DefaultFont;
-                    clb.ForeColor = c_DefaultForeColor;
-                    clb.BackColor = c_DefaultBackColor;
-                }
-            }
+            ToReplaceLetters.Add(lb);
         }
 
         private bool AnalizePass(int index, out int positions, out int letters)
@@ -266,11 +277,24 @@ namespace Fallout_PNP_Helper
 
         private void HackStart()
         {
-            this.Controls.Clear();
-            //           0123456789ABCDEF=FEDCBA9876543210
-            typeMessage("DECRYPT PASSWORD           ReiCo.", 0, 0, -1);
+            TypeStringMessage(Resources.sHeader1, 0, 0);
+            TypeStringMessage(Resources.sHeader2, 1, 0);
+            TypeStringMessage(Resources.sAttempts, 3, 0);
+            m_TryLeft += RNG.Next(1, m_AddTry);
+            for (int i = 0; i < m_TryLeft; i++)
+            {
+                TypeStringMessage("O", 3, Resources.sAttempts.Length + i);
+            }
 
-            m_TryLeft += rng.Next(1, m_AddTry);
+            for (int i = 0; i < c_DataRows; i++)
+            {
+                TypeStringMessage(RngDataString, c_HeaderRows + i, 0, true);
+            }
+
+            for (int i = 0; i < c_DataRows; i++)
+            {
+                TypeStringMessage(RngDataString, c_HeaderRows + i, c_AddressCols + c_DataCols + 1, true);
+            }
 
             m_Password = GeneratePassword(2 + m_Difficulty * 2);
             m_Passwords = new List<string>(m_VariantCount);
@@ -284,56 +308,52 @@ namespace Fallout_PNP_Helper
                 }
             }
 
-            int index = rng.Next(0, m_Passwords.Count);
+            int index = RNG.Next(0, m_Passwords.Count);
             m_Passwords.Insert(index, m_Password);
 
-            for (int i = 0; i < m_VariantCount; i++)
+            var range = (int)(c_DataCols * c_DataRows * 2 / m_Passwords.Count);
+            for (int i = 0; i < m_Passwords.Count; i++)
             {
-                index = rng.Next(0, c_RowLength - m_Password.Length - 1);
-                for (int j = 0; j < c_RowLength; j++)
-                {
-                    string text;
-                    int tag;
-                    if (j >= index && j < index + m_Password.Length)
-                    {
-                        text = m_Passwords[i].Substring(j - index, 1);
-                        tag = i;
-                    }
-                    else
-                    {
-                        text = RngSymbol;
-                        tag = -1;
-                    }
+                var password = m_Passwords[i];
 
-                    typeMessage(text, c_HeaderRows + i, j, tag);
+                var pos = range * i + RNG.Next(0, range - m_Password.Length - 1);
+                var row = c_HeaderRows;
+                var col = c_AddressCols;
+                while (pos > 0)
+                {
+                    NextRowCol(ref row, ref col);
+                    --pos;
+                }
+                for (int j = 0; j < password.Length; j++)
+                {
+                    ReplaceLetter(row, col, password.Substring(j, 1), i);
+                    NextRowCol(ref row, ref col);
                 }
             }
-        }
 
-        private void HackSuccess()
-        {
-            ToTypeLetters.Clear();
-            this.Controls.Clear();
-            //           0123456789ABCDEF=FEDCBA9876543210
-            typeMessage("ACCESS GRANTED", 4, 9, -1);
-        }
+            
 
-        private void HackFailed()
-        {
-            ToTypeLetters.Clear();
-            this.Controls.Clear();
-            //           0123456789ABCDEF=FEDCBA9876543210
-                     typeMessage("TERMINAL LOCKED", 2, 9, -1);
-        }
+            //for (int i = 0; i < m_VariantCount; i++)
+            //{
+            //    index = RNG.Next(0, c_RowLength - m_Password.Length - 1);
+            //    for (int j = 0; j < c_RowLength; j++)
+            //    {
+            //        string text;
+            //        int tag;
+            //        if (j >= index && j < index + m_Password.Length)
+            //        {
+            //            text = m_Passwords[i].Substring(j - index, 1);
+            //            tag = i;
+            //        }
+            //        else
+            //        {
+            //            text = RngSymbol;
+            //            tag = -1;
+            //        }
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            if (ToTypeLetters.Count > 0)
-            {
-                this.Controls.Add(ToTypeLetters[0]);
-                ToTypeLetters.RemoveAt(0);
-                this.Refresh();
-            }
+            //        TypeStringMessage(text, c_HeaderRows + i, j, tag);
+            //    }
+            //}
         }
 
         private void HackingDlg_Shown(object sender, EventArgs e)
@@ -341,14 +361,222 @@ namespace Fallout_PNP_Helper
             HackStart();
         }
 
+        private void PrepareFont()
+        {
+            // Create the byte array and get its length
+            byte[] fontArray = Resources.fixedsys;
+            int dataLength = Resources.fixedsys.Length;
+
+            // ASSIGN MEMORY AND COPY  BYTE[] ON THAT MEMORY ADDRESS
+            IntPtr ptrData = Marshal.AllocCoTaskMem(dataLength);
+            Marshal.Copy(fontArray, 0, ptrData, dataLength);
+
+            uint cFonts = 0;
+            AddFontMemResourceEx(ptrData, (uint)fontArray.Length, IntPtr.Zero, ref cFonts);
+
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            //PASS THE FONT TO THE  PRIVATEFONTCOLLECTION OBJECT
+            pfc.AddMemoryFont(ptrData, dataLength);
+
+            //FREE THE  "UNSAFE" MEMORY
+            Marshal.FreeCoTaskMem(ptrData);
+
+            var ff = pfc.Families[0];
+            m_Font = new Font(ff, c_FontSize, FontStyle.Regular);
+        }
+
+        #region Actions
+
+        //Letters
+        private void letter_Click(object sender, EventArgs e)
+        {
+            var lb = sender as Label;
+            if (lb != null)
+            {
+                var tag = lb.Tag as LetterTag;
+                if (tag != null)
+                {
+                    var index = tag.PassIndex;
+                    if (index >= 0)
+                    {
+                        int pos, cont;
+                        if (!AnalizePass(index, out pos, out cont))
+                        {
+                            TypeStringMessage(">" + m_Passwords[index], m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">" + "hit:" + pos.ToString() + " con:" + cont.ToString(), m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                        }
+                        else
+                        {
+                            TypeStringMessage(">" + m_Passwords[index], m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">Exact match!", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">Please wait", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">while system", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">is accessed.", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            return;
+                        }
+                        ReplaceLetter(3, Resources.sAttempts.Length + m_TryLeft-1, "X", -1);
+                        --m_TryLeft;
+                        if (m_TryLeft == 0)
+                        {
+                            TypeStringMessage(">", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">WARNING!", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">System blocked!", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">Right pass", m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                            TypeStringMessage(">" + m_Password, m_CommentRow, (c_AddressCols + c_DataCols + 1) * 2);
+                            ++m_CommentRow;
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Highlights letters with same Tag >= 0
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void letter_MouseHover(object sender, EventArgs e)
+        {
+            var lb = sender as Label;
+            if (lb != null)
+            {
+                var tag = lb.Tag as LetterTag;
+                if (tag != null)
+                {
+                    var index = tag.PassIndex;
+                    if (index >= 0)
+                    {
+                        foreach (var control in this.Controls)
+                        {
+                            var olb = control as Label;
+                            if (olb != null)
+                            {
+                                var otag = olb.Tag as LetterTag;
+                                if (otag != null)
+                                {
+                                    var cindex = otag.PassIndex;
+
+                                    if (cindex == index)
+                                    {
+                                        olb.ForeColor = c_HighlightForeColor;
+                                        olb.BackColor = c_HighlightBackColor;
+                                    }
+                                    else
+                                    {
+                                        olb.ForeColor = c_DefaultForeColor;
+                                        olb.BackColor = c_DefaultBackgroundColor;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else //if index < 0
+                    {
+                        foreach (var control in this.Controls)
+                        {
+                            var olb = control as Label;
+                            if (olb != null)
+                            {
+                                olb.ForeColor = c_DefaultForeColor;
+                                olb.BackColor = c_DefaultBackgroundColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //Typer timer
+        private void tmTyper_Tick(object sender, EventArgs e)
+        {
+            if (ToTypeLetters.Count > 0)
+            {
+                this.Controls.Add(ToTypeLetters[0]);
+                this.Controls[this.Controls.Count - 1].BringToFront();
+                ToTypeLetters.RemoveAt(0);
+                return;
+            }
+
+            if (ToReplaceLetters.Count > 0)
+            {
+                var newlb = ToReplaceLetters[0];
+                var newtag = newlb.Tag as LetterTag;
+                if (newtag != null)
+                {
+                    for (int i = 0; i < this.Controls.Count; i++)
+                    {
+                        var lb = this.Controls[i] as Label;
+                        if (lb != null)
+                        {
+                            var tag = lb.Tag as LetterTag;
+                            if (tag != null)
+                            {
+                                if (tag.Row == newtag.Row && tag.Col == newtag.Col)
+                                {
+                                    lb.Text = newlb.Text;
+                                    lb.Tag = newtag;
+                                    ToReplaceLetters.RemoveAt(0);
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //Dragging
+        private bool dragging = false;
+        private Point dragCursorPoint;
+        private Point dragFormPoint;
+
         private void HackingDlg_MouseDown(object sender, MouseEventArgs e)
         {
-            timer.Interval = 10;
+            dragging = true;
+            dragCursorPoint = Cursor.Position;
+            dragFormPoint = this.Location;
+        }
+
+        private void HackingDlg_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(dragCursorPoint));
+                this.Location = Point.Add(dragFormPoint, new Size(dif));
+            }
         }
 
         private void HackingDlg_MouseUp(object sender, MouseEventArgs e)
         {
-            timer.Interval = 50;
+            dragging = false;
+        }
+
+        #endregion
+
+        private void TempStorage()
+        {
+            // Store integer 182
+            int decValue = 182;
+            // Convert integer 182 as a hex in a string variable
+            string hexValue = decValue.ToString("X");
+            // Convert the hex string back to the number
+            int decAgain = int.Parse(hexValue, System.Globalization.NumberStyles.HexNumber);
+        }
+
+        private void pbPowerButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

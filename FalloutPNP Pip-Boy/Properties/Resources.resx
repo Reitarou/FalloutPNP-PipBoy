@@ -117,7 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="sTryString" xml:space="preserve">
-    <value>{0}{1}V:{2} ?:{3}</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fixedsys" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fixedsys.ttf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sLetters" xml:space="preserve">
+    <value>ABCDEFGHIJKLMNOPQRSTUVWXYZ</value>
+  </data>
+  <data name="sSymbols" xml:space="preserve">
+    <value>!@#$%^&amp;*()-=_+[]{};'\:"|,./&lt;&gt;?</value>
+  </data>
+  <data name="sAttempts" xml:space="preserve">
+    <value>ATTEMPTS LEFT: </value>
+  </data>
+  <data name="sCodeString" xml:space="preserve">
+    <value>0x{0} {1}</value>
+  </data>
+  <data name="sHeader1" xml:space="preserve">
+    <value>REICO INDUSTRIES (TM) TERMLINK PROTOCOL</value>
+  </data>
+  <data name="sHeader2" xml:space="preserve">
+    <value>ENTER PASSWORD NOW</value>
   </data>
 </root>

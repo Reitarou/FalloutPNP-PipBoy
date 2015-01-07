@@ -60,12 +60,64 @@ namespace Fallout_PNP_PipBoy.Properties {
             }
         }
         
-        /// <summary>
-        ///   Looks up a localized string similar to {0}{1}V:{2} ?:{3}.
-        /// </summary>
-        internal static string sTryString {
+        internal static byte[] fixedsys {
             get {
-                return ResourceManager.GetString("sTryString", resourceCulture);
+                object obj = ResourceManager.GetObject("fixedsys", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ATTEMPTS LEFT: .
+        /// </summary>
+        internal static string sAttempts {
+            get {
+                return ResourceManager.GetString("sAttempts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0x{0} {1}.
+        /// </summary>
+        internal static string sCodeString {
+            get {
+                return ResourceManager.GetString("sCodeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REICO INDUSTRIES (TM) TERMLINK PROTOCOL.
+        /// </summary>
+        internal static string sHeader1 {
+            get {
+                return ResourceManager.GetString("sHeader1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ENTER PASSWORD NOW.
+        /// </summary>
+        internal static string sHeader2 {
+            get {
+                return ResourceManager.GetString("sHeader2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ABCDEFGHIJKLMNOPQRSTUVWXYZ.
+        /// </summary>
+        internal static string sLetters {
+            get {
+                return ResourceManager.GetString("sLetters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to !@#$%^&amp;*()-=_+[]{};&apos;\:&quot;|,./&lt;&gt;?.
+        /// </summary>
+        internal static string sSymbols {
+            get {
+                return ResourceManager.GetString("sSymbols", resourceCulture);
             }
         }
     }
