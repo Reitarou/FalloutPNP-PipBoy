@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Fallout_PNP_Helper
+namespace FalloutPNP_PipBoy
 {
     public partial class PipBoyDlg : Form
     {
+        private Items m_Items;
+
         public PipBoyDlg()
         {
             InitializeComponent();
@@ -32,6 +34,11 @@ namespace Fallout_PNP_Helper
         {
             var hackDlg = new HackingDlg(3);
             hackDlg.ShowDialog();
+        }
+
+        private void PipBoyDlg_Load(object sender, EventArgs e)
+        {
+            m_Items = new Items();
         }
     }
 }

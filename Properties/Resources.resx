@@ -135,4 +135,7 @@
   <data name="sHeader2" xml:space="preserve">
     <value>ENTER PASSWORD NOW</value>
   </data>
+  <data name="cName" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
 </root>

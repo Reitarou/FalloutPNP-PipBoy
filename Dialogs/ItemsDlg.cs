@@ -11,9 +11,23 @@ namespace FalloutPNP_PipBoy.Dialogs
 {
     public partial class ItemsDlg : Form
     {
-        public ItemsDlg()
+        private Items m_Items;
+
+        public ItemsDlg(Items items)
         {
+            m_Items = items;
             InitializeComponent();
+        }
+
+        private void RefreshDGV()
+        {
+            dgvItems.Rows.Clear();
+            foreach (var item in m_Items)
+            {
+                var index = dgvItems.Rows.Add();
+                if (dgvItems.Columns[dgvcName.Name].Visible)
+                    dgvItems.Rows[index].Cells[dgvcName.Name].Value = item.Name;
+            }
         }
     }
 }

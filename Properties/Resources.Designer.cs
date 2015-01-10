@@ -61,6 +61,15 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Наименование.
+        /// </summary>
+        internal static string cName {
+            get {
+                return ResourceManager.GetString("cName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ATTEMPTS LEFT: .
         /// </summary>
         internal static string sAttempts {

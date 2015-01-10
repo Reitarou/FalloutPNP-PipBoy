@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using FalloutPNP_PipBoy.Properties;
 
-namespace Fallout_PNP_Helper
+namespace FalloutPNP_PipBoy
 {
     public partial class HackingDlg : Form
     {

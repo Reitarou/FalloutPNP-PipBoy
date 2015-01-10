@@ -1,4 +1,4 @@
-﻿namespace Fallout_PNP_Helper
+﻿namespace FalloutPNP_PipBoy
 {
     partial class HackingDlg
     {

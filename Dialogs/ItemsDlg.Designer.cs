@@ -28,19 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.dgvcName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvcName});
+            this.dgvItems.Location = new System.Drawing.Point(12, 12);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.Size = new System.Drawing.Size(801, 150);
+            this.dgvItems.TabIndex = 0;
+            // 
+            // dgvcName
+            // 
+            this.dgvcName.HeaderText = "Наименование";
+            this.dgvcName.Name = "dgvcName";
+            this.dgvcName.ReadOnly = true;
             // 
             // ItemsDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 517);
+            this.Controls.Add(this.dgvItems);
             this.Name = "ItemsDlg";
             this.Text = "ItemsDlg";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcName;
     }
 }
