@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FalloutPNP Pip-Boy", "FalloutPNP Pip-Boy\FalloutPNP Pip-Boy.csproj", "{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FalloutPNPPip-Boy", "FalloutPNPPip-Boy.csproj", "{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
