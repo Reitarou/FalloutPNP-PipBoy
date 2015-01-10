@@ -28,6 +28,7 @@ namespace FalloutPNP_PipBoy.Dialogs
                 if (dgvItems.Columns[dgvcName.Name].Visible)
                     dgvItems.Rows[index].Cells[dgvcName.Name].Value = item.Name;
             }
+            //temp
         }
     }
 }
