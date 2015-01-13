@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <items_db>
   <item>
-    <Наименование>60</Наименование>
-    <Тип>test2</Тип>
+    <Name>Р РѕР±Р° Р‘СЂР°С‚СЃС‚РІР°</Name>
+    <Type>Armor</Type>
+    <ArmorClass>6</ArmorClass>
+    <ArmorNormal>
+      <DamageResistance>1</DamageResistance>
+      <DamageThreshold>20</DamageThreshold>
+    </ArmorNormal>
+    <ResistanceLaser>
+      <DamageResistance></DamageResistance>
+      <DamageThreshold>25</DamageThreshold>
+    </ResistanceLaser>
+    <ResistanceFire>
+      <DamageResistance></DamageResistance>
+      <DamageThreshold>10</DamageThreshold>
+    </ResistanceFire>
+    <ResistancePlasma>
+      <DamageResistance></DamageResistance>
+      <DamageThreshold>20</DamageThreshold>
+    </ResistancePlasma>
+    <ResistanceBoom>
+      <DamageResistance></DamageResistance>
+      <DamageThreshold>20</DamageThreshold>
+    </ResistanceBoom>
+    <ResistanceElectic>
+      <DamageResistance></DamageResistance>
+      <DamageThreshold>40</DamageThreshold>
+    </ResistanceElectic>
   </item>
 </items_db>
+
