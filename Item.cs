@@ -11,10 +11,11 @@ namespace FalloutPNP_PipBoy
     {
         private Dictionary<string, string> m_Properties;
 
-        private void PrepareProperties()
+        public enum ItemType
         {
-            m_Properties = new Dictionary<string, string>();
-            m_Properties.Add(Resources.cName, string.Empty);
+            Unknown,
+            OneHandWeapon,
+            TwoHandWeapon
         }
 
         public Item(XmlNode node)
@@ -29,15 +30,32 @@ namespace FalloutPNP_PipBoy
             }
         }
 
+        private void PrepareProperties()
+        {
+            m_Properties = new Dictionary<string, string>();
+            m_Properties.Add(Resources.cName, string.Empty);
+            m_Properties.Add(Resources.cType, string.Empty);
+        }
+
         public string Name
         {
             get
             {
                 return m_Properties[Resources.cName];
             }
-            set
+        }
+
+        public ItemType Type
+        {
+            get
             {
-                m_Properties[Resources.cName] = value;
+                var sType = m_Properties[Resources.cType];
+                ItemType eType = ItemType.Unknown;
+                switch (sType)
+                {
+                }
+
+                return eType;
             }
         }
 

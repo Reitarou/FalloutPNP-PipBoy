@@ -12,6 +12,7 @@ namespace FalloutPNP_PipBoy.Dialogs
     public partial class ItemsDlg : Form
     {
         private Items m_Items;
+        private Item m_SelectedItem = null;
 
         public ItemsDlg(Items items)
         {
@@ -29,6 +30,22 @@ namespace FalloutPNP_PipBoy.Dialogs
                     dgvItems.Rows[index].Cells[dgvcName.Name].Value = item.Name;
             }
             //temp
+        }
+
+        private void UpdateControls()
+        {
+            if (m_SelectedItem != null)
+            {
+                switch (m_SelectedItem.Type)
+                {
+                }
+            }
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Назначить SelectedItem
+            UpdateControls();
         }
     }
 }
