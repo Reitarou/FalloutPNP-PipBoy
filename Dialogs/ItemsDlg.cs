@@ -20,16 +20,8 @@ namespace FalloutPNP_PipBoy.Dialogs
             InitializeComponent();
         }
 
-        private void RefreshDGV()
+        private void RefreshItems()
         {
-            dgvItems.Rows.Clear();
-            foreach (var item in m_Items)
-            {
-                var index = dgvItems.Rows.Add();
-                if (dgvItems.Columns[dgvcName.Name].Visible)
-                    dgvItems.Rows[index].Cells[dgvcName.Name].Value = item.Name;
-            }
-            //temp
         }
 
         private void UpdateControls()

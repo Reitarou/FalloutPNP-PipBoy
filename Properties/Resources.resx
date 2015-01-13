@@ -136,12 +136,12 @@
     <value>ENTER PASSWORD NOW</value>
   </data>
   <data name="cName" xml:space="preserve">
-    <value>Наименование</value>
+    <value>Name</value>
   </data>
-    <data name="cType" xml:space="preserve">
-    <value>Тип</value>
+  <data name="cType" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="cDmg" xml:space="preserve">
-    <value>Урон</value>
+    <value>Damage</value>
   </data>
 </root>

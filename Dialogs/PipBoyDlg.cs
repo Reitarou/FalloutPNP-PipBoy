@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FalloutPNP_PipBoy.Dialogs;
 
 namespace FalloutPNP_PipBoy
 {
@@ -38,7 +39,13 @@ namespace FalloutPNP_PipBoy
 
         private void PipBoyDlg_Load(object sender, EventArgs e)
         {
-            m_Items = new Items();
+            m_Items = new Items("items.xml");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var itemsDlg = new ItemsDlg(m_Items);
+            itemsDlg.Show();
         }
     }
 }

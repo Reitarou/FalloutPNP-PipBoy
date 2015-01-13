@@ -15,21 +15,19 @@ namespace FalloutPNP_PipBoy
         {
             Unknown,
             OneHandWeapon,
-            TwoHandWeapon
+            TwoHandWeapon,
+            Armor
         }
-
-         private void PrepareProperties()
-        {
-            m_Properties = new Dictionary<string, string>();
-            m_Properties.Add(Resources.cName, string.Empty);
-            m_Properties.Add(Resources.cDmg, string.Empty);
-        }
-        
 
         public Item(XmlNode node)
         {
+            PrepareProperties();
+
             foreach (var pair in m_Properties)
             {
+                var t = node.SelectSingleNode("ArmorNormal");
+                var dt = t.SelectSingleNode("DamageThreshold");
+
                 var prop = node.SelectSingleNode(pair.Key);
                 if (prop != null)
                 {
@@ -43,6 +41,7 @@ namespace FalloutPNP_PipBoy
             m_Properties = new Dictionary<string, string>();
             m_Properties.Add(Resources.cName, string.Empty);
             m_Properties.Add(Resources.cType, string.Empty);
+            m_Properties.Add(Resources.cDmg, string.Empty);
         }
 
         public string Name

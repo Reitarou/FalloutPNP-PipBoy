@@ -9,17 +9,18 @@ namespace FalloutPNP_PipBoy
 {
     public class Items : IEnumerable<Item>
     {
-        private string m_ItemsPath = "items.xml";
+        private string m_ItemsPath;
         private List<Item> m_Items;
 
-        public Items()
+        public Items(string path)
         {
-            m_Items = new List<Item>();
-            RefreshItems();
+            m_ItemsPath = path;
+            LoadItems();
         }
 
-        private void RefreshItems()
+        private void LoadItems()
         {
+            m_Items = new List<Item>();
             var fp = m_ItemsPath;
             if (!File.Exists(fp))
             {
@@ -39,8 +40,6 @@ namespace FalloutPNP_PipBoy
                 m_Items.Add(new Item(eItem));
             }
             fs.Close();
-
-            
         }
 
         public void Add(Item item)
