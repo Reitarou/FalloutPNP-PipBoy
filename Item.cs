@@ -18,6 +18,14 @@ namespace FalloutPNP_PipBoy
             TwoHandWeapon
         }
 
+         private void PrepareProperties()
+        {
+            m_Properties = new Dictionary<string, string>();
+            m_Properties.Add(Resources.cName, string.Empty);
+            m_Properties.Add(Resources.cDmg, string.Empty);
+        }
+        
+
         public Item(XmlNode node)
         {
             foreach (var pair in m_Properties)

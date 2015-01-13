@@ -138,7 +138,10 @@
   <data name="cName" xml:space="preserve">
     <value>Наименование</value>
   </data>
-  <data name="cType" xml:space="preserve">
+    <data name="cType" xml:space="preserve">
     <value>Тип</value>
+  </data>
+  <data name="cDmg" xml:space="preserve">
+    <value>Урон</value>
   </data>
 </root>
