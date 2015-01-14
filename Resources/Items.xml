@@ -24,10 +24,10 @@
       <DamageResistance></DamageResistance>
       <DamageThreshold>20</DamageThreshold>
     </ResistanceBoom>
-    <ResistanceElectic>
+    <ResistanceElectric>
       <DamageResistance></DamageResistance>
       <DamageThreshold>40</DamageThreshold>
-    </ResistanceElectic>
+    </ResistanceElectric>
   </item>
 </items_db>
 

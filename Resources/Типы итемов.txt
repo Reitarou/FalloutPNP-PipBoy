@@ -1,0 +1,164 @@
+/*
+Выборку оружия придется делать не только, как одно-двуручное, но 
+и ближнее и дальнее. Будет дополнительная пикча в фильтре,
+котора за это отвечает.
+Транспортные средсва пока не описываю, если потом понадобятся можно дописать	
+*/
+Types:
+	Armor
+	Helm
+	FullArmor
+	WeaponOneHand
+	WeaponTwoHand
+	Ammo
+	Medicine
+	Technics //это разные модификации неа оружие	
+	Boom  //мины, гранаты
+	Sundry
+//=================================
+Type: Armor
+Name:
+ArmorClass:
+ArmorNormal:
+	DamageResistance:
+	DamageThreshold:
+ArmorLaser:
+	DamageResistance:
+	DamageThreshold:
+ArmorFire:
+	DamageResistance:
+	DamageThreshold:
+ArmorPlasma:
+	DamageResistance:
+	DamageThreshold:
+ArmorBoom:
+	DamageResistance:
+	DamageThreshold:
+ArmorElectric:	
+	DamageResistance:
+	DamageThreshold:
+Weight:
+Price:
+Description:
+//=================================
+Type:Helm
+Name:
+ArmorClass:
+ArmorNormal:
+	DamageResistance:
+	DamageThreshold:
+ArmorLaser:
+	DamageResistance:
+	DamageThreshold:
+ArmorFire:
+	DamageResistance:
+	DamageThreshold:
+ArmorPlasma:
+	DamageResistance:
+	DamageThreshold:
+ArmorBoom:
+	DamageResistance:
+	DamageThreshold:
+ArmorElectric:	
+	DamageResistance:
+	DamageThreshold:
+Weight:
+Price:
+Description:
+//================================
+Type:FullArmor
+Name:
+ArmorClass:
+ArmorNormal:
+	DamageResistance:
+	DamageThreshold:
+ArmorLaser:
+	DamageResistance:
+	DamageThreshold:
+ArmorFire:
+	DamageResistance:
+	DamageThreshold:
+ArmorPlasma:
+	DamageResistance:
+	DamageThreshold:
+ArmorBoom:
+	DamageResistance:
+	DamageThreshold:
+ArmorElectric:	
+	DamageResistance:
+	DamageThreshold:
+Weight:
+Price:
+Description:
+//=================================
+Type:WeaponOneHand
+TypeRange:// ближний или дальний
+TypeDamage://тип урона(обычный, лазерный, плазменый, огненый, взрывной)
+Name:
+Damage:
+Ammo:
+Range://если равен 1, то не выводить
+Cage://обойма
+Time://очки действия
+Complexity:// сложность
+Weight:
+Price:
+Description:
+//=================================
+Type:WeaponTwoHand
+TypeRange:
+TypeDamage://тип урона(обычный, лазерный, плазменый, огненый, взрывной)
+Name:
+Damage:
+Ammo:
+Range:
+Cage://обойма
+Time://очки действия
+Complexity:// сложность
+Weight:
+Price:
+Description:
+//=================================
+Type: Ammo
+Name:
+ModifyFMJ:
+	RemoveDamage:
+	ReparationDamage:
+ModyfyBB:
+	RemoveDamage:
+	ReparationDamage:
+ModyfySZT:
+	RemoveDamage:
+	ReparationDamage:
+Damage:
+Count://количество в обной упаковки
+Weight://ибо нех по 500шт носить
+Price:
+Description:
+/*При выборе патронов, есть разные модификации. Они записаны в Modyfy(ЦМ,ББ,СЦТ).
+Каждая модификация уменьшает СУ и\или СП, это записано в Remove и Reparation*/
+//==================================
+Type:Medicine
+Name:
+Price:
+Weight:
+Adaption://привыкание(пусть будет отдельным значением)
+Description:
+//=================================
+Type:Technics
+Name:
+Price:
+Decsription:
+//=================================
+Type:Boom
+Name:
+Damage:
+Price:
+Weight:
+Description:
+//=================================
+Type:Sundry
+Name:
+Price:
+Weight:
+Description:
