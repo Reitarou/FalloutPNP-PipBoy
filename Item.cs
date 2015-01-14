@@ -9,73 +9,92 @@ namespace FalloutPNP_PipBoy
 {
     public class Item
     {
-        private Dictionary<string, string> m_Properties;
+        public Dictionary<string, string> Properties = new Dictionary<string, string>();
 
-        public enum ItemType
+        public Item()
         {
-            Unknown,
-            OneHandWeapon,
-            TwoHandWeapon,
-            Armor
         }
 
-        public Item(XmlNode node)
+        public Item(XmlNode node, Items items)
         {
-            PrepareProperties();
-
-            foreach (var pair in m_Properties)
+            foreach (var pair in items.PropertiesList)
             {
-                var t = node.SelectSingleNode("ArmorNormal");
-                var dt = t.SelectSingleNode("DamageThreshold");
-
                 var prop = node.SelectSingleNode(pair.Key);
                 if (prop != null)
                 {
-                    m_Properties[pair.Key] = prop.InnerText;
+                    Properties.Add(pair.Key, prop.InnerText);
                 }
             }
         }
 
-        private void PrepareProperties()
+        public void Assign(Item item)
         {
-            m_Properties = new Dictionary<string, string>();
-            m_Properties.Add(Resources.cName, string.Empty);
-            m_Properties.Add(Resources.cType, string.Empty);
-            m_Properties.Add(Resources.cDmg, string.Empty);
+            Properties = item.Properties;
         }
 
         public string Name
         {
             get
             {
-                return m_Properties[Resources.cName];
+                if (Properties.ContainsKey(Resources.sName))
+                {
+                    return Properties[Resources.sName];
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            set
+            {
+                if (Properties.ContainsKey(Resources.sName))
+                {
+                    Properties[Resources.sName] = value;
+                }
+                else
+                {
+                    Properties.Add(Resources.sName, value);
+                }
             }
         }
 
-        public ItemType Type
+        public Categories.Category Category
         {
             get
             {
-                var sType = m_Properties[Resources.cType];
-                ItemType eType = ItemType.Unknown;
-                switch (sType)
+                if (Properties.ContainsKey(Resources.sCategory))
                 {
+                    return Categories.GetCategory(Properties[Resources.sCategory]);
                 }
-
-                return eType;
+                else
+                {
+                    return Categories.Category.Unknown;
+                }
+            }
+            set
+            {
+                if (Properties.ContainsKey(Resources.sCategory))
+                {
+                    Properties[Resources.sCategory] = value.ToString();
+                }
+                else
+                {
+                    Properties.Add(Resources.sCategory, value.ToString());
+                }
             }
         }
 
+        
         public void SetToElement(ref XmlElement xe, XmlDocument xd)
         {
             xe.RemoveAll();
-            foreach (var pair in m_Properties)
+            foreach (var pair in Properties)
             {
                 AddNode(xd, xe, pair);
             }
         }
 
-        public void AddNode(XmlDocument xd, XmlElement xe, KeyValuePair<string, string> pair)
+        private void AddNode(XmlDocument xd, XmlElement xe, KeyValuePair<string, string> pair)
         {
             var newElement = xd.CreateElement(pair.Key);
             var newElementText = xd.CreateTextNode(pair.Value);

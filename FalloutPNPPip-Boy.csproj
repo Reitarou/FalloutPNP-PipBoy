@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\EditItemDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditItemDlg.Designer.cs">
+      <DependentUpon>EditItemDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\ItemsDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Items.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\EditItemDlg.resx">
+      <DependentUpon>EditItemDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ItemsDlg.resx">
       <DependentUpon>ItemsDlg.cs</DependentUpon>
     </EmbeddedResource>

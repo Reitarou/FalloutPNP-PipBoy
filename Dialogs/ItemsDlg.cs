@@ -28,9 +28,9 @@ namespace FalloutPNP_PipBoy.Dialogs
         {
             if (m_SelectedItem != null)
             {
-                switch (m_SelectedItem.Type)
-                {
-                }
+                //switch (m_SelectedItem.Type)
+                //{
+                //}
             }
         }
 
@@ -38,6 +38,16 @@ namespace FalloutPNP_PipBoy.Dialogs
         {
             //Назначить SelectedItem
             UpdateControls();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            var item = new Item();
+            if (EditItemDlg.Execute(ref item))
+            {
+                m_Items.Add(item);
+                m_Items.ReloadItems();
+            }
         }
     }
 }
