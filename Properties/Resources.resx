@@ -165,4 +165,16 @@
   <data name="sNormalDamageThreshold" xml:space="preserve">
     <value>NormalDamageThreshold</value>
   </data>
+  <data name="eIncorrectPropertyName" xml:space="preserve">
+    <value>Неверно указано свойство</value>
+  </data>
+  <data name="eIncorrectPropertyValue" xml:space="preserve">
+    <value>Неверно указано значение свойства</value>
+  </data>
+  <data name="sDivider" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="sPropertyView" xml:space="preserve">
+    <value>{0}{1} {2}</value>
+  </data>
 </root>

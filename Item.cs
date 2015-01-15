@@ -9,97 +9,78 @@ namespace FalloutPNP_PipBoy
 {
     public class Item
     {
-        public Dictionary<string, string> Properties = new Dictionary<string, string>();
+        public ItemProperties Properties;
 
         public Item()
         {
+            Properties = new ItemProperties();
         }
 
-        public Item(XmlNode node, Items items)
+        public Item(XmlNode node)
         {
-            foreach (var pair in items.PropertiesList)
+            Properties = new ItemProperties();
+
+            foreach (var property in Properties)
             {
-                var prop = node.SelectSingleNode(pair.Key);
-                if (prop != null)
+                var valueNode = node.SelectSingleNode(property.Name);
+                if (valueNode != null)
                 {
-                    Properties.Add(pair.Key, prop.InnerText);
+                    Properties[property.Name].Value = valueNode.InnerText;
                 }
             }
         }
 
         public void Assign(Item item)
         {
-            Properties = item.Properties;
+            foreach (var property in Properties)
+            {
+                property.Value = item.Properties[property.Name].Value;
+            }
         }
 
         public string Name
         {
             get
             {
-                if (Properties.ContainsKey(Resources.sName))
-                {
-                    return Properties[Resources.sName];
-                }
-                else
-                {
-                    return string.Empty;
-                }
+                return Properties[Resources.sName].Value;
             }
             set
             {
-                if (Properties.ContainsKey(Resources.sName))
-                {
-                    Properties[Resources.sName] = value;
-                }
-                else
-                {
-                    Properties.Add(Resources.sName, value);
-                }
+                Properties[Resources.sName].Value = value;
             }
         }
 
-        public Categories.Category Category
+        public Category Category
         {
             get
             {
-                if (Properties.ContainsKey(Resources.sCategory))
-                {
-                    return Categories.GetCategory(Properties[Resources.sCategory]);
-                }
-                else
-                {
-                    return Categories.Category.Unknown;
-                }
+                return ItemProperties.GetCategory(Properties[Resources.sCategory].Value);
             }
             set
             {
-                if (Properties.ContainsKey(Resources.sCategory))
-                {
-                    Properties[Resources.sCategory] = value.ToString();
-                }
-                else
-                {
-                    Properties.Add(Resources.sCategory, value.ToString());
-                }
+                Properties[Resources.sCategory].Value = value.GetDescription();
             }
         }
 
         
-        public void SetToElement(ref XmlElement xe, XmlDocument xd)
+        public void SetToElement(ref XmlNode xn, XmlDocument xd)
         {
-            xe.RemoveAll();
-            foreach (var pair in Properties)
+            xn.RemoveAll();
+            foreach (var property in Properties)
             {
-                AddNode(xd, xe, pair);
+                if (property.Value != string.Empty)
+                {
+                    AddNode(xd, xn, property);
+                }
             }
         }
 
-        private void AddNode(XmlDocument xd, XmlElement xe, KeyValuePair<string, string> pair)
+        private void AddNode(XmlDocument xd, XmlNode xn, ItemProperty property)
         {
-            var newElement = xd.CreateElement(pair.Key);
-            var newElementText = xd.CreateTextNode(pair.Value);
+            var newElement = xd.CreateElement(property.Name);
+            var newElementText = xd.CreateTextNode(property.Value);
             newElement.AppendChild(newElementText);
-            xe.AppendChild(newElement);
+            xn.AppendChild(newElement);
         }
     }
 }

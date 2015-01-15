@@ -61,6 +61,24 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Неверно указано свойство.
+        /// </summary>
+        internal static string eIncorrectPropertyName {
+            get {
+                return ResourceManager.GetString("eIncorrectPropertyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неверно указано значение свойства.
+        /// </summary>
+        internal static string eIncorrectPropertyValue {
+            get {
+                return ResourceManager.GetString("eIncorrectPropertyValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ArmorClass.
         /// </summary>
         internal static string sArmorClass {
@@ -93,6 +111,15 @@ namespace FalloutPNP_PipBoy.Properties {
         internal static string sCodeString {
             get {
                 return ResourceManager.GetString("sCodeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to :.
+        /// </summary>
+        internal static string sDivider {
+            get {
+                return ResourceManager.GetString("sDivider", resourceCulture);
             }
         }
         
@@ -183,6 +210,15 @@ namespace FalloutPNP_PipBoy.Properties {
         internal static string sNormalDamageThreshold {
             get {
                 return ResourceManager.GetString("sNormalDamageThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}{1} {2}.
+        /// </summary>
+        internal static string sPropertyView {
+            get {
+                return ResourceManager.GetString("sPropertyView", resourceCulture);
             }
         }
         

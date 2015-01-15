@@ -22,15 +22,53 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void UpdateControls()
         {
+            cbPropertyName.Items.Clear();
+            foreach (var property in m_Item.Properties)
+            {
+                if (property.Category == Category.Common)
+                {
+                    if (property.Name != Resources.sName && property.Name != Resources.sCategory)
+                    {
+                        if (m_Item.Properties[property.Name].Value == string.Empty)
+                        {
+                            cbPropertyName.Items.Add(property.Name);
+                        }
+                    }
+                }
+            }
 
+            foreach (var property in m_Item.Properties)
+            {
+                if (property.Category == m_Item.Category)
+                {
+                    if (m_Item.Properties[property.Name].Value == string.Empty)
+                    {
+                        cbPropertyName.Items.Add(property.Name);
+                    }
+                }
+            }
+            if (cbPropertyName.Items.Count > 0)
+            {
+                cbPropertyName.SelectedIndex = 0;
+            }
+
+            lbProperties.Items.Clear();
+            foreach (var property in m_Item.Properties)
+            {
+                if (property.Name != Resources.sName && property.Name != Resources.sCategory && property.Value != string.Empty)
+                {
+                    lbProperties.Items.Add(string.Format(Resources.sPropertyView, property.Name, Resources.sDivider, property.Value));
+                }
+            }
+            
         }
 
         private void DoInit()
         {
             cbCategory.Items.Clear();
-            for (int i = 0; i < (int)Categories.Category.Count; i++)
+            for (int i = 0; i < (int)Category.Count; i++)
             {
-                var cat = (Categories.Category)i;
+                var cat = (Category)i;
                 cbCategory.Items.Add(cat.GetDescription());
             }
             tbName.Text = m_Item.Name;
@@ -40,7 +78,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoCommit()
         {
             m_Item.Name = tbName.Text;
-            m_Item.Category = (Categories.Category)cbCategory.SelectedIndex;
+            m_Item.Category = (Category)cbCategory.SelectedIndex;
         }
 
         public static bool Execute(ref Item item)
@@ -69,6 +107,8 @@ namespace FalloutPNP_PipBoy.Dialogs
                             Debug.Assert(false);
                             break;
                     }
+
+
                 }
             }
         }
@@ -78,25 +118,53 @@ namespace FalloutPNP_PipBoy.Dialogs
             if (tbName.Text == string.Empty)
             {
                 MessageBox.Show("Введите название");
-                this.DialogResult = DialogResult.Retry;
+                return;
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            DialogResult = DialogResult.OK;
         }
 
-        private void cbCategories_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var cat = (Category)cbCategory.SelectedIndex;
+            m_Item.Category = cat;
             UpdateControls();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Cancel;
         }
 
-        private void EditItemDlg_Load(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            if (cbPropertyName.Text == string.Empty)
+            {
+                MessageBox.Show(Resources.eIncorrectPropertyName);
+                return;
+            }
+
+            if (tbPropertyValue.Text == string.Empty)
+            {
+                MessageBox.Show(Resources.eIncorrectPropertyValue);
+                return;
+            }
+
+            m_Item.Properties[cbPropertyName.Text].Value = tbPropertyValue.Text;
+            UpdateControls();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var index = lbProperties.SelectedIndex;
+            if (index >= 0)
+            {
+                var s = lbProperties.Items[index].ToString();
+                var separators = new string[1];
+                separators[0] = Resources.sDivider;
+                var ss = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                m_Item.Properties[ss[0]].Value = string.Empty;
+                UpdateControls();
+            }
         }
     }
 }

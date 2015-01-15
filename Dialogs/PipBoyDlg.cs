@@ -22,29 +22,29 @@ namespace FalloutPNP_PipBoy
         private void button1_Click(object sender, EventArgs e)
         {
             var hackDlg = new HackingDlg(1);
-            hackDlg.ShowDialog();
+            hackDlg.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var hackDlg = new HackingDlg(2);
-            hackDlg.ShowDialog();
+            hackDlg.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             var hackDlg = new HackingDlg(3);
-            hackDlg.ShowDialog();
+            hackDlg.Show();
         }
 
         private void PipBoyDlg_Load(object sender, EventArgs e)
         {
-            m_Items = new Items("items.xml");
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var itemsDlg = new ItemsDlg(m_Items);
+            var itemsDlg = new ItemsDlg();
             itemsDlg.Show();
         }
     }

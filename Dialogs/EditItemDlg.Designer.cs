@@ -86,7 +86,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(288, 21);
             this.cbCategory.TabIndex = 3;
-            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategories_SelectedIndexChanged);
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // tbName
             // 
@@ -147,6 +147,7 @@
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Удалить";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -156,6 +157,7 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbPropertyName
             // 
@@ -197,7 +199,6 @@
             this.Controls.Add(this.lbProperties);
             this.Name = "EditItemDlg";
             this.Text = "Свойства предмета";
-            this.Load += new System.EventHandler(this.EditItemDlg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
