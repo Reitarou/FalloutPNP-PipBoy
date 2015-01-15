@@ -66,7 +66,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoInit()
         {
             cbCategory.Items.Clear();
-            for (int i = 1; i < (int)Category.Count-1; i++) //i<Count-1 добавляет все кроме последних ДВУХ (Собственно каунт и коммон, которая для свойств)
+            for (int i = 0; i < (int)Category.Count-1; i++) //i<Count-1 добавляет все кроме последних ДВУХ (Собственно каунт и коммон, которая для свойств)
             {
                 var cat = (Category)i;
                 cbCategory.Items.Add(cat.GetDescription());
@@ -78,7 +78,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoCommit()
         {
             m_Item.Name = tbName.Text;
-            m_Item.Category = (Category)cbCategory.SelectedIndex;
+            m_Item.Category = (Category)(cbCategory.SelectedIndex);
         }
 
         public static bool Execute(ref Item item)
@@ -165,11 +165,6 @@ namespace FalloutPNP_PipBoy.Dialogs
                 m_Item.Properties[ss[0]].Value = string.Empty;
                 UpdateControls();
             }
-        }
-
-        private void lbProperties_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
