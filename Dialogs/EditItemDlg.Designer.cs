@@ -53,6 +53,7 @@
             this.lbProperties.Name = "lbProperties";
             this.lbProperties.Size = new System.Drawing.Size(288, 290);
             this.lbProperties.TabIndex = 0;
+            this.lbProperties.SelectedIndexChanged += new System.EventHandler(this.lbProperties_SelectedIndexChanged);
             // 
             // label1
             // 

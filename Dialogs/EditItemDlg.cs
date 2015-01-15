@@ -166,5 +166,10 @@ namespace FalloutPNP_PipBoy.Dialogs
                 UpdateControls();
             }
         }
+
+        private void lbProperties_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
