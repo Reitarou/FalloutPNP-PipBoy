@@ -78,7 +78,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoCommit()
         {
             m_Item.Name = tbName.Text;
-            m_Item.Category = (Category)(cbCategory.SelectedIndex);
+            m_Item.Category = (Category)cbCategory.SelectedIndex;
         }
 
         public static bool Execute(ref Item item)
