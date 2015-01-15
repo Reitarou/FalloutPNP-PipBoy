@@ -66,7 +66,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoInit()
         {
             cbCategory.Items.Clear();
-            for (int i = 0; i < (int)Category.Count; i++)
+            for (int i = 1; i < (int)Category.Count-1; i++) //i<Count-1 добавляет все кроме последних ДВУХ (Собственно каунт и коммон, которая для свойств)
             {
                 var cat = (Category)i;
                 cbCategory.Items.Add(cat.GetDescription());

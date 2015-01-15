@@ -1,0 +1,140 @@
+﻿Свойства итема: Структура и перечень
+
+Item изначально обладает всеми свойствами, но они все имеют значение string.Empty
+У Item`а должно быть заполнено поле Name. Иначе он в списке предметов будет пустой строкой.
+У Item`а должно быть заполнено поле Category. Иначе он не попадёт в сортировку. У него будет Category.Unknown.
+
+Все свойства должны иметь уникальные имена.
+Каждое свойство так же имеет категорию.
+
+Окно редактирования предметов:
+При редактировании предмета есть фильтр по категориям для отображения соответствующих свойств. Больше он вроде нигде не используется.
+Свойства категории Common отображаются всегда.
+
+Перечень категорий: ItemProperties.Category
+
+	Armor - Броня
+    Helm - Шлем
+    FullArmor - Броня со шлемом
+    Weapon - Оружие
+    Ammo - Аммуниция
+    Medicine - Медицина
+    Mod - Модификация
+    Demolition - Взрывчатое в-во
+    Sundry - Предмет
+
+**********************
+*** Список свойств ***
+**********************
+
+=== Common ===
+Свойства которые есть у всех итемов
+
+Name: Название. Должно быть заполнено.
+Category: Категория. Если не заполнено - будет Unknown и отобразится только в особом фильтре.
+
+Weight: вес
+Price: цена
+Description: описание
+	
+=== Armor ===
+ArmorClass:
+
+ArmorNormalDamageResistance:
+ArmorNormalDamageThreshold:
+ArmorLaserDamageResistance:
+ArmorLaserDamageThreshold:
+ArmorFireDamageResistance:
+ArmorFireDamageThreshold:
+ArmorPlasmaDamageResistance:
+ArmorPlasmaDamageThreshold:
+ArmorBlastDamageResistance:
+ArmorBlastDamageThreshold:
+ArmorElectricDamageResistance:
+ArmorElectricDamageThreshold:
+
+
+=== Helm ===
+HelmArmorClass:
+
+HelmNormalDamageResistance:
+HelmNormalDamageThreshold:
+HelmLaserDamageResistance:
+HelmLaserDamageThreshold:
+HelmFireDamageResistance:
+HelmFireDamageThreshold:
+HelmPlasmaDamageResistance:
+HelmPlasmaDamageThreshold:
+HelmBlastDamageResistance:
+HelmBlastDamageThreshold:
+HelmElectroDamageResistance:
+HelmElectroDamageThreshold:
+
+=== FullArmor ===
+Свойства Armor и свойства Helm
+
+=== Weapon ===
+
+WeaponHandling: одноручное, двуручное
+WeaponRange: дальность
+
+Урон каждым типом
+WeaponNormalDamage:
+WeaponLaserDamage:
+WeaponPlasmaDamage:
+WeaponFireDamage:
+WeaponBlastDamage:
+WeaponElectroDamage:
+
+WeaponAmmoType: тип боеприпасов
+WeaponCage: патронов в обоймe
+WeaponBurstAmmo: патронов в очереди
+WeaponTimeSingle: ОД на одиночный
+WeaponTimeAimed: ОД на прицельный
+WeaponTimeBurst: ОД на очередь
+WeaponComplexity: сложность
+
+=== Ammo ===
+Урон каждым типом
+AmmoNormalDamage:
+AmmoLaserDamage:
+AmmoPlasmaDamage:
+AmmoFireDamage:
+AmmoBlastDamage:
+AmmoElectroDamage:
+
+AmmoArmorClassMod: Изменение КБ
+
+Изменение резистов каждого типа										!!! Это нужно? Или патроны дают изменение всех резистов сразу? Так можно делать специальные патроны
+AmmoNormalDamageResistanceMod:
+AmmoNormalDamageThresholdMod:
+AmmoLaserDamageResistanceMod:
+AmmoLaserDamageThresholdMod:
+AmmoFireDamageResistanceMod:
+AmmoFireDamageThresholdMod:
+AmmoPlasmaDamageResistanceMod:
+AmmoPlasmaDamageThresholdMod:
+AmmoBlastDamageResistanceMod:
+AmmoBlastDamageThresholdMod:
+AmmoElectroDamageResistanceMod:
+AmmoElectroDamageThresholdMod:
+
+AmmoBoxCount://количество в одной упаковке                         !!! А что это даёт?
+
+=== Medicine ===
+Adaption: привыкание
+
+=== Mods ===
+Всё описывается в Description?
+
+=== Demolition ===
+
+DemolitionNormalDamage:
+DemolitionLaserDamage:
+DemolitionPlasmaDamage:
+DemolitionFireDamage:
+DemolitionBlastDamage:
+DemolitionElectroDamage:
+
+=== Sundry ===
+Всё описывается в Description. =)

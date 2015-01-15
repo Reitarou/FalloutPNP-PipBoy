@@ -11,20 +11,31 @@ namespace FalloutPNP_PipBoy
     public enum Category
     {
         [Description("Неизвестно")]
-        Unknown,
+        Unknown, /*Этот пункт всегда должен быть первым!!! 
+                  * Присваивается если категория не совпадает с одной из перечисленных ниже*/
+
         [Description("Броня")]
         Armor,
         [Description("Шлем")]
         Helm,
-        [Description("Комплект броня и шлем")]
-        ArmorWithHelm,
-        [Description("Оружие (одноручное)")]
-        Weapon1H,
-        [Description("Оружие (двуручное)")]
-        Weapon2H,
+        [Description("Броня со шлемом")]
+        FullArmor,
+        [Description("Оружие")]
+        Weapon,
+        [Description("Аммуниция")]
+        Ammo,
+        [Description("Медицина")]
+        Medicine,
+        [Description("Модификация")]
+        Mod,
+        [Description("Взрывчатое в-во")]
+        Demolition,
         [Description("Предмет")]
-        Common,
-        Count //Этот пункт всегда должен быть последним!!!
+        Sundry,
+
+        Common, /*Этот пункт всегда должен быть предпоследним!!! 
+                 * Эта категория только для свойств. Не должна фигурировать в предметах*/
+        Count /*Этот пункт всегда должен быть последним!!!*/
     }
 
     public static class CategoryExtensions
@@ -119,7 +130,7 @@ namespace FalloutPNP_PipBoy
 
         public static Category GetCategory(string sCategory)
         {
-            for (int i = 0; i < (int)Category.Count; i++)
+            for (int i = 0; i < (int)Category.Count - 1; i++) // Категория Common у Item`а идёт как Unknown, а Count вообще не должна быть назначена
             {
                 var cat = (Category)i;
                 if (cat.GetDescription() == sCategory)
