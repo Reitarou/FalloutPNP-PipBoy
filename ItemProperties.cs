@@ -143,19 +143,33 @@ namespace FalloutPNP_PipBoy
 
         private static List<ItemProperty> GetAllPropertiesList()
         {
-            //m_Properties.Add(Resources., Resources.);
+            //props.Add(new ItemProperty(Resources., Category.));
             var props = new List<ItemProperty>();
 
             //Common
             props.Add(new ItemProperty(Resources.sName, Category.Common));
             props.Add(new ItemProperty(Resources.sCategory, Category.Common));
+            props.Add(new ItemProperty(Resources.sWeight, Category.Common));
+            props.Add(new ItemProperty(Resources.sDescription, Category.Common));
+            props.Add(new ItemProperty(Resources.sPrice, Category.Common));
+            //props.Add(new ItemProperty(Resources., Category.Common));
 
             //Armor
             props.Add(new ItemProperty(Resources.sArmorClass, Category.Armor));
-            props.Add(new ItemProperty(Resources.sNormalDamageThreshold, Category.Armor));
-            props.Add(new ItemProperty(Resources.sNormalDamageResistance, Category.Armor));
-            //m_Properties.Add(Resources., Resources.cArmor);
-            //m_Properties.Add(Resources., Resources.cArmor);
+            props.Add(new ItemProperty(Resources.sArmorNormalDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorNormalDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorLaserDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorLaserDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorFireDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorFireDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorPlasmaDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorPlasmaDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorBlastDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorBlastDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorElectricDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(Resources.sArmorElectricDamageThreshold, Category.Armor));
+            
+            //props.Add(new ItemProperty(Resources., Category.Armor));
 
             return props;
         }

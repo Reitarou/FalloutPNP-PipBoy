@@ -79,11 +79,119 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ArmorBlastDamageResistance.
+        /// </summary>
+        internal static string sArmorBlastDamageResistance {
+            get {
+                return ResourceManager.GetString("sArmorBlastDamageResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorBlastDamageThreshold.
+        /// </summary>
+        internal static string sArmorBlastDamageThreshold {
+            get {
+                return ResourceManager.GetString("sArmorBlastDamageThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ArmorClass.
         /// </summary>
         internal static string sArmorClass {
             get {
                 return ResourceManager.GetString("sArmorClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorElectricDamageResistance.
+        /// </summary>
+        internal static string sArmorElectricDamageResistance {
+            get {
+                return ResourceManager.GetString("sArmorElectricDamageResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorElectricDamageThreshold.
+        /// </summary>
+        internal static string sArmorElectricDamageThreshold {
+            get {
+                return ResourceManager.GetString("sArmorElectricDamageThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorFireDamageResistance.
+        /// </summary>
+        internal static string sArmorFireDamageResistance {
+            get {
+                return ResourceManager.GetString("sArmorFireDamageResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorFireDamageThreshold.
+        /// </summary>
+        internal static string sArmorFireDamageThreshold {
+            get {
+                return ResourceManager.GetString("sArmorFireDamageThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorLaserDamageResistance.
+        /// </summary>
+        internal static string sArmorLaserDamageResistance {
+            get {
+                return ResourceManager.GetString("sArmorLaserDamageResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorLaserDamageThreshold.
+        /// </summary>
+        internal static string sArmorLaserDamageThreshold {
+            get {
+                return ResourceManager.GetString("sArmorLaserDamageThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorNormalDamageResistance.
+        /// </summary>
+        internal static string sArmorNormalDamageResistance {
+            get {
+                return ResourceManager.GetString("sArmorNormalDamageResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorNormalDamageThreshold.
+        /// </summary>
+        internal static string sArmorNormalDamageThreshold {
+            get {
+                return ResourceManager.GetString("sArmorNormalDamageThreshold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorPlasmaDamageResistance.
+        /// </summary>
+        internal static string sArmorPlasmaDamageResistance {
+            get {
+                return ResourceManager.GetString("sArmorPlasmaDamageResistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ArmorPlasmaDamageThreshold.
+        /// </summary>
+        internal static string sArmorPlasmaDamageThreshold {
+            get {
+                return ResourceManager.GetString("sArmorPlasmaDamageThreshold", resourceCulture);
             }
         }
         
@@ -115,29 +223,20 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string sDescription {
+            get {
+                return ResourceManager.GetString("sDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to :.
         /// </summary>
         internal static string sDivider {
             get {
                 return ResourceManager.GetString("sDivider", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ElectricDamageResistance.
-        /// </summary>
-        internal static string sElectroDamageResistance {
-            get {
-                return ResourceManager.GetString("sElectroDamageResistance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ElectricDamageThreshold.
-        /// </summary>
-        internal static string sElectroDamageThreshold {
-            get {
-                return ResourceManager.GetString("sElectroDamageThreshold", resourceCulture);
             }
         }
         
@@ -160,24 +259,6 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LaserDamageResistance.
-        /// </summary>
-        internal static string sLaserDamageResistance {
-            get {
-                return ResourceManager.GetString("sLaserDamageResistance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to LaserDamageThreshold.
-        /// </summary>
-        internal static string sLaserDamageThreshold {
-            get {
-                return ResourceManager.GetString("sLaserDamageThreshold", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ABCDEFGHIJKLMNOPQRSTUVWXYZ.
         /// </summary>
         internal static string sLetters {
@@ -196,20 +277,11 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NormalDamageResistance.
+        ///   Looks up a localized string similar to Price.
         /// </summary>
-        internal static string sNormalDamageResistance {
+        internal static string sPrice {
             get {
-                return ResourceManager.GetString("sNormalDamageResistance", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to NormalDamageThreshold.
-        /// </summary>
-        internal static string sNormalDamageThreshold {
-            get {
-                return ResourceManager.GetString("sNormalDamageThreshold", resourceCulture);
+                return ResourceManager.GetString("sPrice", resourceCulture);
             }
         }
         
@@ -232,11 +304,11 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Damage.
+        ///   Looks up a localized string similar to Weight.
         /// </summary>
-        internal static string sWpnDmg {
+        internal static string sWeight {
             get {
-                return ResourceManager.GetString("sWpnDmg", resourceCulture);
+                return ResourceManager.GetString("sWeight", resourceCulture);
             }
         }
     }

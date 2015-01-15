@@ -141,29 +141,8 @@
   <data name="sCategory" xml:space="preserve">
     <value>Category</value>
   </data>
-  <data name="sWpnDmg" xml:space="preserve">
-    <value>Damage</value>
-  </data>
   <data name="sArmorClass" xml:space="preserve">
     <value>ArmorClass</value>
-  </data>
-  <data name="sElectroDamageResistance" xml:space="preserve">
-    <value>ElectricDamageResistance</value>
-  </data>
-  <data name="sElectroDamageThreshold" xml:space="preserve">
-    <value>ElectricDamageThreshold</value>
-  </data>
-  <data name="sLaserDamageResistance" xml:space="preserve">
-    <value>LaserDamageResistance</value>
-  </data>
-  <data name="sLaserDamageThreshold" xml:space="preserve">
-    <value>LaserDamageThreshold</value>
-  </data>
-  <data name="sNormalDamageResistance" xml:space="preserve">
-    <value>NormalDamageResistance</value>
-  </data>
-  <data name="sNormalDamageThreshold" xml:space="preserve">
-    <value>NormalDamageThreshold</value>
   </data>
   <data name="eIncorrectPropertyName" xml:space="preserve">
     <value>Неверно указано свойство</value>
@@ -176,5 +155,50 @@
   </data>
   <data name="sPropertyView" xml:space="preserve">
     <value>{0}{1} {2}</value>
+  </data>
+  <data name="sArmorBlastDamageResistance" xml:space="preserve">
+    <value>ArmorBlastDamageResistance</value>
+  </data>
+  <data name="sArmorBlastDamageThreshold" xml:space="preserve">
+    <value>ArmorBlastDamageThreshold</value>
+  </data>
+  <data name="sArmorElectricDamageResistance" xml:space="preserve">
+    <value>ArmorElectricDamageResistance</value>
+  </data>
+  <data name="sArmorElectricDamageThreshold" xml:space="preserve">
+    <value>ArmorElectricDamageThreshold</value>
+  </data>
+  <data name="sArmorFireDamageResistance" xml:space="preserve">
+    <value>ArmorFireDamageResistance</value>
+  </data>
+  <data name="sArmorFireDamageThreshold" xml:space="preserve">
+    <value>ArmorFireDamageThreshold</value>
+  </data>
+  <data name="sArmorLaserDamageResistance" xml:space="preserve">
+    <value>ArmorLaserDamageResistance</value>
+  </data>
+  <data name="sArmorLaserDamageThreshold" xml:space="preserve">
+    <value>ArmorLaserDamageThreshold</value>
+  </data>
+  <data name="sArmorNormalDamageResistance" xml:space="preserve">
+    <value>ArmorNormalDamageResistance</value>
+  </data>
+  <data name="sArmorNormalDamageThreshold" xml:space="preserve">
+    <value>ArmorNormalDamageThreshold</value>
+  </data>
+  <data name="sArmorPlasmaDamageResistance" xml:space="preserve">
+    <value>ArmorPlasmaDamageResistance</value>
+  </data>
+  <data name="sArmorPlasmaDamageThreshold" xml:space="preserve">
+    <value>ArmorPlasmaDamageThreshold</value>
+  </data>
+  <data name="sDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="sPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="sWeight" xml:space="preserve">
+    <value>Weight</value>
   </data>
 </root>
