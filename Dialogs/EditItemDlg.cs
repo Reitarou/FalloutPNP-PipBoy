@@ -14,6 +14,7 @@ namespace FalloutPNP_PipBoy.Dialogs
     public partial class EditItemDlg : Form
     {
         private static Item m_Item;
+        private bool m_NonUserChange = false;
 
         public EditItemDlg()
         {
@@ -22,55 +23,48 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void UpdateControls()
         {
-            cbPropertyName.Items.Clear();
+            m_NonUserChange = true;
+            dgvProperties.Rows.Clear();
             foreach (var property in m_Item.Properties)
             {
                 if (property.Category == Category.Common)
                 {
-                    if (property.Name != Resources.sName && property.Name != Resources.sCategory)
+                    if (property.Name != PropertyName.pName && property.Name != PropertyName.pCategory)
                     {
-                        if (m_Item.Properties[property.Name].Value == string.Empty)
-                        {
-                            cbPropertyName.Items.Add(property.Name);
-                        }
+                        var index = dgvProperties.Rows.Add();
+                        var row = dgvProperties.Rows[index];
+                        row.Cells[dgvcProperty.Name].Value = property.Name;
+                        row.Cells[dgvcValue.Name].Value = m_Item.Properties[property.Name].Value;
                     }
                 }
             }
 
             foreach (var property in m_Item.Properties)
             {
-                if (property.Category == m_Item.Category)
+                if (property.Category == m_Item.Category || (m_Item.Category == Category.FullArmor && (property.Category == Category.Armor || property.Category == Category.Helm)))
                 {
-                    if (m_Item.Properties[property.Name].Value == string.Empty)
-                    {
-                        cbPropertyName.Items.Add(property.Name);
-                    }
+                    var index = dgvProperties.Rows.Add();
+                    var row = dgvProperties.Rows[index];
+                    row.Cells[dgvcProperty.Name].Value = property.Name;
+                    row.Cells[dgvcValue.Name].Value = m_Item.Properties[property.Name].Value;
                 }
             }
-            if (cbPropertyName.Items.Count > 0)
-            {
-                cbPropertyName.SelectedIndex = 0;
-            }
-
-            lbProperties.Items.Clear();
-            foreach (var property in m_Item.Properties)
-            {
-                if (property.Name != Resources.sName && property.Name != Resources.sCategory && property.Value != string.Empty)
-                {
-                    lbProperties.Items.Add(string.Format(Resources.sPropertyView, property.Name, Resources.sDivider, property.Value));
-                }
-            }
-            
+            m_NonUserChange = false;
         }
 
         private void DoInit()
         {
             cbCategory.Items.Clear();
-            for (int i = 0; i < (int)Category.Count-1; i++) //i<Count-1 добавляет все кроме последних ДВУХ (Собственно каунт и коммон, которая для свойств)
-            {
-                var cat = (Category)i;
-                cbCategory.Items.Add(cat.GetDescription());
-            }
+            cbCategory.Items.Add(Category.Armor.GetDescription());
+            cbCategory.Items.Add(Category.Helm.GetDescription());
+            cbCategory.Items.Add(Category.FullArmor.GetDescription());
+            cbCategory.Items.Add(Category.Weapon.GetDescription());
+            cbCategory.Items.Add(Category.Ammo.GetDescription());
+            cbCategory.Items.Add(Category.Demolition.GetDescription());
+            cbCategory.Items.Add(Category.Mod.GetDescription());
+            cbCategory.Items.Add(Category.Medicine.GetDescription());
+            cbCategory.Items.Add(Category.Sundry.GetDescription());
+
             tbName.Text = m_Item.Name;
             cbCategory.SelectedIndex = (int)m_Item.Category;
         }
@@ -78,7 +72,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoCommit()
         {
             m_Item.Name = tbName.Text;
-            m_Item.Category = (Category)cbCategory.SelectedIndex;
+            ItemProperties.GetCategory(cbCategory.Text);
         }
 
         public static bool Execute(ref Item item)
@@ -123,47 +117,30 @@ namespace FalloutPNP_PipBoy.Dialogs
             DialogResult = DialogResult.OK;
         }
 
-        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var cat = (Category)cbCategory.SelectedIndex;
-            m_Item.Category = cat;
-            UpdateControls();
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbPropertyName.Text == string.Empty)
-            {
-                MessageBox.Show(Resources.eIncorrectPropertyName);
-                return;
-            }
-
-            if (tbPropertyValue.Text == string.Empty)
-            {
-                MessageBox.Show(Resources.eIncorrectPropertyValue);
-                return;
-            }
-
-            m_Item.Properties[cbPropertyName.Text].Value = tbPropertyValue.Text;
+            var cat = ItemProperties.GetCategory(cbCategory.Text);
+            m_Item.Category = cat;
             UpdateControls();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void dgvProperties_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            var index = lbProperties.SelectedIndex;
-            if (index >= 0)
+            if (!m_NonUserChange)
             {
-                var s = lbProperties.Items[index].ToString();
-                var separators = new string[1];
-                separators[0] = Resources.sDivider;
-                var ss = s.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                m_Item.Properties[ss[0]].Value = string.Empty;
-                UpdateControls();
+                var index = e.RowIndex;
+                if (index >= 0)
+                {
+                    var row = dgvProperties.Rows[index];
+                    var name = row.Cells[dgvcProperty.Name].Value.ToString();
+                    var value = row.Cells[dgvcValue.Name].Value.ToString();
+                    m_Item.Properties[name].Value = value;
+                }
             }
         }
     }

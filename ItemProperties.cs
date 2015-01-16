@@ -8,29 +8,63 @@ using FalloutPNP_PipBoy.Properties;
 
 namespace FalloutPNP_PipBoy
 {
+    public static class PropertyName
+    {
+        public const string cArmor = "Броня";
+        public const string cHelm = "Шлем";
+        public const string cFullArmor = "Броня со шлемом";
+        public const string cWeapon = "Оружие";
+        public const string cAmmo = "Аммуниция";
+        public const string cDemolition = "Взрывчатое в-во";
+        public const string cMod = "Модификация";
+        public const string cMedicine = "Медицина";
+        public const string cSundry = "Предмет";
+
+        public const string pName = "Name";
+        public const string pCategory = "Category";
+        public const string pWeight = "Weight";
+        public const string pDescription = "Description";
+        public const string pPrice = "Price";
+
+        public const string pArmorClass = "ArmorClass";
+        public const string pArmorNormalDamageThreshold = "ArmorNormalDamageThreshold";
+        public const string pArmorLaserDamageThreshold = "ArmorLaserDamageThreshold";
+        public const string pArmorFireDamageThreshold = "ArmorFireDamageThreshold";
+        public const string pArmorPlasmaDamageThreshold = "ArmorPlasmaDamageThreshold";
+        public const string pArmorBlastDamageThreshold = "ArmorBlastDamageThreshold";
+        public const string pArmorElectricDamageThreshold = "ArmorElectricDamageThreshold";
+        public const string pArmorNormalDamageResistance = "ArmorNormalDamageResistance";
+        public const string pArmorLaserDamageResistance = "ArmorLaserDamageResistance";
+        public const string pArmorFireDamageResistance = "ArmorFireDamageResistance";
+        public const string pArmorPlasmaDamageResistance = "ArmorPlasmaDamageResistance";
+        public const string pArmorBlastDamageResistance = "ArmorBlastDamageResistance";
+        public const string pArmorElectricDamageResistance = "ArmorElectricDamageResistance";
+    }
+
+
     public enum Category
     {
         [Description("Неизвестно")]
         Unknown, /*Этот пункт всегда должен быть первым!!! 
                   * Присваивается если категория не совпадает с одной из перечисленных ниже*/
 
-        [Description("Броня")]
+        [Description(PropertyName.cArmor)]
         Armor,
-        [Description("Шлем")]
+        [Description(PropertyName.cHelm)]
         Helm,
-        [Description("Броня со шлемом")]
+        [Description(PropertyName.cFullArmor)]
         FullArmor,
-        [Description("Оружие")]
+        [Description(PropertyName.cWeapon)]
         Weapon,
-        [Description("Аммуниция")]
+        [Description(PropertyName.cAmmo)]
         Ammo,
-        [Description("Медицина")]
-        Medicine,
-        [Description("Модификация")]
-        Mod,
-        [Description("Взрывчатое в-во")]
+        [Description(PropertyName.cDemolition)]
         Demolition,
-        [Description("Предмет")]
+        [Description(PropertyName.cMod)]
+        Mod,
+        [Description(PropertyName.cMedicine)]
+        Medicine,
+        [Description(PropertyName.cSundry)]
         Sundry,
 
         Common, /*Этот пункт всегда должен быть предпоследним!!! 
@@ -147,27 +181,27 @@ namespace FalloutPNP_PipBoy
             var props = new List<ItemProperty>();
 
             //Common
-            props.Add(new ItemProperty(Resources.sName, Category.Common));
-            props.Add(new ItemProperty(Resources.sCategory, Category.Common));
-            props.Add(new ItemProperty(Resources.sWeight, Category.Common));
-            props.Add(new ItemProperty(Resources.sDescription, Category.Common));
-            props.Add(new ItemProperty(Resources.sPrice, Category.Common));
+            props.Add(new ItemProperty(PropertyName.pName, Category.Common));
+            props.Add(new ItemProperty(PropertyName.pCategory, Category.Common));
+            props.Add(new ItemProperty(PropertyName.pWeight, Category.Common));
+            props.Add(new ItemProperty(PropertyName.pDescription, Category.Common));
+            props.Add(new ItemProperty(PropertyName.pPrice, Category.Common));
             //props.Add(new ItemProperty(Resources., Category.Common));
 
             //Armor
-            props.Add(new ItemProperty(Resources.sArmorClass, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorNormalDamageResistance, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorNormalDamageThreshold, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorLaserDamageResistance, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorLaserDamageThreshold, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorFireDamageResistance, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorFireDamageThreshold, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorPlasmaDamageResistance, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorPlasmaDamageThreshold, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorBlastDamageResistance, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorBlastDamageThreshold, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorElectricDamageResistance, Category.Armor));
-            props.Add(new ItemProperty(Resources.sArmorElectricDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorClass, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorNormalDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorNormalDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorLaserDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorLaserDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorFireDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorFireDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorPlasmaDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorPlasmaDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorBlastDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorBlastDamageThreshold, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorElectricDamageResistance, Category.Armor));
+            props.Add(new ItemProperty(PropertyName.pArmorElectricDamageThreshold, Category.Armor));
             
             //props.Add(new ItemProperty(Resources., Category.Armor));
 

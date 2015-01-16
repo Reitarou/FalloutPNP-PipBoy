@@ -42,11 +42,11 @@ namespace FalloutPNP_PipBoy
         {
             get
             {
-                return Properties[Resources.sName].Value;
+                return Properties[PropertyName.pName].Value;
             }
             set
             {
-                Properties[Resources.sName].Value = value;
+                Properties[PropertyName.pName].Value = value;
             }
         }
 
@@ -54,11 +54,11 @@ namespace FalloutPNP_PipBoy
         {
             get
             {
-                return ItemProperties.GetCategory(Properties[Resources.sCategory].Value);
+                return ItemProperties.GetCategory(Properties[PropertyName.pCategory].Value);
             }
             set
             {
-                Properties[Resources.sCategory].Value = value.GetDescription();
+                Properties[PropertyName.pCategory].Value = value.GetDescription();
             }
         }
 

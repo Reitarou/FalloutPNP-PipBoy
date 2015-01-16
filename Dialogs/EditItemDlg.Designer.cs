@@ -28,31 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbProperties = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.cbPropertyName = new System.Windows.Forms.ComboBox();
-            this.tbPropertyValue = new System.Windows.Forms.TextBox();
+            this.dgvProperties = new System.Windows.Forms.DataGridView();
+            this.dgvcProperty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbProperties
-            // 
-            this.lbProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbProperties.FormattingEnabled = true;
-            this.lbProperties.Location = new System.Drawing.Point(12, 179);
-            this.lbProperties.Name = "lbProperties";
-            this.lbProperties.Size = new System.Drawing.Size(288, 290);
-            this.lbProperties.TabIndex = 0;
             // 
             // label1
             // 
@@ -60,7 +46,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 16);
+            this.label1.Size = new System.Drawing.Size(277, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Название";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +57,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Location = new System.Drawing.Point(12, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(288, 16);
+            this.label2.Size = new System.Drawing.Size(277, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Категория";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,7 +70,7 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(12, 70);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(288, 21);
+            this.cbCategory.Size = new System.Drawing.Size(277, 21);
             this.cbCategory.TabIndex = 3;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
@@ -94,26 +80,8 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.tbName.Location = new System.Drawing.Point(12, 28);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(288, 20);
+            this.tbName.Size = new System.Drawing.Size(277, 20);
             this.tbName.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(9, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Значение";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(12, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Свойство";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnOK
             // 
@@ -121,7 +89,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.Location = new System.Drawing.Point(12, 502);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(165, 39);
+            this.btnOK.Size = new System.Drawing.Size(154, 39);
             this.btnOK.TabIndex = 9;
             this.btnOK.Text = "ОК";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -130,7 +98,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.Location = new System.Drawing.Point(183, 502);
+            this.btnCancel.Location = new System.Drawing.Point(172, 502);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 39);
             this.btnCancel.TabIndex = 10;
@@ -138,67 +106,49 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnDelete
+            // dgvProperties
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(183, 473);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(117, 23);
-            this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(9, 150);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 23);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // cbPropertyName
-            // 
-            this.cbPropertyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbPropertyName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPropertyName.FormattingEnabled = true;
-            this.cbPropertyName.Location = new System.Drawing.Point(100, 98);
-            this.cbPropertyName.Name = "cbPropertyName";
-            this.cbPropertyName.Size = new System.Drawing.Size(200, 21);
-            this.cbPropertyName.TabIndex = 7;
+            this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProperties.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvcProperty,
+            this.dgvcValue});
+            this.dgvProperties.Location = new System.Drawing.Point(12, 97);
+            this.dgvProperties.Name = "dgvProperties";
+            this.dgvProperties.RowHeadersVisible = false;
+            this.dgvProperties.Size = new System.Drawing.Size(277, 399);
+            this.dgvProperties.TabIndex = 11;
+            this.dgvProperties.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProperties_CellValueChanged);
             // 
-            // tbPropertyValue
+            // dgvcProperty
             // 
-            this.tbPropertyValue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPropertyValue.Location = new System.Drawing.Point(100, 125);
-            this.tbPropertyValue.Name = "tbPropertyValue";
-            this.tbPropertyValue.Size = new System.Drawing.Size(200, 20);
-            this.tbPropertyValue.TabIndex = 8;
+            this.dgvcProperty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvcProperty.HeaderText = "Свойство";
+            this.dgvcProperty.Name = "dgvcProperty";
+            this.dgvcProperty.ReadOnly = true;
+            // 
+            // dgvcValue
+            // 
+            this.dgvcValue.HeaderText = "Значение";
+            this.dgvcValue.Name = "dgvcValue";
             // 
             // EditItemDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(312, 553);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnDelete);
+            this.ClientSize = new System.Drawing.Size(301, 553);
+            this.Controls.Add(this.dgvProperties);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.tbPropertyValue);
-            this.Controls.Add(this.cbPropertyName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbProperties);
             this.Name = "EditItemDlg";
             this.Text = "Свойства предмета";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,18 +156,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbProperties;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox cbPropertyName;
-        private System.Windows.Forms.TextBox tbPropertyValue;
+        private System.Windows.Forms.DataGridView dgvProperties;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcProperty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcValue;
     }
 }

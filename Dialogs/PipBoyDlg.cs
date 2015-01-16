@@ -37,11 +37,6 @@ namespace FalloutPNP_PipBoy
             hackDlg.Show();
         }
 
-        private void PipBoyDlg_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             var itemsDlg = new ItemsDlg();

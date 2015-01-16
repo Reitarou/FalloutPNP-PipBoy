@@ -99,7 +99,6 @@
             this.Name = "PipBoyDlg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pip-Boy";
-            this.Load += new System.EventHandler(this.PipBoyDlg_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
