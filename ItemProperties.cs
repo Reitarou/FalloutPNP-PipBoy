@@ -10,6 +10,10 @@ namespace FalloutPNP_PipBoy
 {
     public static class PropertyName
     {
+        /* Сюда вбивать свойства. 
+         * В названии свойства не должно быть пробелов.
+         * Начинаем названия свойств с буквы p*/
+
         public const string cArmor = "Броня";
         public const string cHelm = "Шлем";
         public const string cFullArmor = "Броня со шлемом";
@@ -179,6 +183,9 @@ namespace FalloutPNP_PipBoy
         {
             //props.Add(new ItemProperty(Resources., Category.));
             var props = new List<ItemProperty>();
+
+            /* Сюда доюавлять свойства. Имя свойства вбивается выше. Категории уже вбиты. 
+             * Категорию "Броня со шлемом" заполнять не надо - там просто выводятся свойства брони и свойства шлема.*/
 
             //Common
             props.Add(new ItemProperty(PropertyName.pName, Category.Common));
