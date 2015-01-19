@@ -115,6 +115,15 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ${0}.
+        /// </summary>
+        internal static string sPrice {
+            get {
+                return ResourceManager.GetString("sPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0}{1} {2}.
         /// </summary>
         internal static string sPropertyView {
@@ -129,6 +138,15 @@ namespace FalloutPNP_PipBoy.Properties {
         internal static string sSymbols {
             get {
                 return ResourceManager.GetString("sSymbols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} кг.
+        /// </summary>
+        internal static string sWeight {
+            get {
+                return ResourceManager.GetString("sWeight", resourceCulture);
             }
         }
     }

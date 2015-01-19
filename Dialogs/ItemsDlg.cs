@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using FalloutPNP_PipBoy.Properties;
 
 namespace FalloutPNP_PipBoy.Dialogs
 {
@@ -41,15 +42,33 @@ namespace FalloutPNP_PipBoy.Dialogs
 
             if (m_SelectedItem != null)
             {
-                //switch (m_SelectedItem.Type)
-                //{
-                //}
+                lbItemName.Text = m_SelectedItem.Name;
+
+                lbItemWeight.Text = string.Format(Resources.sWeight, m_SelectedItem.Properties[PropertyName.pWeight].Value);
+                lbItemPrice.Text = string.Format(Resources.sPrice, m_SelectedItem.Properties[PropertyName.pPrice].Value);
+            }
+            else
+            {
+                lbItemName.Text = string.Empty;
+
+                lbItemWeight.Text = string.Empty;
+                lbItemPrice.Text = string.Empty;
             }
         }
 
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Назначить SelectedItem
+            var index = lbItems.SelectedIndex;
+            if (index >= 0)
+            {
+                var name = lbItems.Items[index].ToString();
+                var item = m_Items[name];
+                if (item != null)
+                {
+                    m_SelectedItem = item;
+                }
+            }
+            UpdateControls();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

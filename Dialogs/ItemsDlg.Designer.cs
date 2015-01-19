@@ -36,13 +36,13 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbItemName = new System.Windows.Forms.Label();
             this.lbItems = new System.Windows.Forms.ListBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.lbItemPrice = new System.Windows.Forms.Label();
+            this.lbItemWeight = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,7 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -112,50 +111,36 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(13, 242);
+            this.pictureBox8.Location = new System.Drawing.Point(12, 262);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(104, 103);
             this.pictureBox8.TabIndex = 8;
             this.pictureBox8.TabStop = false;
             // 
-            // label1
+            // lbItemName
             // 
-            this.label1.Location = new System.Drawing.Point(123, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 34);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Location = new System.Drawing.Point(427, 242);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(79, 69);
-            this.pictureBox9.TabIndex = 10;
-            this.pictureBox9.TabStop = false;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(312, 242);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(109, 69);
-            this.listBox1.TabIndex = 11;
+            this.lbItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbItemName.Location = new System.Drawing.Point(12, 235);
+            this.lbItemName.Name = "lbItemName";
+            this.lbItemName.Size = new System.Drawing.Size(715, 24);
+            this.lbItemName.TabIndex = 9;
+            this.lbItemName.Text = "label1";
+            this.lbItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbItems
             // 
             this.lbItems.FormattingEnabled = true;
-            this.lbItems.Location = new System.Drawing.Point(236, 15);
+            this.lbItems.Location = new System.Drawing.Point(236, 12);
             this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(491, 199);
+            this.lbItems.Size = new System.Drawing.Size(491, 212);
             this.lbItems.TabIndex = 12;
-            this.lbItems.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
+            this.lbItems.SelectedIndexChanged += new System.EventHandler(this.lbItems_SelectedIndexChanged);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(45, 452);
+            this.btnAdd.Location = new System.Drawing.Point(733, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(59, 43);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -163,9 +148,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(126, 452);
+            this.btnEdit.Location = new System.Drawing.Point(733, 110);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.Size = new System.Drawing.Size(59, 43);
             this.btnEdit.TabIndex = 14;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -173,26 +158,46 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(207, 452);
+            this.btnRemove.Location = new System.Drawing.Point(733, 61);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.Size = new System.Drawing.Size(59, 43);
             this.btnRemove.TabIndex = 15;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
+            // lbItemPrice
+            // 
+            this.lbItemPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbItemPrice.Location = new System.Drawing.Point(12, 368);
+            this.lbItemPrice.Name = "lbItemPrice";
+            this.lbItemPrice.Size = new System.Drawing.Size(104, 24);
+            this.lbItemPrice.TabIndex = 16;
+            this.lbItemPrice.Text = "label2";
+            this.lbItemPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbItemWeight
+            // 
+            this.lbItemWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbItemWeight.Location = new System.Drawing.Point(12, 392);
+            this.lbItemWeight.Name = "lbItemWeight";
+            this.lbItemWeight.Size = new System.Drawing.Size(104, 24);
+            this.lbItemWeight.TabIndex = 17;
+            this.lbItemWeight.Text = "label3";
+            this.lbItemWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ItemsDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 489);
+            this.ClientSize = new System.Drawing.Size(802, 573);
+            this.Controls.Add(this.lbItemWeight);
+            this.Controls.Add(this.lbItemPrice);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lbItems);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbItemName);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
@@ -212,7 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,12 +231,12 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lbItemName;
         private System.Windows.Forms.ListBox lbItems;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label lbItemPrice;
+        private System.Windows.Forms.Label lbItemWeight;
     }
 }

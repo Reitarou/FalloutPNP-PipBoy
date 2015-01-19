@@ -141,4 +141,10 @@
   <data name="sPropertyView" xml:space="preserve">
     <value>{0}{1} {2}</value>
   </data>
+  <data name="sPrice" xml:space="preserve">
+    <value>${0}</value>
+  </data>
+  <data name="sWeight" xml:space="preserve">
+    <value>{0} кг</value>
+  </data>
 </root>
