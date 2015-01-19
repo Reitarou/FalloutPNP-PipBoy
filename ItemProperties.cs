@@ -30,6 +30,7 @@ namespace FalloutPNP_PipBoy
         public const string pDescription = "Description";
         public const string pPrice = "Price";
 
+        // === Броня ===
         public const string pArmorClass = "ArmorClass";
         public const string pArmorNormalDamageThreshold = "ArmorNormalDamageThreshold";
         public const string pArmorLaserDamageThreshold = "ArmorLaserDamageThreshold";
@@ -43,6 +44,88 @@ namespace FalloutPNP_PipBoy
         public const string pArmorPlasmaDamageResistance = "ArmorPlasmaDamageResistance";
         public const string pArmorBlastDamageResistance = "ArmorBlastDamageResistance";
         public const string pArmorElectricDamageResistance = "ArmorElectricDamageResistance";
+
+        // === Шлем ===
+        public const string pHelmClass = "HelmClass";
+        public const string pHelmNormalDamageThreshold = "HelmNormalDamageThreshold";
+        public const string pHelmLaserDamageThreshold = "HelmLaserDamageThreshold";
+        public const string pHelmFireDamageThreshold = "HelmFireDamageThreshold";
+        public const string pHelmPlasmaDamageThreshold = "HelmPlasmaDamageThreshold";
+        public const string pHelmBlastDamageThreshold = "HelmBlastDamageThreshold";
+        public const string pHelmElectricDamageThreshold = "HelmElectricDamageThreshold";
+        public const string pHelmNormalDamageResistance = "HelmNormalDamageResistance";
+        public const string pHelmLaserDamageResistance = "HelmLaserDamageResistance";
+        public const string pHelmFireDamageResistance = "HelmFireDamageResistance";
+        public const string pHelmPlasmaDamageResistance = "HelmPlasmaDamageResistance";
+        public const string pHelmBlastDamageResistance = "HelmBlastDamageResistance";
+        public const string pHelmElectricDamageResistance = "HelmElectricDamageResistance";
+
+        // === Оружие ===
+        public const string pWeaponHandling = "WeaponHandling"; // одноручное, двуручное
+        public const string pWeaponRange = "WeaponRange"; // дальность
+
+        //Урон каждым типом
+        public const string pWeaponNormalDamage = "WeaponNormalDamage"; //
+        public const string pWeaponLaserDamage = "WeaponLaserDamage"; //
+        public const string pWeaponPlasmaDamage = "WeaponPlasmaDamage"; //
+        public const string pWeaponFireDamage = "WeaponFireDamage"; //
+        public const string pWeaponBlastDamage = "WeaponBlastDamage"; //
+        public const string pWeaponElectroDamage = "WeaponElectroDamage"; //
+
+        public const string pWeaponAmmoType = "WeaponAmmoType"; // тип боеприпасов
+        public const string pWeaponCage = "WeaponCage"; // патронов в обоймe
+        public const string pWeaponBurstAmmo = "WeaponBurstAmmo"; // патронов в очереди
+        public const string pWeaponTimeSingle = "WeaponTimeSingle"; // ОД на одиночный
+        public const string pWeaponTimeAimed = "WeaponTimeAimed"; // ОД на прицельный
+        public const string pWeaponTimeBurst = "WeaponTimeBurst"; // ОД на очередь
+        public const string pWeaponComplexity = "WeaponComplexity"; // сложность
+
+        //=== Ammo ===
+        //Урон каждым типом
+        public const string pAmmoNormalDamage = "AmmoNormalDamage"; //
+        public const string pAmmoLaserDamage = "AmmoLaserDamage"; //
+        public const string pAmmoPlasmaDamage = "AmmoPlasmaDamage"; //
+        public const string pAmmoFireDamage = "AmmoFireDamage"; //
+        public const string pAmmoBlastDamage = "AmmoBlastDamage"; //
+        public const string pAmmoElectroDamage = "AmmoElectroDamage"; //
+
+        public const string pAmmoArmorClassMod = "AmmoArmorClassMod"; // Изменение КБ
+
+        //Изменение резистов каждого типа										!!! Это нужно? Или патроны дают изменение всех резистов сразу? Так можно делать специальные патроны
+        public const string pAmmoNormalDamageResistanceMod = "AmmoNormalDamageResistanceMod"; //
+        public const string pAmmoNormalDamageThresholdMod = "AmmoNormalDamageThresholdMod"; //
+        public const string pAmmoLaserDamageResistanceMod = "AmmoLaserDamageResistanceMod"; //
+        public const string pAmmoLaserDamageThresholdMod = "AmmoLaserDamageThresholdMod"; //
+        public const string pAmmoFireDamageResistanceMod = "AmmoFireDamageResistanceMod"; //
+        public const string pAmmoFireDamageThresholdMod = "AmmoFireDamageThresholdMod"; //
+        public const string pAmmoPlasmaDamageResistanceMod = "AmmoPlasmaDamageResistanceMod"; //
+        public const string pAmmoPlasmaDamageThresholdMod = "AmmoPlasmaDamageThresholdMod"; //
+        public const string pAmmoBlastDamageResistanceMod = "AmmoBlastDamageResistanceMod"; //
+        public const string pAmmoBlastDamageThresholdMod = "AmmoBlastDamageThresholdMod"; //
+        public const string pAmmoElectroDamageResistanceMod = "AmmoElectroDamageResistanceMod"; //
+        public const string pAmmoElectroDamageThresholdMod = "AmmoElectroDamageThresholdMod"; //
+
+        public const string pAmmoBoxCount = "AmmoBoxCount"; //количество в одной упаковке                         !!! А что это даёт?
+
+        //=== Medicine ===
+        public const string pAdaption = "Adaption"; // привыкание
+
+        //=== Mods ===
+        //Всё описывается в Description?
+
+        //=== Demolition ===
+        public const string pDemolitionNormalDamage = "DemolitionNormalDamage"; //
+        public const string pDemolitionLaserDamage = "DemolitionLaserDamage"; //
+        public const string pDemolitionPlasmaDamage = "DemolitionPlasmaDamage"; //
+        public const string pDemolitionFireDamage = "DemolitionFireDamage"; //
+        public const string pDemolitionBlastDamage = "DemolitionBlastDamage"; //
+        public const string pDemolitionElectroDamage = "DemolitionElectroDamage"; //
+
+
+
+
+
+
     }
 
 
@@ -125,7 +208,7 @@ namespace FalloutPNP_PipBoy
             Category = category;
         }
 
-        
+
     }
 
     public class ItemProperties : IEnumerable<ItemProperty>
@@ -181,7 +264,6 @@ namespace FalloutPNP_PipBoy
 
         private static List<ItemProperty> GetAllPropertiesList()
         {
-            //props.Add(new ItemProperty(Resources., Category.));
             var props = new List<ItemProperty>();
 
             /* Сюда доюавлять свойства. Имя свойства вбивается выше. Категории уже вбиты. 
@@ -193,7 +275,6 @@ namespace FalloutPNP_PipBoy
             props.Add(new ItemProperty(PropertyName.pWeight, Category.Common));
             props.Add(new ItemProperty(PropertyName.pDescription, Category.Common));
             props.Add(new ItemProperty(PropertyName.pPrice, Category.Common));
-            //props.Add(new ItemProperty(Resources., Category.Common));
 
             //Armor
             props.Add(new ItemProperty(PropertyName.pArmorClass, Category.Armor));
@@ -209,8 +290,83 @@ namespace FalloutPNP_PipBoy
             props.Add(new ItemProperty(PropertyName.pArmorBlastDamageThreshold, Category.Armor));
             props.Add(new ItemProperty(PropertyName.pArmorElectricDamageResistance, Category.Armor));
             props.Add(new ItemProperty(PropertyName.pArmorElectricDamageThreshold, Category.Armor));
-            
-            //props.Add(new ItemProperty(Resources., Category.Armor));
+
+            //Helm
+            props.Add(new ItemProperty(PropertyName.pHelmClass, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmNormalDamageResistance, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmNormalDamageThreshold, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmLaserDamageResistance, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmLaserDamageThreshold, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmFireDamageResistance, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmFireDamageThreshold, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmPlasmaDamageResistance, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmPlasmaDamageThreshold, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmBlastDamageResistance, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmBlastDamageThreshold, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmElectricDamageResistance, Category.Helm));
+            props.Add(new ItemProperty(PropertyName.pHelmElectricDamageThreshold, Category.Helm));
+
+            //Weapon
+            // === Оружие ===
+            props.Add(new ItemProperty(PropertyName.pWeaponHandling, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponRange, Category.Weapon));
+
+            //Урон каждым типом
+            props.Add(new ItemProperty(PropertyName.pWeaponNormalDamage, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponLaserDamage, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponPlasmaDamage, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponFireDamage, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponBlastDamage, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponElectroDamage, Category.Weapon));
+
+            props.Add(new ItemProperty(PropertyName.pWeaponAmmoType, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponCage, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponBurstAmmo, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponTimeSingle, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponTimeAimed, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponTimeBurst, Category.Weapon));
+            props.Add(new ItemProperty(PropertyName.pWeaponComplexity, Category.Weapon));
+
+            //=== Ammo ===
+            //Урон каждым типом
+            props.Add(new ItemProperty(PropertyName.pAmmoNormalDamage, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoLaserDamage, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoPlasmaDamage, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoFireDamage, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoBlastDamage, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoElectroDamage, Category.Ammo));
+
+            props.Add(new ItemProperty(PropertyName.pAmmoArmorClassMod, Category.Ammo));
+
+            //Изменение резистов каждого типа									
+            props.Add(new ItemProperty(PropertyName.pAmmoNormalDamageResistanceMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoNormalDamageThresholdMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoLaserDamageResistanceMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoLaserDamageThresholdMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoFireDamageResistanceMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoFireDamageThresholdMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoPlasmaDamageResistanceMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoPlasmaDamageThresholdMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoBlastDamageResistanceMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoBlastDamageThresholdMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoElectroDamageResistanceMod, Category.Ammo));
+            props.Add(new ItemProperty(PropertyName.pAmmoElectroDamageThresholdMod, Category.Ammo));
+
+            props.Add(new ItemProperty(PropertyName.pAmmoBoxCount, Category.Ammo));
+
+            //=== Medicine ===
+            props.Add(new ItemProperty(PropertyName.pAdaption, Category.Medicine));
+
+            //=== Mods ===
+            //Всё описывается в Description?
+
+            //=== Demolition ===
+            props.Add(new ItemProperty(PropertyName.pDemolitionNormalDamage, Category.Demolition));
+            props.Add(new ItemProperty(PropertyName.pDemolitionLaserDamage, Category.Demolition));
+            props.Add(new ItemProperty(PropertyName.pDemolitionPlasmaDamage, Category.Demolition));
+            props.Add(new ItemProperty(PropertyName.pDemolitionFireDamage, Category.Demolition));
+            props.Add(new ItemProperty(PropertyName.pDemolitionBlastDamage, Category.Demolition));
+            props.Add(new ItemProperty(PropertyName.pDemolitionElectroDamage, Category.Demolition));
 
             return props;
         }
