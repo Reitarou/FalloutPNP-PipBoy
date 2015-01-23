@@ -43,6 +43,8 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.lbItemPrice = new System.Windows.Forms.Label();
             this.lbItemWeight = new System.Windows.Forms.Label();
+            this.gbArmorProperties = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.gbArmorProperties.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -186,11 +189,31 @@
             this.lbItemWeight.Text = "label3";
             this.lbItemWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // gbArmorProperties
+            // 
+            this.gbArmorProperties.Controls.Add(this.label1);
+            this.gbArmorProperties.Location = new System.Drawing.Point(139, 272);
+            this.gbArmorProperties.Name = "gbArmorProperties";
+            this.gbArmorProperties.Size = new System.Drawing.Size(241, 240);
+            this.gbArmorProperties.TabIndex = 18;
+            this.gbArmorProperties.TabStop = false;
+            this.gbArmorProperties.Text = " Параметры брони ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // ItemsDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 573);
+            this.Controls.Add(this.gbArmorProperties);
             this.Controls.Add(this.lbItemWeight);
             this.Controls.Add(this.lbItemPrice);
             this.Controls.Add(this.btnRemove);
@@ -217,6 +240,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.gbArmorProperties.ResumeLayout(false);
+            this.gbArmorProperties.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +263,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lbItemPrice;
         private System.Windows.Forms.Label lbItemWeight;
+        private System.Windows.Forms.GroupBox gbArmorProperties;
+        private System.Windows.Forms.Label label1;
     }
 }

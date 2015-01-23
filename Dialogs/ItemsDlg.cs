@@ -39,13 +39,31 @@ namespace FalloutPNP_PipBoy.Dialogs
                 lbItems.Items.Add(item.Name);
             }
 
-
             if (m_SelectedItem != null)
             {
                 lbItemName.Text = m_SelectedItem.Name;
 
                 lbItemWeight.Text = string.Format(Resources.sWeight, m_SelectedItem.Properties[PropertyName.pWeight].Value);
                 lbItemPrice.Text = string.Format(Resources.sPrice, m_SelectedItem.Properties[PropertyName.pPrice].Value);
+
+                foreach (var obj in this.Controls)
+                {
+                    var control = obj as Control;
+                    if (control != null)
+                    {
+                        if (control.Tag != string.Empty)
+                        {
+                            if (control.Tag.ToString() == m_SelectedItem.Category.GetDescription())
+                            {
+                                control.Visible = true;
+                            }
+                            else
+                            {
+                                control.Visible = false;
+                            }
+                        }
+                    }
+                }
             }
             else
             {
@@ -53,6 +71,18 @@ namespace FalloutPNP_PipBoy.Dialogs
 
                 lbItemWeight.Text = string.Empty;
                 lbItemPrice.Text = string.Empty;
+
+                foreach (var obj in this.Controls)
+                {
+                    var control = obj as Control;
+                    if (control != null)
+                    {
+                        if (control.Tag != string.Empty)
+                        {
+                            control.Visible = false;
+                        }
+                    }
+                }
             }
         }
 
