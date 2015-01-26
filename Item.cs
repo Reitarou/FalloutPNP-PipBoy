@@ -22,10 +22,11 @@ namespace FalloutPNP_PipBoy
 
             foreach (var property in Properties)
             {
-                var valueNode = node.SelectSingleNode(property.Name);
+                var name = property.Name;
+                var valueNode = node.SelectSingleNode(name);
                 if (valueNode != null)
                 {
-                    Properties[property.Name].Value = valueNode.InnerText;
+                    Properties[name].Value = valueNode.InnerText;
                 }
             }
         }
