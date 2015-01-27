@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using FalloutPNP_PipBoy.Properties;
+using FalloutPNP_PipBoy.XmlCollections;
 
 namespace FalloutPNP_PipBoy.Dialogs
 {
@@ -25,28 +26,28 @@ namespace FalloutPNP_PipBoy.Dialogs
         {
             m_NonUserChange = true;
             dgvProperties.Rows.Clear();
-            foreach (var property in m_Item.Properties)
+            foreach (var property in m_Item.Attributes)
             {
-                if (property.Category == Category.Common)
+                if (property.Category == ItemCategory.Common)
                 {
-                    if (property.Name != PropertyName.pName && property.Name != PropertyName.pCategory)
+                    if (property.Name != AttributeName.pName && property.Name != AttributeName.pCategory)
                     {
                         var index = dgvProperties.Rows.Add();
                         var row = dgvProperties.Rows[index];
                         row.Cells[dgvcProperty.Name].Value = property.Name;
-                        row.Cells[dgvcValue.Name].Value = m_Item.Properties[property.Name].Value;
+                        row.Cells[dgvcValue.Name].Value = m_Item.Attributes[property.Name].Value;
                     }
                 }
             }
 
-            foreach (var property in m_Item.Properties)
+            foreach (var property in m_Item.Attributes)
             {
-                if (property.Category == m_Item.Category || (m_Item.Category == Category.FullArmor && (property.Category == Category.Armor || property.Category == Category.Helm)))
+                if (property.Category == m_Item.Category || (m_Item.Category == ItemCategory.FullArmor && (property.Category == ItemCategory.Armor || property.Category == ItemCategory.Helm)))
                 {
                     var index = dgvProperties.Rows.Add();
                     var row = dgvProperties.Rows[index];
                     row.Cells[dgvcProperty.Name].Value = property.Name;
-                    row.Cells[dgvcValue.Name].Value = m_Item.Properties[property.Name].Value;
+                    row.Cells[dgvcValue.Name].Value = m_Item.Attributes[property.Name].Value;
                 }
             }
             m_NonUserChange = false;
@@ -55,15 +56,15 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoInit()
         {
             cbCategory.Items.Clear();
-            cbCategory.Items.Add(Category.Armor.GetDescription());
-            cbCategory.Items.Add(Category.Helm.GetDescription());
-            cbCategory.Items.Add(Category.FullArmor.GetDescription());
-            cbCategory.Items.Add(Category.Weapon.GetDescription());
-            cbCategory.Items.Add(Category.Ammo.GetDescription());
-            cbCategory.Items.Add(Category.Demolition.GetDescription());
-            cbCategory.Items.Add(Category.Mod.GetDescription());
-            cbCategory.Items.Add(Category.Medicine.GetDescription());
-            cbCategory.Items.Add(Category.Sundry.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Armor.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Helm.GetDescription());
+            cbCategory.Items.Add(ItemCategory.FullArmor.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Weapon.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Ammo.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Demolition.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Mod.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Medicine.GetDescription());
+            cbCategory.Items.Add(ItemCategory.Sundry.GetDescription());
 
             tbName.Text = m_Item.Name;
             cbCategory.SelectedIndex = (int)m_Item.Category;
@@ -72,7 +73,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void DoCommit()
         {
             m_Item.Name = tbName.Text;
-            ItemProperties.GetCategory(cbCategory.Text);
+            Attributes.GetCategory(cbCategory.Text);
         }
 
         public static bool Execute(ref Item item)
@@ -124,7 +125,7 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cat = ItemProperties.GetCategory(cbCategory.Text);
+            var cat = Attributes.GetCategory(cbCategory.Text);
             m_Item.Category = cat;
             UpdateControls();
         }
@@ -139,7 +140,7 @@ namespace FalloutPNP_PipBoy.Dialogs
                     var row = dgvProperties.Rows[index];
                     var name = row.Cells[dgvcProperty.Name].Value.ToString();
                     var value = row.Cells[dgvcValue.Name].Value.ToString();
-                    m_Item.Properties[name].Value = value;
+                    m_Item.Attributes[name].Value = value;
                 }
             }
         }

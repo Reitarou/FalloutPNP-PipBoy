@@ -64,7 +64,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.cs" />
     <Compile Include="CustomControls.cs" />
+    <Compile Include="Dialogs\CharactersDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CharactersDlg.Designer.cs">
+      <DependentUpon>CharactersDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\EditItemDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,16 +96,15 @@
     <Compile Include="Dialogs\HackingDlg.Designer.cs">
       <DependentUpon>HackingDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\Form1.cs">
+    <Compile Include="Dialogs\CharacterDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Dialogs\CharacterDlg.designer.cs">
+      <DependentUpon>CharacterDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemProperties.cs" />
-    <Compile Include="Items.cs" />
-    <Compile Include="Parametrs.cs" />
+    <Compile Include="XmlCollections\Item.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="XmlCollections\Items.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dialogs\EditItemDlg.resx">
@@ -113,8 +119,8 @@
     <EmbeddedResource Include="Dialogs\HackingDlg.resx">
       <DependentUpon>HackingDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\CharacterDlg.resx">
+      <DependentUpon>CharacterDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,7 +143,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Race.cs" />
+    <Compile Include="XmlCollections\Race.cs" />
+    <Compile Include="XmlCollections\Races.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

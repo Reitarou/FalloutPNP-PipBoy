@@ -61,6 +61,24 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Файл с описаниями предметов не найден..
+        /// </summary>
+        internal static string eItemsFileNotFound {
+            get {
+                return ResourceManager.GetString("eItemsFileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Файл с описаниями рас не найден..
+        /// </summary>
+        internal static string eRacesFileNotFound {
+            get {
+                return ResourceManager.GetString("eRacesFileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ATTEMPTS LEFT: .
         /// </summary>
         internal static string sAttempts {

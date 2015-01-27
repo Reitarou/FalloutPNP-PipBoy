@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml;
-using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace FalloutPNP_PipBoy
 {
-    class RaceParam
+    class Character
     {
-
+        public string Name;
+        public Race m_Race;
     }
-
-
 }

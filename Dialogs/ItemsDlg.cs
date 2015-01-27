@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FalloutPNP_PipBoy.Properties;
+using FalloutPNP_PipBoy.XmlCollections;
 
 namespace FalloutPNP_PipBoy.Dialogs
 {
@@ -43,8 +44,8 @@ namespace FalloutPNP_PipBoy.Dialogs
             {
                 lbItemName.Text = m_SelectedItem.Name;
 
-                lbItemWeight.Text = string.Format(Resources.sWeight, m_SelectedItem.Properties[PropertyName.pWeight].Value);
-                lbItemPrice.Text = string.Format(Resources.sPrice, m_SelectedItem.Properties[PropertyName.pPrice].Value);
+                lbItemWeight.Text = string.Format(Resources.sWeight, m_SelectedItem.Attributes[AttributeName.pWeight].Value);
+                lbItemPrice.Text = string.Format(Resources.sPrice, m_SelectedItem.Attributes[AttributeName.pPrice].Value);
 
                 foreach (var obj in this.Controls)
                 {

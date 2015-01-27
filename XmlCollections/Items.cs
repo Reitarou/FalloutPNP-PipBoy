@@ -7,8 +7,9 @@ using System.IO;
 using FalloutPNP_PipBoy.Properties;
 using System.Reflection;
 using System.ComponentModel;
+using System.Windows.Forms;
 
-namespace FalloutPNP_PipBoy
+namespace FalloutPNP_PipBoy.XmlCollections
 {
 
 
@@ -45,11 +46,12 @@ namespace FalloutPNP_PipBoy
             var fp = m_ItemsPath;
             if (!File.Exists(fp))
             {
-                XmlTextWriter xtw = new XmlTextWriter(fp, Encoding.UTF8);
-                xtw.WriteStartDocument();
-                xtw.WriteStartElement("items");
-                xtw.WriteEndDocument();
-                xtw.Close();
+                //XmlTextWriter xtw = new XmlTextWriter(fp, Encoding.UTF8);
+                //xtw.WriteStartDocument();
+                //xtw.WriteStartElement("items");
+                //xtw.WriteEndDocument();
+                //xtw.Close();
+                MessageBox.Show(Resources.eItemsFileNotFound);
             }
             XmlDocument xd = new XmlDocument();
             FileStream fs = new FileStream(fp, FileMode.Open, FileAccess.Read);
@@ -57,8 +59,8 @@ namespace FalloutPNP_PipBoy
             var nItems = xd.GetElementsByTagName("item");
             for (int i = 0; i < nItems.Count; i++)
             {
-                var eItem = nItems[i];
-                m_Items.Add(new Item(eItem));
+                var nItem = nItems[i];
+                m_Items.Add(new Item(nItem));
             }
             fs.Close();
         }

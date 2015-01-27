@@ -55,6 +55,7 @@ namespace WindowsFormsApplication1
                                 MaxCharisma = stats.Element("MaxCharisma").Value,
                                 MaxIntelligence = stats.Element("MaxIntelligence").Value,
                                 MaxAgility = stats.Element("MaxAgility").Value,
+                                MaxLuck = stats.Element("MaxLuck").Value,
                                 ResistancePoison = stats.Element("ResistancePoison").Value,
                                 ResistanceRadiation = stats.Element("ResistanceRadiation").Value,
                                 ResistanceElectric = stats.Element("ResistanceElectric").Value,

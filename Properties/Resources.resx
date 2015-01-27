@@ -147,4 +147,10 @@
   <data name="sWeight" xml:space="preserve">
     <value>{0} кг</value>
   </data>
+  <data name="eItemsFileNotFound" xml:space="preserve">
+    <value>Файл с описаниями предметов не найден.</value>
+  </data>
+  <data name="eRacesFileNotFound" xml:space="preserve">
+    <value>Файл с описаниями рас не найден.</value>
+  </data>
 </root>
