@@ -64,7 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Character.cs" />
+    <Compile Include="XmlCollections\Character.cs" />
     <Compile Include="CustomControls.cs" />
     <Compile Include="Dialogs\CharactersDlg.cs">
       <SubType>Form</SubType>

@@ -28,49 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnTerminalEasy = new System.Windows.Forms.Button();
+            this.btnTerminalNormal = new System.Windows.Forms.Button();
+            this.btnTerminalHard = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnItemsList = new System.Windows.Forms.Button();
+            this.btnCreateCharacter = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnTerminalEasy
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Level 1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnTerminalEasy.Location = new System.Drawing.Point(6, 19);
+            this.btnTerminalEasy.Name = "btnTerminalEasy";
+            this.btnTerminalEasy.Size = new System.Drawing.Size(100, 23);
+            this.btnTerminalEasy.TabIndex = 0;
+            this.btnTerminalEasy.Text = "Level 1";
+            this.btnTerminalEasy.UseVisualStyleBackColor = true;
+            this.btnTerminalEasy.Click += new System.EventHandler(this.btnTerminalEasy_Click);
             // 
-            // button2
+            // btnTerminalNormal
             // 
-            this.button2.Location = new System.Drawing.Point(6, 48);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Level 2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnTerminalNormal.Location = new System.Drawing.Point(6, 48);
+            this.btnTerminalNormal.Name = "btnTerminalNormal";
+            this.btnTerminalNormal.Size = new System.Drawing.Size(100, 23);
+            this.btnTerminalNormal.TabIndex = 1;
+            this.btnTerminalNormal.Text = "Level 2";
+            this.btnTerminalNormal.UseVisualStyleBackColor = true;
+            this.btnTerminalNormal.Click += new System.EventHandler(this.btnTerminalNormal_Click);
             // 
-            // button3
+            // btnTerminalHard
             // 
-            this.button3.Location = new System.Drawing.Point(6, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Level 3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTerminalHard.Location = new System.Drawing.Point(6, 77);
+            this.btnTerminalHard.Name = "btnTerminalHard";
+            this.btnTerminalHard.Size = new System.Drawing.Size(100, 23);
+            this.btnTerminalHard.TabIndex = 2;
+            this.btnTerminalHard.Text = "Level 3";
+            this.btnTerminalHard.UseVisualStyleBackColor = true;
+            this.btnTerminalHard.Click += new System.EventHandler(this.btnTerminalHard_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnTerminalEasy);
+            this.groupBox1.Controls.Add(this.btnTerminalHard);
+            this.groupBox1.Controls.Add(this.btnTerminalNormal);
             this.groupBox1.Location = new System.Drawing.Point(362, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(112, 110);
@@ -78,22 +79,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Взлом терминала";
             // 
-            // button4
+            // btnItemsList
             // 
-            this.button4.Location = new System.Drawing.Point(40, 34);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnItemsList.Location = new System.Drawing.Point(341, 139);
+            this.btnItemsList.Name = "btnItemsList";
+            this.btnItemsList.Size = new System.Drawing.Size(127, 23);
+            this.btnItemsList.TabIndex = 4;
+            this.btnItemsList.Text = "Список предметов";
+            this.btnItemsList.UseVisualStyleBackColor = true;
+            this.btnItemsList.Click += new System.EventHandler(this.btnItemsList_Click);
+            // 
+            // btnCreateCharacter
+            // 
+            this.btnCreateCharacter.Location = new System.Drawing.Point(12, 12);
+            this.btnCreateCharacter.Name = "btnCreateCharacter";
+            this.btnCreateCharacter.Size = new System.Drawing.Size(127, 23);
+            this.btnCreateCharacter.TabIndex = 5;
+            this.btnCreateCharacter.Text = "Создание персонажа";
+            this.btnCreateCharacter.UseVisualStyleBackColor = true;
+            this.btnCreateCharacter.Click += new System.EventHandler(this.btnCreateCharacter_Click);
             // 
             // PipBoyDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 260);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnCreateCharacter);
+            this.Controls.Add(this.btnItemsList);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PipBoyDlg";
@@ -106,11 +118,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnTerminalEasy;
+        private System.Windows.Forms.Button btnTerminalNormal;
+        private System.Windows.Forms.Button btnTerminalHard;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnItemsList;
+        private System.Windows.Forms.Button btnCreateCharacter;
     }
 }
 

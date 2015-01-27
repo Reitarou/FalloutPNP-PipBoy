@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<items>
+  <item>
+    <Name>Кожаная броня</Name>
+    <Category>Шлем</Category>
+    <Weight>12</Weight>
+    <Description>Кожаная рубаха, для большей защиты крепко сбитая.</Description>
+    <Price>700</Price>
+    <ArmorClass>15</ArmorClass>
+    <ArmorNormalDamageResistance>2</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>25</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>0</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>20</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>0</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>20</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>0</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>10</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>0</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>20</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>4</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>30</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Броня из шкуры Когтя Смерти </Name>
+    <Category>Броня</Category>
+    <Weight>15</Weight>
+    <Description>Эта броня была сделана из выдубленной шкуры Когтя Смерти. Она выглядит довольно необычно, а чтобы её сделать надо раздобыть, собственно, Когтя Смерти и снять с него шкуру. В основном такую броню носят вожди Повелителей зверей - племени каннибалов, умеющих телепатически контролировать диких животных. К сожалению, броня не защищает от огня, к тому же не позавидуешь тому, кого в этой броне увидит Коготь Смерти. </Description>
+    <Price>1100</Price>
+    <ArmorClass>15</ArmorClass>
+    <ArmorNormalDamageResistance>5</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>20</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>3</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>20</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>0</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>0</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>3</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>20</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>2</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>20</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>0</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>20</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Металлическая броня</Name>
+    <Category>Броня</Category>
+    <Weight>35</Weight>
+    <Description>Бронежилет, собранный из приваренных друг к другу обрезков металла. При использовании этой брони вероятность успешного применения Умения Красться уменьшается на 25%.</Description>
+    <Price>1100</Price>
+    <ArmorClass>10</ArmorClass>
+    <ArmorNormalDamageResistance>4</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>30</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>6</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>75</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>4</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>10</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>4</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>20</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>4</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>25</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>0</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>-20</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Кевларовый бронежилет</Name>
+    <Category>Броня</Category>
+    <Weight>20</Weight>
+    <Price>1200</Price>
+    <ArmorClass>15</ArmorClass>
+    <ArmorNormalDamageResistance>4</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>30</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>2</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>20</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>4</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>20</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>1</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>20</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>3</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>30</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>3</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>10</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Риверские обмотки</Name>
+    <Category>Броня</Category>
+    <Weight>10</Weight>
+    <Description>Эта броня изготовлена Риверами из ткани и металла. </Description>
+    <Price>1200</Price>
+    <ArmorClass>20</ArmorClass>
+    <ArmorNormalDamageResistance>3</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>25</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>2</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>30</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>3</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>17</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>2</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>30</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>3</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>25</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>0</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>20</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Броня мертвяков</Name>
+    <Category>Броня</Category>
+    <Weight>10</Weight>
+    <Description>Маленький комплект брони, разработанный мертвяками и для мертвяков. Имеет незначительный вес и обеспечивает самую примитивную защиту. Только мертвяки и карлики могут носить эту броню.</Description>
+    <Price>1300</Price>
+    <ArmorClass>10</ArmorClass>
+    <ArmorNormalDamageResistance>0</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>20</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>0</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>25</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>0</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>10</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>0</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>25</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>0</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>20</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>0</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>30</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Усиленная броня мертвяков</Name>
+    <Category>Броня</Category>
+    <Weight>10</Weight>
+    <Description>Кожаные лямки и металлические пластины, скреплённые друг с другом резиновыми ремнями. Несмотря на свой небольшой вес, эта модель брони обеспечивает вполне приличный уровень защиты. Только мертвяки и карлики могут носить эту броню.</Description>
+    <Price>1400</Price>
+    <ArmorClass>20</ArmorClass>
+    <ArmorNormalDamageResistance>3</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>15</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>1</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>25</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>1</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>15</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>1</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>25</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>1</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>20</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>1</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>10</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Металлическая броня МК ||</Name>
+    <Category>Броня</Category>
+    <Weight>35</Weight>
+    <Description>Действительно хорошая броня, изготовленная искусными мастерами. Обычно их можно обнаружить только в густонаселенных районах. При использовании этой брони вероятность успешного применения Умения Красться уменьшается на 20%.</Description>
+    <Price>1900</Price>
+    <ArmorClass>15</ArmorClass>
+    <ArmorNormalDamageResistance>4</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>35</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>7</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>80</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>4</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>15</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>4</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>25</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>4</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>30</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>0</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>-20</ArmorElectricDamageThreshold>
+  </item>
+  <item>
+    <Name>Металлическая броня Братства МК || </Name>
+    <Category>Броня</Category>
+    <Weight>35</Weight>
+    <Price>2100</Price>
+    <ArmorClass>15</ArmorClass>
+    <ArmorNormalDamageResistance>4</ArmorNormalDamageResistance>
+    <ArmorNormalDamageThreshold>35</ArmorNormalDamageThreshold>
+    <ArmorLaserDamageResistance>4</ArmorLaserDamageResistance>
+    <ArmorLaserDamageThreshold>45</ArmorLaserDamageThreshold>
+    <ArmorFireDamageResistance>4</ArmorFireDamageResistance>
+    <ArmorFireDamageThreshold>20</ArmorFireDamageThreshold>
+    <ArmorPlasmaDamageResistance>4</ArmorPlasmaDamageResistance>
+    <ArmorPlasmaDamageThreshold>15</ArmorPlasmaDamageThreshold>
+    <ArmorBlastDamageResistance>4</ArmorBlastDamageResistance>
+    <ArmorBlastDamageThreshold>30</ArmorBlastDamageThreshold>
+    <ArmorElectricDamageResistance>0</ArmorElectricDamageResistance>
+    <ArmorElectricDamageThreshold>-25</ArmorElectricDamageThreshold>
+  </item>
+</items>

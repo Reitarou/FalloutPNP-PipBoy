@@ -10,7 +10,7 @@ using FalloutPNP_PipBoy.Properties;
 
 namespace FalloutPNP_PipBoy.XmlCollections
 {
-    class Races: IEnumerable<Race>
+    class Races : IEnumerable<Race>
     {
         private string m_RacesPath;
         private List<Race> m_Races;
@@ -81,4 +81,5 @@ namespace FalloutPNP_PipBoy.XmlCollections
         }
 
         #endregion
+    }
 }

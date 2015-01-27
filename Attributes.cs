@@ -11,9 +11,85 @@ namespace FalloutPNP_PipBoy
 {
     public static class AttributeName
     {
-        /* Сюда вбивать свойства. 
-         * В названии свойства не должно быть пробелов.
-         * Начинаем названия свойств с буквы p*/
+        /* Сюда вбивать атрибуты.
+         * Названия атрибутов должны быть уникальными.
+         * В названии свойства не должно быть пробелов.*/
+
+
+
+        public static class SpecialAtt
+        {
+            public const string StrMin = "SPECIAL_Str_Min";
+            public const string StrStart = "SPECIAL_Str_Init";
+            public const string StrMax = "SPECIAL_Str_Max";
+
+            public const string PerMin = "SPECIAL_Per_Min";
+            public const string PerStart = "SPECIAL_Per_Init";
+            public const string PerMax = "SPECIAL_Per_Max";
+
+            public const string EndurMin = "SPECIAL_Endur_Min";
+            public const string EndurStart = "SPECIAL_Endur_Init";
+            public const string EndurMax = "SPECIAL_Endur_Max";
+
+            public const string CharMin = "SPECIAL_Char_Min";
+            public const string CharStart = "SPECIAL_Char_Init";
+            public const string CharMax = "SPECIAL_Char_Max";
+
+            public const string IntMin = "SPECIAL_Int_Min";
+            public const string IntStart = "SPECIAL_Int_Init";
+            public const string IntMax = "SPECIAL_Int_Max";
+
+            public const string AgiMin = "SPECIAL_Agi_Min";
+            public const string AgiStart = "SPECIAL_Agi_Init";
+            public const string AgiMax = "SPECIAL_Agi_Max";
+
+            public const string LuckMin = "SPECIAL_Luck_Min";
+            public const string LuckStart = "SPECIAL_Luck_Init";
+            public const string LuckMax = "SPECIAL_Luck_Max";
+        }
+
+        public static class ArmourAtt
+        {
+            public const string ArmorClass = "Armour_Armor_Class";
+
+            public const string NormalDamageThreshold = "Armour_Normal_Damage_Threshold";
+            public const string NormalDamageReduction = "Armour_Normal_Damage_Reduction";
+
+            public const string FireDamageThreshold = "Armour_Fire_Damage_Threshold";
+            public const string FireDamageReduction = "Armour_Fire_Damage_Reduction";
+
+            public const string BlastDamageThreshold = "Armour_Blast_Damage_Threshold";
+            public const string BlastDamageReduction = "Armour_Blast_Damage_Reduction";
+
+            public const string LaserDamageThreshold = "Armour_Laser_Damage_Threshold";
+            public const string LaserDamageReduction = "Armour_Laser_Damage_Reduction";
+
+            public const string PlasmaDamageThreshold = "Armour_Plasma_Damage_Threshold";
+            public const string PlasmaDamageReduction = "Armour_Plasma_Damage_Reduction";
+
+            public const string ElectricDamageThreshold = "Armour_Electric_Damage_Threshold";
+            public const string ElectricDamageReduction = "Armour_Electric_Damage_Reduction";
+            
+            public const string PoisonDamageResistance = "Armour_Poison_Damage_Resistance";
+            public const string RadiationDamageResistance = "Armour_Radiation_Damage_Resistance";
+            public const string GasDamageResistance = "Armour_Gas_Damage_Resistance";
+
+        }
+
+        public static class CharacterAtt
+        {
+            public const string Name = "Character_Name";
+            public const string Race = "Character_Race";
+
+
+        }
+
+        public static class RacesAtt
+        {
+            public const string Name = "Race_Name";
+        }
+
+        //Раса
 
         public const string cArmor = "Броня";
         public const string cHelm = "Шлем";
@@ -228,7 +304,11 @@ namespace FalloutPNP_PipBoy
             switch (list)
             {
                 case AttributesLists.ItemAttributes:
-                    m_Properties = GetItemPropertiesList();
+                    m_Properties = GetItemAttributesList();
+                    break;
+
+                case AttributesLists.RaceAttributes:
+                    m_Properties = GetRaceAttributesList();
                     break;
             }
 
@@ -276,7 +356,7 @@ namespace FalloutPNP_PipBoy
             return ItemCategory.Unknown;
         }
 
-        private static List<Attribute> GetItemPropertiesList()
+        private static List<Attribute> GetItemAttributesList()
         {
             var props = new List<Attribute>();
 
@@ -384,6 +464,17 @@ namespace FalloutPNP_PipBoy
 
             return props;
         }
+
+        private static List<Attribute> GetRaceAttributesList()
+        {
+            var props = new List<Attribute>();
+
+            props.Add(new Attribute(AttributeName.pName, ItemCategory.Common));
+
+            return props;
+        }
+
+        
 
         #region IEnumerable<ItemProperty> Members
 

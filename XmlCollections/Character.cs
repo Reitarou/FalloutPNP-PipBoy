@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FalloutPNP_PipBoy
+namespace FalloutPNP_PipBoy.XmlCollections
 {
     class Character
     {

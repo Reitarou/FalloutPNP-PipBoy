@@ -16,9 +16,9 @@ namespace FalloutPNP_PipBoy.Dialogs
         private Items m_Items;
         private Item m_SelectedItem = null;
 
-        public ItemsDlg()
+        public ItemsDlg(Items items)
         {
-            m_Items = new Items("items.xml");
+            m_Items = items;
             InitializeComponent();
         }
 
@@ -52,7 +52,7 @@ namespace FalloutPNP_PipBoy.Dialogs
                     var control = obj as Control;
                     if (control != null)
                     {
-                        if (control.Tag != string.Empty)
+                        if (control.Tag.ToString() != string.Empty)
                         {
                             if (control.Tag.ToString() == m_SelectedItem.Category.GetDescription())
                             {
@@ -78,7 +78,7 @@ namespace FalloutPNP_PipBoy.Dialogs
                     var control = obj as Control;
                     if (control != null)
                     {
-                        if (control.Tag != string.Empty)
+                        if (control.Tag.ToString() != string.Empty)
                         {
                             control.Visible = false;
                         }
