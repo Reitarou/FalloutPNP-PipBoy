@@ -10,15 +10,26 @@ using FalloutPNP_PipBoy.Properties;
 
 namespace FalloutPNP_PipBoy.XmlCollections
 {
-    class Races : IEnumerable<Race>
+    public class Races : XmlEntries, IEnumerable<Race>
     {
-        private string m_RacesPath;
         private List<Race> m_Races;
 
         public Races(string path)
+            : base(path)
         {
-            m_RacesPath = path;
-            ReloadRaces();
+        }
+
+        protected override void ReloadEntries()
+        {
+            m_Races = new List<Race>();
+
+            var nodes = GetNodes("race", Resources.eRacesFileNotFound);
+            foreach (var node in nodes)
+            {
+                var item = new Race();
+                item.Load(node);
+                m_Races.Add(item);
+            }
         }
 
         public Race this[string name]
@@ -35,34 +46,6 @@ namespace FalloutPNP_PipBoy.XmlCollections
                 return null;
             }
         }
-
-        public void ReloadRaces()
-        {
-            m_Races = new List<Race>();
-
-            var fp = m_RacesPath;
-            if (!File.Exists(fp))
-            {
-                //XmlTextWriter xtw = new XmlTextWriter(fp, Encoding.UTF8);
-                //xtw.WriteStartDocument();
-                //xtw.WriteStartElement("races");
-                //xtw.WriteEndDocument();
-                //xtw.Close();
-                MessageBox.Show(Resources.eRacesFileNotFound);
-            }
-
-            XmlDocument xd = new XmlDocument();
-            FileStream fs = new FileStream(fp, FileMode.Open, FileAccess.Read);
-            xd.Load(fs);
-            var nRaces = xd.GetElementsByTagName("race");
-            for (int i = 0; i < nRaces.Count; i++)
-            {
-                var nRace = nRaces[i];
-                m_Races.Add(new Race(nRace));
-            }
-            fs.Close();
-        }
-
 
         #region IEnumerable<Race> Members
 

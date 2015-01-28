@@ -7,34 +7,34 @@ using System.Xml;
 
 namespace FalloutPNP_PipBoy.XmlCollections
 {
-    class Race
+    public class Race : XmlEntry
     {
-        public Attributes Attributes;
-
-        public Race(XmlNode node)
+        public Race()
+            :base()
         {
-            Attributes = new Attributes(AttributesLists.RaceAttributes);
-
-            foreach (var attribute in Attributes)
-            {
-                var name = attribute.Name;
-                var valueNode = node.SelectSingleNode(name);
-                if (valueNode != null)
-                {
-                    Attributes[name].Value = valueNode.InnerText;
-                }
-            }
+            
         }
 
-        public string Name
+        public override void FillList()
+        {
+            AttributesList = new AttributesList();
+            foreach (var att in Attributes.SpecialAtt.All)
+            {
+                AttributesList.Add(att);
+            }
+            foreach (var att in Attributes.ArmourAtt.All)
+            {
+                AttributesList.Add(att);
+            }
+
+            AttributesList.Add(new Attribute(Attributes.CharacterAtt.Race));
+        }
+
+        public override string Name
         {
             get
             {
-                return Attributes[AttributeName.RacesAtt.Name].Value;
-            }
-            set
-            {
-                Attributes[AttributeName.RacesAtt.Name].Value = value;
+                return AttributesList[Attributes.CharacterAtt.Race];
             }
         }
     }

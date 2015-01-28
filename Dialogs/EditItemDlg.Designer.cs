@@ -34,10 +34,10 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.dgvProperties = new System.Windows.Forms.DataGridView();
+            this.dgvAttributes = new System.Windows.Forms.DataGridView();
             this.dgvcProperty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttributes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,19 +108,19 @@
             // 
             // dgvProperties
             // 
-            this.dgvProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.dgvAttributes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProperties.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAttributes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttributes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvcProperty,
             this.dgvcValue});
-            this.dgvProperties.Location = new System.Drawing.Point(12, 97);
-            this.dgvProperties.Name = "dgvProperties";
-            this.dgvProperties.RowHeadersVisible = false;
-            this.dgvProperties.Size = new System.Drawing.Size(277, 399);
-            this.dgvProperties.TabIndex = 11;
-            this.dgvProperties.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProperties_CellValueChanged);
+            this.dgvAttributes.Location = new System.Drawing.Point(12, 97);
+            this.dgvAttributes.Name = "dgvProperties";
+            this.dgvAttributes.RowHeadersVisible = false;
+            this.dgvAttributes.Size = new System.Drawing.Size(277, 399);
+            this.dgvAttributes.TabIndex = 11;
+            this.dgvAttributes.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProperties_CellValueChanged);
             // 
             // dgvcProperty
             // 
@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(301, 553);
-            this.Controls.Add(this.dgvProperties);
+            this.Controls.Add(this.dgvAttributes);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.tbName);
@@ -148,7 +148,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EditItemDlg";
             this.Text = "Свойства предмета";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttributes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +162,7 @@
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridView dgvProperties;
+        private System.Windows.Forms.DataGridView dgvAttributes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcProperty;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcValue;
     }

@@ -8,141 +8,102 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using FalloutPNP_PipBoy.XmlCollections;
 
-namespace WindowsFormsApplication1
+namespace FalloutPNP_PipBoy
 {
     
-    public partial class Form1 : Form
+    public partial class CharacterDlg : Form
     {
-        public string race;
-        public decimal param;
-        public Form1()
+        private Character m_Character;
+        private Races m_Races;
+        private Items m_Items;
+
+
+
+        public CharacterDlg(Races races, Items items, Character character)
         {
             InitializeComponent();
+            m_Races = races;
+            m_Items = items;
+            m_Character = character;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void CharacterDlg_Load(object sender, EventArgs e)
         {
-            racesBox.SelectedIndex = 0;
-            numericStrenght.Minimum = 1;
-            numericStrenght.Maximum = 10;
-            
-        }
-
-        private void RaceParamLoad(string Race)
-        {
-            XDocument RaceParametr = XDocument.Load("Races.xml");
-            var parametrs = from stats in RaceParametr.Descendants(Race)
-                            select new
-                            {
-                                MinStrenght = stats.Element("MinStrenght").Value,
-                                MinPerception = stats.Element("MinPerception").Value,
-                                MinEndurance = stats.Element("MinEndurance").Value,
-                                MinCharisma = stats.Element("MinCharisma").Value,
-                                MinIntelligence = stats.Element("MinIntelligence").Value,
-                                MinAgility = stats.Element("MinAgility").Value,
-                                MinLuck = stats.Element("MinLuck").Value,
-                                Strenght = stats.Element("Strenght").Value,
-                                Perception = stats.Element("Perception").Value,
-                                Endurance = stats.Element("Endurance").Value,
-                                Charisma = stats.Element("Charisma").Value,
-                                Intelligence = stats.Element("Intelligence").Value,
-                                Agility = stats.Element("Agility").Value,
-                                Luck = stats.Element("Luck").Value,
-                                MaxStrenght = stats.Element("MaxStrenght").Value,
-                                MaxPerception = stats.Element("MaxPerception").Value,
-                                MaxEndurance = stats.Element("MaxEndurance").Value,
-                                MaxCharisma = stats.Element("MaxCharisma").Value,
-                                MaxIntelligence = stats.Element("MaxIntelligence").Value,
-                                MaxAgility = stats.Element("MaxAgility").Value,
-                                MaxLuck = stats.Element("MaxLuck").Value,
-                                ResistancePoison = stats.Element("ResistancePoison").Value,
-                                ResistanceRadiation = stats.Element("ResistanceRadiation").Value,
-                                ResistanceElectric = stats.Element("ResistanceElectric").Value,
-                                ResistanceGas = stats.Element("ResistanceGas").Value,
-
-                            };
-            foreach (var Par in parametrs)
+            cmbRace.Items.Clear();
+            foreach (var race in m_Races)
             {
-                decimal.TryParse(Par.MinStrenght, out param);
-                numericStrenght.Minimum = param;
-                decimal.TryParse(Par.MinPerception, out param);
-                numericPerception.Minimum = param;
-                decimal.TryParse(Par.MinEndurance, out param);
-                numericEndurance.Minimum = param;
-                decimal.TryParse(Par.MinCharisma, out param);
-                numericCharisma.Minimum = param;
-                decimal.TryParse(Par.MinIntelligence, out param);
-                numericIntelligence.Minimum = param;
-                decimal.TryParse(Par.MinAgility, out param);
-                numericAgility.Minimum = param;
-                decimal.TryParse(Par.MinLuck, out param);
-                numericLuck.Minimum = param;
-
-                decimal.TryParse(Par.MaxStrenght, out param);
-                numericStrenght.Maximum = param;
-                decimal.TryParse(Par.MaxPerception, out param);
-                numericPerception.Maximum = param;
-                decimal.TryParse(Par.MaxEndurance, out param);
-                numericEndurance.Maximum = param;
-                decimal.TryParse(Par.MaxCharisma, out param);
-                numericCharisma.Maximum = param;
-                decimal.TryParse(Par.MaxIntelligence, out param);
-                numericIntelligence.Maximum = param;
-                decimal.TryParse(Par.MaxAgility, out param);
-                numericAgility.Maximum = param;
-                decimal.TryParse(Par.MaxLuck, out param);
-                numericLuck.Maximum = param;
-
-                decimal.TryParse(Par.Strenght, out param);
-                numericStrenght.Value = param;
-                decimal.TryParse(Par.Perception, out param);
-                numericPerception.Value = param;
-                decimal.TryParse(Par.Endurance, out param);
-                numericEndurance.Value = param;
-                decimal.TryParse(Par.Charisma, out param);
-                numericCharisma.Value = param;
-                decimal.TryParse(Par.Intelligence, out param);
-                numericIntelligence.Value = param;
-                decimal.TryParse(Par.Agility, out param);
-                numericAgility.Value = param;
-                decimal.TryParse(Par.Luck, out param);
-                numericLuck.Value = param;
+                cmbRace.Items.Add(race.Name);
             }
         }
 
-        private void racesBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void RefreshChar()
         {
+            int RaceStrMin, RaceStrInit, RaceStrMax,
+                RacePerMin, RacePerInit, RacePerMax;
 
-            switch (racesBox.Text)
+            RaceStrMin = RaceStrInit = RaceStrMax =
+            RacePerMin = RacePerInit = RacePerMax =
+            0;
+
+            var sRace = m_Character.AttributesList[Attributes.CharacterAtt.Race];
+            foreach (var race in m_Races)
             {
-                case "Человек":
-                    race = "RaceHuman";
-                    break;
-                case "Гуль":
-                    race = "RaceGhoul";
-                    break;
-                case "Супер Мутант Альфа":
-                    race = "RaceSuperMutantAlfa";
-                    break;
-                case "Супер Мутант Бета":
-                    race = "RaceSuperMutantBeta";
-                    break;
-                case "Полумутант":
-                    race = "RaceSuperMutantHalf";
-                    break;
-                case "Коготь Смерти":
-                    race = "RaceDeathclaws";
-                    break;
-                case "Собака":
-                    race = "RaceDog";
-                    break;
-                case "Робот Гуманоид":
-                    race = "RaceHumanoidRobot";
-                    break;
+                if (race.Name == sRace)
+                {
+                    RaceStrMin = race.AttributesList.GetInt(Attributes.SpecialAtt.StrMin);
+                    RaceStrInit = race.AttributesList.GetInt(Attributes.SpecialAtt.StrInit);
+                    RaceStrMax = race.AttributesList.GetInt(Attributes.SpecialAtt.StrMax);
+                    RacePerMin = race.AttributesList.GetInt(Attributes.SpecialAtt.PerMin);
+                    RacePerInit = race.AttributesList.GetInt(Attributes.SpecialAtt.PerInit);
+                    RacePerMax = race.AttributesList.GetInt(Attributes.SpecialAtt.PerMax);
+                }
             }
 
-            RaceParamLoad(race);
+            lbStrMin.Text = RaceStrMin.ToString();
+            nudStr.Value = RaceStrInit;
+            lbStrMax.Text = RaceStrMax.ToString();
+            lbPerMin.Text = RacePerMin.ToString();
+            nudPer.Value = RacePerInit;
+            lbPerMax.Text = RacePerMax.ToString();
+
+
+        }
+
+        private void cmbRaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            m_Character.AttributesList[Attributes.CharacterAtt.Race] = cmbRace.Text;
+            RefreshChar();
+            //switch (cbRace.Text)
+            //{
+            //    case "Человек":
+            //        race = "RaceHuman";
+            //        break;
+            //    case "Гуль":
+            //        race = "RaceGhoul";
+            //        break;
+            //    case "Супер Мутант Альфа":
+            //        race = "RaceSuperMutantAlfa";
+            //        break;
+            //    case "Супер Мутант Бета":
+            //        race = "RaceSuperMutantBeta";
+            //        break;
+            //    case "Полумутант":
+            //        race = "RaceSuperMutantHalf";
+            //        break;
+            //    case "Коготь Смерти":
+            //        race = "RaceDeathclaws";
+            //        break;
+            //    case "Собака":
+            //        race = "RaceDog";
+            //        break;
+            //    case "Робот Гуманоид":
+            //        race = "RaceHumanoidRobot";
+            //        break;
+            //}
+
+            //RaceParamLoad(race);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -5,9 +5,20 @@ using System.Text;
 
 namespace FalloutPNP_PipBoy.XmlCollections
 {
-    class Character
+    public class Character : XmlEntry
     {
-        public string Name;
-        public Race m_Race;
+        public override void FillList()
+        {
+            AttributesList = new AttributesList();
+            foreach (var att in Attributes.CharacterAtt.All)
+            {
+                AttributesList.Add(att);
+            }
+        }
+
+        public override string Name
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

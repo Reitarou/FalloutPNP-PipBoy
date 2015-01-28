@@ -24,56 +24,56 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void UpdateControls()
         {
-            m_NonUserChange = true;
-            dgvProperties.Rows.Clear();
-            foreach (var property in m_Item.Attributes)
-            {
-                if (property.Category == ItemCategory.Common)
-                {
-                    if (property.Name != AttributeName.pName && property.Name != AttributeName.pCategory)
-                    {
-                        var index = dgvProperties.Rows.Add();
-                        var row = dgvProperties.Rows[index];
-                        row.Cells[dgvcProperty.Name].Value = property.Name;
-                        row.Cells[dgvcValue.Name].Value = m_Item.Attributes[property.Name].Value;
-                    }
-                }
-            }
+            //m_NonUserChange = true;
+            //dgvAttributes.Rows.Clear();
+            //foreach (var property in m_Item.Attributes)
+            //{
+            //    if (property.Category == ItemCategory.Common)
+            //    {
+            //        if (property.Name != Attributes.pName && property.Name != Attributes.pCategory)
+            //        {
+            //            var index = dgvAttributes.Rows.Add();
+            //            var row = dgvAttributes.Rows[index];
+            //            row.Cells[dgvcProperty.Name].Value = property.Name;
+            //            row.Cells[dgvcValue.Name].Value = m_Item.Attributes[property.Name].Value;
+            //        }
+            //    }
+            //}
 
-            foreach (var property in m_Item.Attributes)
-            {
-                if (property.Category == m_Item.Category || (m_Item.Category == ItemCategory.FullArmor && (property.Category == ItemCategory.Armor || property.Category == ItemCategory.Helm)))
-                {
-                    var index = dgvProperties.Rows.Add();
-                    var row = dgvProperties.Rows[index];
-                    row.Cells[dgvcProperty.Name].Value = property.Name;
-                    row.Cells[dgvcValue.Name].Value = m_Item.Attributes[property.Name].Value;
-                }
-            }
-            m_NonUserChange = false;
+            //foreach (var property in m_Item.Attributes)
+            //{
+            //    if (property.Category == m_Item.Category || (m_Item.Category == ItemCategory.FullArmor && (property.Category == ItemCategory.Armor || property.Category == ItemCategory.Helm)))
+            //    {
+            //        var index = dgvAttributes.Rows.Add();
+            //        var row = dgvAttributes.Rows[index];
+            //        row.Cells[dgvcProperty.Name].Value = property.Name;
+            //        row.Cells[dgvcValue.Name].Value = m_Item.Attributes[property.Name].Value;
+            //    }
+            //}
+            //m_NonUserChange = false;
         }
 
         private void DoInit()
         {
-            cbCategory.Items.Clear();
-            cbCategory.Items.Add(ItemCategory.Armor.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Helm.GetDescription());
-            cbCategory.Items.Add(ItemCategory.FullArmor.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Weapon.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Ammo.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Demolition.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Mod.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Medicine.GetDescription());
-            cbCategory.Items.Add(ItemCategory.Sundry.GetDescription());
+            //cbCategory.Items.Clear();
+            //cbCategory.Items.Add(ItemCategory.Armor.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Helm.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.FullArmor.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Weapon.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Ammo.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Demolition.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Mod.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Medicine.GetDescription());
+            //cbCategory.Items.Add(ItemCategory.Sundry.GetDescription());
 
-            tbName.Text = m_Item.Name;
-            cbCategory.SelectedIndex = (int)m_Item.Category;
+            //tbName.Text = m_Item.Name;
+            //cbCategory.SelectedIndex = (int)m_Item.Category;
         }
 
         private void DoCommit()
         {
-            m_Item.Name = tbName.Text;
-            Attributes.GetCategory(cbCategory.Text);
+            //m_Item.Name = tbName.Text;
+            //Attributes.GetCategory(cbCategory.Text);
         }
 
         public static bool Execute(ref Item item)
@@ -125,24 +125,24 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cat = Attributes.GetCategory(cbCategory.Text);
-            m_Item.Category = cat;
-            UpdateControls();
+            //var cat = Attributes.GetCategory(cbCategory.Text);
+            //m_Item.Category = cat;
+            //UpdateControls();
         }
 
         private void dgvProperties_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (!m_NonUserChange)
-            {
-                var index = e.RowIndex;
-                if (index >= 0)
-                {
-                    var row = dgvProperties.Rows[index];
-                    var name = row.Cells[dgvcProperty.Name].Value.ToString();
-                    var value = row.Cells[dgvcValue.Name].Value.ToString();
-                    m_Item.Attributes[name].Value = value;
-                }
-            }
+            //if (!m_NonUserChange)
+            //{
+            //    var index = e.RowIndex;
+            //    if (index >= 0)
+            //    {
+            //        var row = dgvAttributes.Rows[index];
+            //        var name = row.Cells[dgvcProperty.Name].Value.ToString();
+            //        var value = row.Cells[dgvcValue.Name].Value.ToString();
+            //        m_Item.Attributes[name].Value = value;
+            //    }
+            //}
         }
     }
 }

@@ -25,8 +25,8 @@ namespace FalloutPNP_PipBoy
 
         private void ReadXml()
         {
-            m_Items = new Items("items.xml");
-            m_Races = new Races("races.xml");
+            m_Items = new Items("Xmls\\items.xml");
+            m_Races = new Races("Xmls\\races.xml");
         }
 
 
@@ -56,7 +56,9 @@ namespace FalloutPNP_PipBoy
 
         private void btnCreateCharacter_Click(object sender, EventArgs e)
         {
-
+            var character = new Character();
+            var characterDlg = new CharacterDlg(m_Races, m_Items, character);
+            characterDlg.Show();
         }
     }
 }

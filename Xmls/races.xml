@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<races>
+  <race>
+    <Race_Name>Человек</Race_Name>
+    <SPECIAL_Str_Min>1</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>1</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    
+    <SPECIAL_Str_Init>5</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>5</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+    
+    <SPECIAL_Str_Max>10</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>10</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>10</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>10</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>10</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    
+    <ResistancePoison>0</ResistancePoison>
+    <ResistanceRadiation>0</ResistanceRadiation>
+    <ResistanceElectric>10</ResistanceElectric>
+    <ResistanceGas>0/0</ResistanceGas>
+    <ResistanceNormal>0</ResistanceNormal>
+    <ResistanceLaser>0</ResistanceLaser>
+    <ResistanceFire>0</ResistanceFire>
+    <ResistancePlasma>0</ResistancePlasma>
+    <ResistanceBlast>0</ResistanceBlast>
+    <ThresholdNormal>0</ThresholdNormal>
+    <ThresholdLaser>0</ThresholdLaser>
+    <ThresholdFire>0</ThresholdFire>
+    <ThresholdPlasma>0</ThresholdPlasma>
+    <ThresholdBlast>0</ThresholdBlast>
+    <PerkPerLvl>3</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>0</BonusHP>
+    <BonusHpPerLvl>3</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Мертвяк</Race_Name>
+    <SPECIAL_Str_Min>1</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>4</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>1</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>2</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>5</SPECIAL_Luck_Min>
+    
+    <SPECIAL_Str_Init>3</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>8</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>4</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>6</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>4</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>7</SPECIAL_Luck_Init>
+    
+    <SPECIAL_Str_Max>6</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>14</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>10</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>9</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>13</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>13</SPECIAL_Luck_Max>
+    
+    <ResistancePoison>10</ResistancePoison>
+    <ResistanceRadiation>40</ResistanceRadiation>
+    <ResistanceElectric>10</ResistanceElectric>
+    <ResistanceGas>0/0</ResistanceGas>
+    <ResistanceNormal>0</ResistanceNormal>
+    <ResistanceLaser>0</ResistanceLaser>
+    <ResistanceFire>0</ResistanceFire>
+    <ResistancePlasma>0</ResistancePlasma>
+    <ResistanceBlast>0</ResistanceBlast>
+    <ThresholdNormal>10</ThresholdNormal>
+    <ThresholdLaser>0</ThresholdLaser>
+    <ThresholdFire>0</ThresholdFire>
+    <ThresholdPlasma>0</ThresholdPlasma>
+    <ThresholdBlast>0</ThresholdBlast>
+    <PerkPerLvl>4</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>-5</BonusHP>
+    <BonusHpPerLvl>0</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Супермутант Альфа</Race_Name>
+    <SPECIAL_Str_Min>4</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>3</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>7</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>3</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>12</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>8</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>11</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+
+    <ResistancePoison>20</ResistancePoison>
+    <ResistanceRadiation>10</ResistanceRadiation>
+    <ResistanceElectric>20</ResistanceElectric>
+    <ResistanceGas>0/35</ResistanceGas>
+    
+    <ResistanceNormal>5</ResistanceNormal>
+    <ResistanceLaser>2</ResistanceLaser>
+    <ResistanceFire>5</ResistanceFire>
+    <ResistancePlasma>2</ResistancePlasma>
+    <ResistanceBlast>3</ResistanceBlast>
+    
+    <ThresholdNormal>25</ThresholdNormal>
+    <ThresholdLaser>10</ThresholdLaser>
+    <ThresholdFire>15</ThresholdFire>
+    <ThresholdPlasma>10</ThresholdPlasma>
+    <ThresholdBlast>10</ThresholdBlast>
+    
+    <PerkPerLvl>4</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>10</BonusHP>
+    <BonusHpPerLvl>2</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Супермутант Бета</Race_Name>
+    <SPECIAL_Str_Min>5</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>4</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>8</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>6</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>3</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>3</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>13</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>12</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>8</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>8</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+
+    <ResistancePoison>20</ResistancePoison>
+    <ResistanceRadiation>10</ResistanceRadiation>
+    <ResistanceElectric>20</ResistanceElectric>
+    <ResistanceGas>0/35</ResistanceGas>
+
+    <ResistanceNormal>5</ResistanceNormal>
+    <ResistanceLaser>2</ResistanceLaser>
+    <ResistanceFire>5</ResistanceFire>
+    <ResistancePlasma>2</ResistancePlasma>
+    <ResistanceBlast>3</ResistanceBlast>
+
+    <ThresholdNormal>25</ThresholdNormal>
+    <ThresholdLaser>10</ThresholdLaser>
+    <ThresholdFire>15</ThresholdFire>
+    <ThresholdPlasma>10</ThresholdPlasma>
+    <ThresholdBlast>10</ThresholdBlast>
+
+    <PerkPerLvl>4</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>10</BonusHP>
+    <BonusHpPerLvl>2</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Полумутант</Race_Name>
+    <SPECIAL_Str_Min>3</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>5</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>5</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>11</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>10</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>10</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+
+    <ResistancePoison>10</ResistancePoison>
+    <ResistanceRadiation>5</ResistanceRadiation>
+    <ResistanceElectric>15</ResistanceElectric>
+    <ResistanceGas>0/15</ResistanceGas>
+
+    <ResistanceNormal>5</ResistanceNormal>
+    <ResistanceLaser>2</ResistanceLaser>
+    <ResistanceFire>5</ResistanceFire>
+    <ResistancePlasma>2</ResistancePlasma>
+    <ResistanceBlast>3</ResistanceBlast>
+
+    <ThresholdNormal>25</ThresholdNormal>
+    <ThresholdLaser>10</ThresholdLaser>
+    <ThresholdFire>15</ThresholdFire>
+    <ThresholdPlasma>10</ThresholdPlasma>
+    <ThresholdBlast>10</ThresholdBlast>
+
+    <PerkPerLvl>3</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>0</BonusHP>
+    <BonusHpPerLvl>0</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Коготь смерти</Race_Name>
+    <SPECIAL_Str_Min>6</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>5</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>6</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>8</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>1</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>9</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>4</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>14</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>13</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>3</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>4</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>16</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+
+    <ResistancePoison>10</ResistancePoison>
+    <ResistanceRadiation>5</ResistanceRadiation>
+    <ResistanceElectric>20</ResistanceElectric>
+    <ResistanceGas>0/30</ResistanceGas>
+
+    <ResistanceNormal>5</ResistanceNormal>
+    <ResistanceLaser>3</ResistanceLaser>
+    <ResistanceFire>0</ResistanceFire>
+    <ResistancePlasma>3</ResistancePlasma>
+    <ResistanceBlast>2</ResistanceBlast>
+
+    <ThresholdNormal>15</ThresholdNormal>
+    <ThresholdLaser>10</ThresholdLaser>
+    <ThresholdFire>0</ThresholdFire>
+    <ThresholdPlasma>10</ThresholdPlasma>
+    <ThresholdBlast>10</ThresholdBlast>
+
+    <PerkPerLvl>4</PerkPerLvl>
+    <BonusMeele>5</BonusMeele>
+    <BonusHP>15</BonusHP>
+    <BonusHpPerLvl>2</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Коготь смерти (Серый)</Race_Name>
+    <SPECIAL_Str_Min>6</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>5</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>6</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>6</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>7</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>4</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>11</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>3</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>8</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>16</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+
+    <ResistancePoison>10</ResistancePoison>
+    <ResistanceRadiation>5</ResistanceRadiation>
+    <ResistanceElectric>20</ResistanceElectric>
+    <ResistanceGas>0/30</ResistanceGas>
+
+    <ResistanceNormal>5</ResistanceNormal>
+    <ResistanceLaser>3</ResistanceLaser>
+    <ResistanceFire>0</ResistanceFire>
+    <ResistancePlasma>3</ResistancePlasma>
+    <ResistanceBlast>2</ResistanceBlast>
+
+    <ThresholdNormal>15</ThresholdNormal>
+    <ThresholdLaser>10</ThresholdLaser>
+    <ThresholdFire>0</ThresholdFire>
+    <ThresholdPlasma>10</ThresholdPlasma>
+    <ThresholdBlast>10</ThresholdBlast>
+
+    <PerkPerLvl>4</PerkPerLvl>
+    <BonusMeele>5</BonusMeele>
+    <BonusHP>15</BonusHP>
+    <BonusHpPerLvl>2</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Собака</Race_Name>
+    <SPECIAL_Str_Min>6</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>5</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>6</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>6</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>7</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>4</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>11</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>3</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>8</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>16</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+
+    <ResistancePoison>0</ResistancePoison>
+    <ResistanceRadiation>0</ResistanceRadiation>
+    <ResistanceElectric>10</ResistanceElectric>
+    <ResistanceGas>0/0</ResistanceGas>
+
+    <ResistanceNormal>0</ResistanceNormal>
+    <ResistanceLaser></ResistanceLaser>
+    <ResistanceFire>0</ResistanceFire>
+    <ResistancePlasma>0</ResistancePlasma>
+    <ResistanceBlast>0</ResistanceBlast>
+
+    <ThresholdNormal>0</ThresholdNormal>
+    <ThresholdLaser>0</ThresholdLaser>
+    <ThresholdFire>0</ThresholdFire>
+    <ThresholdPlasma>0</ThresholdPlasma>
+    <ThresholdBlast>0</ThresholdBlast>
+
+    <PerkPerLvl>2</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>-7</BonusHP>
+    <BonusHpPerLvl>2</BonusHpPerLvl>
+    <BonusSkillPoint>0</BonusSkillPoint>
+  </race>
+
+  <race>
+    <Race_Name>Робот-гуманоид</Race_Name>
+    <SPECIAL_Str_Min>7</SPECIAL_Str_Min>
+    <SPECIAL_Per_Min>7</SPECIAL_Per_Min>
+    <SPECIAL_Endur_Min>7</SPECIAL_Endur_Min>
+    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
+    <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
+    <SPECIAL_Luck_Min>5</SPECIAL_Luck_Min>
+
+    <SPECIAL_Str_Init>7</SPECIAL_Str_Init>
+    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
+    <SPECIAL_Endur_Init>7</SPECIAL_Endur_Init>
+    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
+    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
+    <SPECIAL_Agi_Init>5</SPECIAL_Agi_Init>
+    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+
+    <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
+    <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
+    <SPECIAL_Endur_Max>12</SPECIAL_Endur_Max>
+    <SPECIAL_Char_Max>1</SPECIAL_Char_Max>
+    <SPECIAL_Int_Max>12</SPECIAL_Int_Max>
+    <SPECIAL_Agi_Max>12</SPECIAL_Agi_Max>
+    <SPECIAL_Luck_Max>5</SPECIAL_Luck_Max>
+
+    <ResistancePoison>100</ResistancePoison>
+    <ResistanceRadiation>100</ResistanceRadiation>
+    <ResistanceElectric>-50</ResistanceElectric>
+    <ResistanceGas>100/100</ResistanceGas>
+
+    <ResistanceNormal>16</ResistanceNormal>
+    <ResistanceLaser>4</ResistanceLaser>
+    <ResistanceFire>20</ResistanceFire>
+    <ResistancePlasma>4</ResistancePlasma>
+    <ResistanceBlast>4</ResistanceBlast>
+
+    <ThresholdNormal>50</ThresholdNormal>
+    <ThresholdLaser>15</ThresholdLaser>
+    <ThresholdFire>55</ThresholdFire>
+    <ThresholdPlasma>15</ThresholdPlasma>
+    <ThresholdBlast>15</ThresholdBlast>
+
+    <PerkPerLvl>100</PerkPerLvl>
+    <BonusMeele>0</BonusMeele>
+    <BonusHP>-15</BonusHP>
+    <BonusHpPerLvl>0</BonusHpPerLvl>
+    <BonusSkillPoint>5</BonusSkillPoint>
+  </race>
+</races>
