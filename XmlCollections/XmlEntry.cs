@@ -6,6 +6,9 @@ using System.Xml;
 
 namespace FalloutPNP_PipBoy.XmlCollections
 {
+    /// <summary>
+    /// Абстрактный класс, который загружает параметры из XML
+    /// </summary>
     public abstract class XmlEntry
     {
         public AttributesList AttributesList;
@@ -15,6 +18,9 @@ namespace FalloutPNP_PipBoy.XmlCollections
             FillList();
         }
 
+        /// <summary>
+        /// Заполнение списка атрибутов
+        /// </summary>
         public abstract void FillList();
 
         public abstract string Name
