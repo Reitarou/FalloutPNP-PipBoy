@@ -102,7 +102,6 @@
             this.nudPer.Size = new System.Drawing.Size(34, 20);
             this.nudPer.TabIndex = 2;
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudPer.ValueChanged += new System.EventHandler(this.nudPer_ValueChanged);
             // 
             // nudEnd
             // 
@@ -111,7 +110,6 @@
             this.nudEnd.Size = new System.Drawing.Size(34, 20);
             this.nudEnd.TabIndex = 3;
             this.nudEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudEnd.ValueChanged += new System.EventHandler(this.nudEnd_ValueChanged);
             // 
             // nudCha
             // 
@@ -120,7 +118,6 @@
             this.nudCha.Size = new System.Drawing.Size(34, 20);
             this.nudCha.TabIndex = 4;
             this.nudCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudCha.ValueChanged += new System.EventHandler(this.nudCha_ValueChanged);
             // 
             // nudInt
             // 
@@ -129,7 +126,6 @@
             this.nudInt.Size = new System.Drawing.Size(34, 20);
             this.nudInt.TabIndex = 5;
             this.nudInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudInt.ValueChanged += new System.EventHandler(this.nudInt_ValueChanged);
             // 
             // nudAgi
             // 
@@ -138,7 +134,6 @@
             this.nudAgi.Size = new System.Drawing.Size(34, 20);
             this.nudAgi.TabIndex = 6;
             this.nudAgi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudAgi.ValueChanged += new System.EventHandler(this.nudAgi_ValueChanged);
             // 
             // nudLck
             // 
@@ -147,7 +142,6 @@
             this.nudLck.Size = new System.Drawing.Size(34, 20);
             this.nudLck.TabIndex = 7;
             this.nudLck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudLck.ValueChanged += new System.EventHandler(this.nudLck_ValueChanged);
             // 
             // lbStr
             // 
@@ -257,7 +251,7 @@
             this.label10.Size = new System.Drawing.Size(22, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "РУ";
-            
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
