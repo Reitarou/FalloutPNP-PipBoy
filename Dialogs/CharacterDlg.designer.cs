@@ -35,6 +35,7 @@
             this.nudInt = new System.Windows.Forms.NumericUpDown();
             this.nudAgi = new System.Windows.Forms.NumericUpDown();
             this.nudLck = new System.Windows.Forms.NumericUpDown();
+
             this.lbStr = new System.Windows.Forms.Label();
             this.lbPer = new System.Windows.Forms.Label();
             this.lbEnd = new System.Windows.Forms.Label();
@@ -54,12 +55,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
             this.lbRace = new System.Windows.Forms.Label();
             this.gbSpecial = new System.Windows.Forms.GroupBox();
+
             this.lbLckMax = new System.Windows.Forms.Label();
             this.lbLckMin = new System.Windows.Forms.Label();
             this.lbAgiMax = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.lbChaMin = new System.Windows.Forms.Label();
             this.lbEndMax = new System.Windows.Forms.Label();
             this.lbEndMin = new System.Windows.Forms.Label();
+
             this.lbPerMax = new System.Windows.Forms.Label();
             this.lbPerMin = new System.Windows.Forms.Label();
             this.lbStrMax = new System.Windows.Forms.Label();
@@ -77,11 +78,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).BeginInit();
+
             this.gbSpecial.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -90,6 +93,7 @@
             // 
             this.nudStr.Location = new System.Drawing.Point(117, 19);
             this.nudStr.Name = "nudStr";
+            this.nudStr.ReadOnly = true;
             this.nudStr.Size = new System.Drawing.Size(34, 20);
             this.nudStr.TabIndex = 1;
             this.nudStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -99,49 +103,62 @@
             // 
             this.nudPer.Location = new System.Drawing.Point(117, 45);
             this.nudPer.Name = "nudPer";
+            this.nudPer.ReadOnly = true;
             this.nudPer.Size = new System.Drawing.Size(34, 20);
             this.nudPer.TabIndex = 2;
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudPer.ValueChanged += new System.EventHandler(this.nudPer_ValueChanged);
+            // 
             // 
             // nudEnd
             // 
             this.nudEnd.Location = new System.Drawing.Point(117, 71);
             this.nudEnd.Name = "nudEnd";
+            this.nudEnd.ReadOnly = true;
             this.nudEnd.Size = new System.Drawing.Size(34, 20);
             this.nudEnd.TabIndex = 3;
             this.nudEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudEnd.ValueChanged += new System.EventHandler(this.nudEnd_ValueChanged);
             // 
             // nudCha
             // 
             this.nudCha.Location = new System.Drawing.Point(117, 97);
             this.nudCha.Name = "nudCha";
+            this.nudCha.ReadOnly = true;
             this.nudCha.Size = new System.Drawing.Size(34, 20);
             this.nudCha.TabIndex = 4;
             this.nudCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudCha.ValueChanged += new System.EventHandler(this.nudCha_ValueChanged);
             // 
             // nudInt
             // 
             this.nudInt.Location = new System.Drawing.Point(117, 123);
             this.nudInt.Name = "nudInt";
+            this.nudInt.ReadOnly = true;
             this.nudInt.Size = new System.Drawing.Size(34, 20);
             this.nudInt.TabIndex = 5;
             this.nudInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudInt.ValueChanged += new System.EventHandler(this.nudInt_ValueChanged);
             // 
             // nudAgi
             // 
             this.nudAgi.Location = new System.Drawing.Point(117, 149);
             this.nudAgi.Name = "nudAgi";
+            this.nudAgi.ReadOnly = true;
             this.nudAgi.Size = new System.Drawing.Size(34, 20);
             this.nudAgi.TabIndex = 6;
             this.nudAgi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudAgi.ValueChanged += new System.EventHandler(this.nudAgi_ValueChanged);
             // 
             // nudLck
             // 
             this.nudLck.Location = new System.Drawing.Point(117, 175);
             this.nudLck.Name = "nudLck";
+            this.nudLck.ReadOnly = true;
             this.nudLck.Size = new System.Drawing.Size(34, 20);
             this.nudLck.TabIndex = 7;
             this.nudLck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudLck.ValueChanged += new System.EventHandler(this.nudLck_ValueChanged);
             // 
             // lbStr
             // 
@@ -251,7 +268,6 @@
             this.label10.Size = new System.Drawing.Size(22, 13);
             this.label10.TabIndex = 18;
             this.label10.Text = "РУ";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -325,24 +341,6 @@
             this.label18.TabIndex = 26;
             this.label18.Text = "КБ";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(214, 48);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
-            this.label19.TabIndex = 38;
-            this.label19.Text = "label19";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(214, 69);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 39;
-            this.label20.Text = "label20";
-            // 
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(47, 12);
@@ -380,6 +378,7 @@
             this.gbSpecial.Controls.Add(this.lbChaMin);
             this.gbSpecial.Controls.Add(this.lbEndMax);
             this.gbSpecial.Controls.Add(this.lbEndMin);
+
             this.gbSpecial.Controls.Add(this.lbPerMax);
             this.gbSpecial.Controls.Add(this.lbPerMin);
             this.gbSpecial.Controls.Add(this.lbStrMax);
@@ -392,6 +391,7 @@
             this.gbSpecial.Controls.Add(this.nudInt);
             this.gbSpecial.Controls.Add(this.nudAgi);
             this.gbSpecial.Controls.Add(this.nudLck);
+ 
             this.gbSpecial.Controls.Add(this.lbPer);
             this.gbSpecial.Controls.Add(this.lbEnd);
             this.gbSpecial.Controls.Add(this.lbCha);
@@ -494,6 +494,7 @@
             this.lbEndMin.TabIndex = 19;
             this.lbEndMin.Text = "00";
             this.lbEndMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+ 
             // 
             // lbPerMax
             // 
@@ -561,19 +562,19 @@
             this.Controls.Add(this.lbRace);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.cmbRace);
             this.Name = "CharacterDlg";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.CharacterDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).EndInit();
+ 
             this.gbSpecial.ResumeLayout(false);
             this.gbSpecial.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -587,6 +588,7 @@
 
         private System.Windows.Forms.NumericUpDown nudStr;
         private System.Windows.Forms.NumericUpDown nudPer;
+
         private System.Windows.Forms.NumericUpDown nudEnd;
         private System.Windows.Forms.NumericUpDown nudCha;
         private System.Windows.Forms.NumericUpDown nudInt;
@@ -611,8 +613,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbRace;
@@ -621,6 +621,7 @@
         private System.Windows.Forms.Label lbPerMin;
         private System.Windows.Forms.Label lbStrMax;
         private System.Windows.Forms.Label lbStrMin;
+
         private System.Windows.Forms.Label lbEndMax;
         private System.Windows.Forms.Label lbEndMin;
         private System.Windows.Forms.Label lbChaMax;
@@ -631,6 +632,7 @@
         private System.Windows.Forms.Label lbAgiMin;
         private System.Windows.Forms.Label lbIntMax;
         private System.Windows.Forms.Label lbIntMin;
+
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
