@@ -35,7 +35,6 @@
             this.nudInt = new System.Windows.Forms.NumericUpDown();
             this.nudAgi = new System.Windows.Forms.NumericUpDown();
             this.nudLck = new System.Windows.Forms.NumericUpDown();
-
             this.lbStr = new System.Windows.Forms.Label();
             this.lbPer = new System.Windows.Forms.Label();
             this.lbEnd = new System.Windows.Forms.Label();
@@ -59,7 +58,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbRace = new System.Windows.Forms.Label();
             this.gbSpecial = new System.Windows.Forms.GroupBox();
-
             this.lbLckMax = new System.Windows.Forms.Label();
             this.lbLckMin = new System.Windows.Forms.Label();
             this.lbAgiMax = new System.Windows.Forms.Label();
@@ -70,21 +68,19 @@
             this.lbChaMin = new System.Windows.Forms.Label();
             this.lbEndMax = new System.Windows.Forms.Label();
             this.lbEndMin = new System.Windows.Forms.Label();
-
             this.lbPerMax = new System.Windows.Forms.Label();
             this.lbPerMin = new System.Windows.Forms.Label();
             this.lbStrMax = new System.Windows.Forms.Label();
             this.lbStrMin = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbSkills = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).BeginInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).BeginInit();
-
             this.gbSpecial.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +104,6 @@
             this.nudPer.TabIndex = 2;
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudPer.ValueChanged += new System.EventHandler(this.nudPer_ValueChanged);
-            // 
             // 
             // nudEnd
             // 
@@ -378,7 +373,6 @@
             this.gbSpecial.Controls.Add(this.lbChaMin);
             this.gbSpecial.Controls.Add(this.lbEndMax);
             this.gbSpecial.Controls.Add(this.lbEndMin);
-
             this.gbSpecial.Controls.Add(this.lbPerMax);
             this.gbSpecial.Controls.Add(this.lbPerMin);
             this.gbSpecial.Controls.Add(this.lbStrMax);
@@ -391,7 +385,6 @@
             this.gbSpecial.Controls.Add(this.nudInt);
             this.gbSpecial.Controls.Add(this.nudAgi);
             this.gbSpecial.Controls.Add(this.nudLck);
- 
             this.gbSpecial.Controls.Add(this.lbPer);
             this.gbSpecial.Controls.Add(this.lbEnd);
             this.gbSpecial.Controls.Add(this.lbCha);
@@ -494,7 +487,6 @@
             this.lbEndMin.TabIndex = 19;
             this.lbEndMin.Text = "00";
             this.lbEndMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
- 
             // 
             // lbPerMax
             // 
@@ -545,18 +537,28 @@
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Location = new System.Drawing.Point(326, 81);
+            this.groupBox1.Location = new System.Drawing.Point(12, 260);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(249, 310);
+            this.groupBox1.Size = new System.Drawing.Size(183, 298);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // gbSkills
+            // 
+            this.gbSkills.Location = new System.Drawing.Point(204, 48);
+            this.gbSkills.Name = "gbSkills";
+            this.gbSkills.Size = new System.Drawing.Size(234, 467);
+            this.gbSkills.TabIndex = 45;
+            this.gbSkills.TabStop = false;
+            this.gbSkills.Text = " Умения ";
             // 
             // CharacterDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 494);
+            this.ClientSize = new System.Drawing.Size(698, 625);
+            this.Controls.Add(this.gbSkills);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbSpecial);
             this.Controls.Add(this.lbRace);
@@ -568,13 +570,11 @@
             this.Load += new System.EventHandler(this.CharacterDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).EndInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).EndInit();
- 
             this.gbSpecial.ResumeLayout(false);
             this.gbSpecial.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -634,6 +634,7 @@
         private System.Windows.Forms.Label lbIntMin;
 
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbSkills;
     }
 }
 

@@ -11,6 +11,48 @@ namespace FalloutPNP_PipBoy
 {
     public static class Attributes
     {
+        public enum SkillNames
+        {
+            [Description("Легкое оружие")]
+            SmallGuns,
+            [Description("Тяжелое оружие")]
+            BigGuns,
+            [Description("Энергет. оружие")]
+            EnergyWeapons,
+            [Description("Рукопашная")]
+            Unarmed,
+            [Description("Холодное оружие")]
+            MeleeWeapons,
+            [Description("Метание")]
+            Throwing,
+            [Description("Первая помощь")]
+            FirstAid,
+            [Description("Доктор")]
+            Doctor,
+            [Description("Скрытность")]
+            Sneak,
+            [Description("Взлом")]
+            Lockpick,
+            [Description("Кража")]
+            Steal,
+            [Description("Ловушки")]
+            Trap,
+            [Description("Наука")]
+            Science,
+            [Description("Ремонт")]
+            Repair,
+            [Description("Вождение")]
+            Pilot,
+            [Description("Разговор")]
+            Speech,
+            [Description("Обмен")]
+            Barter,
+            [Description("Игра")]
+            Gambling,
+            [Description("Скиталец")]
+            Outdoorsman
+        }
+        
         /* Сюда вбивать атрибуты.
          * Названия атрибутов должны быть уникальными.
          * В названии свойства не должно быть пробелов.*/

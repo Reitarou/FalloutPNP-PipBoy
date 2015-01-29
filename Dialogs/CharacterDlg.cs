@@ -37,6 +37,14 @@ namespace FalloutPNP_PipBoy
         private const string cSpecialCanDistrib =  " Доступно {0} оч.";
         private const string cSpecialOverDistrib = " ПРЕВЫШЕНО {0} оч.";
 
+        private const string cLbSkillName = "lb{0}";
+        private const string cLbSkillName = "lb{0}";
+        private const string cLbSkillName = "lb{0}";
+        private const string cLbSkillName = "lb{0}";
+        private const string cLbSkillName = "lb{0}";
+        private const string cLbSkillName = "lb{0}";
+        private const string cLbSkillName = "lb{0}";
+
         private decimal StrCur, PerCur, EndCur, ChaCur, IntCur, AgiCur, LckCur;
 
         public CharacterDlg(Races races, Items items, Character character)
@@ -45,6 +53,8 @@ namespace FalloutPNP_PipBoy
             m_Races = races;
             m_Items = items;
             m_Character = character;
+
+            CreateControls();
 
             RefreshChar();
         }
@@ -375,6 +385,41 @@ namespace FalloutPNP_PipBoy
             {
                 nudSPECIAL_ValueChanged(SPECIAL.Lck, nudLck);
             }
+        }
+
+        #endregion
+
+        #region CreateControls
+
+        private void CreateControls()
+        {
+            #region Skills
+
+            int y = 20;
+            for (int i = 0; i < 19; i++)
+            {
+                var label = new Label();
+                label.Name = string.Format("lb{0}", ((Attributes.SkillNames)i).ToString());
+                label.Size = new Size(100, 13);
+                label.Text = ((Attributes.SkillNames)i).Description();
+                label.Location = new Point(10, y);
+                gbSkills.Controls.Add(label);
+
+                label = new Label();
+                label.Name = string.Format("lb{0}CurValue", ((Attributes.SkillNames)i).ToString());
+                label.Size = new Size(25, 13);
+                label.Text = "200";
+                label.Location = new Point(110, y);
+                gbSkills.Controls.Add(label);
+
+                y += 20;
+                if (i == 2 || i == 5 || i == 7 || i == 11 || i == 14 || i == 16)
+                {
+                    y += 10;
+                }
+            }
+
+            #endregion
         }
 
         #endregion
