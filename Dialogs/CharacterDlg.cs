@@ -319,7 +319,7 @@ namespace FalloutPNP_PipBoy
 
             RefreshChar();
         }
-
+        
         private void nudStr_ValueChanged(object sender, EventArgs e)
         {
             if (ChangedByUser)
