@@ -30,19 +30,11 @@
         {
             this.nudStr = new System.Windows.Forms.NumericUpDown();
             this.nudPer = new System.Windows.Forms.NumericUpDown();
-
-            this.nudEndur = new System.Windows.Forms.NumericUpDown();
-            this.nudChar = new System.Windows.Forms.NumericUpDown();
-            this.nudIntel = new System.Windows.Forms.NumericUpDown();
-            this.nudAgil = new System.Windows.Forms.NumericUpDown();
-            this.nudLuck = new System.Windows.Forms.NumericUpDown();
-
             this.nudEnd = new System.Windows.Forms.NumericUpDown();
             this.nudCha = new System.Windows.Forms.NumericUpDown();
             this.nudInt = new System.Windows.Forms.NumericUpDown();
             this.nudAgi = new System.Windows.Forms.NumericUpDown();
             this.nudLck = new System.Windows.Forms.NumericUpDown();
-
             this.lbStr = new System.Windows.Forms.Label();
             this.lbPer = new System.Windows.Forms.Label();
             this.lbEnd = new System.Windows.Forms.Label();
@@ -68,18 +60,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbRace = new System.Windows.Forms.Label();
             this.gbSpecial = new System.Windows.Forms.GroupBox();
-
-            this.lbLuckMax = new System.Windows.Forms.Label();
-            this.lbLuckMin = new System.Windows.Forms.Label();
-            this.lbAgilMax = new System.Windows.Forms.Label();
-            this.lbAgilMin = new System.Windows.Forms.Label();
-            this.lbIntelMax = new System.Windows.Forms.Label();
-            this.lbIntelMin = new System.Windows.Forms.Label();
-            this.lbCharMax = new System.Windows.Forms.Label();
-            this.lbCharMin = new System.Windows.Forms.Label();
-            this.lbEndurMax = new System.Windows.Forms.Label();
-            this.lbEndurMin = new System.Windows.Forms.Label();
-
             this.lbLckMax = new System.Windows.Forms.Label();
             this.lbLckMin = new System.Windows.Forms.Label();
             this.lbAgiMax = new System.Windows.Forms.Label();
@@ -90,7 +70,6 @@
             this.lbChaMin = new System.Windows.Forms.Label();
             this.lbEndMax = new System.Windows.Forms.Label();
             this.lbEndMin = new System.Windows.Forms.Label();
-
             this.lbPerMax = new System.Windows.Forms.Label();
             this.lbPerMin = new System.Windows.Forms.Label();
             this.lbStrMax = new System.Windows.Forms.Label();
@@ -98,19 +77,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).BeginInit();
-
-            ((System.ComponentModel.ISupportInitialize)(this.nudEndur)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudChar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIntel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAgil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLuck)).BeginInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).BeginInit();
-
             this.gbSpecial.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -132,46 +103,6 @@
             this.nudPer.TabIndex = 2;
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-           // nudEndur
-            // 
-            this.nudEndur.Location = new System.Drawing.Point(117, 71);
-            this.nudEndur.Name = "nudEndur";
-            this.nudEndur.Size = new System.Drawing.Size(34, 20);
-            this.nudEndur.TabIndex = 3;
-            this.nudEndur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // nudChar
-            // 
-            this.nudChar.Location = new System.Drawing.Point(117, 97);
-            this.nudChar.Name = "nudChar";
-            this.nudChar.Size = new System.Drawing.Size(34, 20);
-            this.nudChar.TabIndex = 4;
-            this.nudChar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // nudIntel
-            // 
-            this.nudIntel.Location = new System.Drawing.Point(117, 123);
-            this.nudIntel.Name = "nudIntel";
-            this.nudIntel.Size = new System.Drawing.Size(34, 20);
-            this.nudIntel.TabIndex = 5;
-            this.nudIntel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // nudAgil
-            // 
-            this.nudAgil.Location = new System.Drawing.Point(117, 149);
-            this.nudAgil.Name = "nudAgil";
-            this.nudAgil.Size = new System.Drawing.Size(34, 20);
-            this.nudAgil.TabIndex = 6;
-            this.nudAgil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // nudLuck
-            // 
-            this.nudLuck.Location = new System.Drawing.Point(117, 175);
-            this.nudLuck.Name = "nudLuck";
-            this.nudLuck.Size = new System.Drawing.Size(34, 20);
-            this.nudLuck.TabIndex = 7;
-            this.nudLuck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-
             // nudEnd
             // 
             this.nudEnd.Location = new System.Drawing.Point(117, 71);
@@ -211,7 +142,6 @@
             this.nudLck.Size = new System.Drawing.Size(34, 20);
             this.nudLck.TabIndex = 7;
             this.nudLck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
- 
             // 
             // lbStr
             // 
@@ -440,18 +370,6 @@
             // 
             // gbSpecial
             // 
- 
-            this.gbSpecial.Controls.Add(this.lbLuckMax);
-            this.gbSpecial.Controls.Add(this.lbLuckMin);
-            this.gbSpecial.Controls.Add(this.lbAgilMax);
-            this.gbSpecial.Controls.Add(this.lbAgilMin);
-            this.gbSpecial.Controls.Add(this.lbIntelMax);
-            this.gbSpecial.Controls.Add(this.lbIntelMin);
-            this.gbSpecial.Controls.Add(this.lbCharMax);
-            this.gbSpecial.Controls.Add(this.lbCharMin);
-            this.gbSpecial.Controls.Add(this.lbEndurMax);
-            this.gbSpecial.Controls.Add(this.lbEndurMin);
-
             this.gbSpecial.Controls.Add(this.lbLckMax);
             this.gbSpecial.Controls.Add(this.lbLckMin);
             this.gbSpecial.Controls.Add(this.lbAgiMax);
@@ -462,7 +380,6 @@
             this.gbSpecial.Controls.Add(this.lbChaMin);
             this.gbSpecial.Controls.Add(this.lbEndMax);
             this.gbSpecial.Controls.Add(this.lbEndMin);
-
             this.gbSpecial.Controls.Add(this.lbPerMax);
             this.gbSpecial.Controls.Add(this.lbPerMin);
             this.gbSpecial.Controls.Add(this.lbStrMax);
@@ -470,19 +387,11 @@
             this.gbSpecial.Controls.Add(this.lbStr);
             this.gbSpecial.Controls.Add(this.nudStr);
             this.gbSpecial.Controls.Add(this.nudPer);
-
-            this.gbSpecial.Controls.Add(this.nudEndur);
-            this.gbSpecial.Controls.Add(this.nudChar);
-            this.gbSpecial.Controls.Add(this.nudIntel);
-            this.gbSpecial.Controls.Add(this.nudAgil);
-            this.gbSpecial.Controls.Add(this.nudLuck);
-
             this.gbSpecial.Controls.Add(this.nudEnd);
             this.gbSpecial.Controls.Add(this.nudCha);
             this.gbSpecial.Controls.Add(this.nudInt);
             this.gbSpecial.Controls.Add(this.nudAgi);
             this.gbSpecial.Controls.Add(this.nudLck);
- 
             this.gbSpecial.Controls.Add(this.lbPer);
             this.gbSpecial.Controls.Add(this.lbEnd);
             this.gbSpecial.Controls.Add(this.lbCha);
@@ -496,96 +405,6 @@
             this.gbSpecial.TabStop = false;
             this.gbSpecial.Text = " S.P.E.C.I.A.L. ";
             // 
-            // lbLuckMax
-            // 
-            this.lbLuckMax.Location = new System.Drawing.Point(157, 177);
-            this.lbLuckMax.Name = "lbLuckMax";
-            this.lbLuckMax.Size = new System.Drawing.Size(19, 13);
-            this.lbLuckMax.TabIndex = 28;
-            this.lbLuckMax.Text = "00";
-            this.lbLuckMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbLuckMin
-            // 
-            this.lbLuckMin.Location = new System.Drawing.Point(92, 177);
-            this.lbLuckMin.Name = "lbLuckMin";
-            this.lbLuckMin.Size = new System.Drawing.Size(19, 13);
-            this.lbLuckMin.TabIndex = 27;
-            this.lbLuckMin.Text = "00";
-            this.lbLuckMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAgilMax
-            // 
-            this.lbAgilMax.Location = new System.Drawing.Point(157, 151);
-            this.lbAgilMax.Name = "lbAgilMax";
-            this.lbAgilMax.Size = new System.Drawing.Size(19, 13);
-            this.lbAgilMax.TabIndex = 26;
-            this.lbAgilMax.Text = "00";
-            this.lbAgilMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbAgilMin
-            // 
-            this.lbAgilMin.Location = new System.Drawing.Point(92, 151);
-            this.lbAgilMin.Name = "lbAgilMin";
-            this.lbAgilMin.Size = new System.Drawing.Size(19, 13);
-            this.lbAgilMin.TabIndex = 25;
-            this.lbAgilMin.Text = "00";
-            this.lbAgilMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbIntelMax
-            // 
-            this.lbIntelMax.Location = new System.Drawing.Point(157, 125);
-            this.lbIntelMax.Name = "lbIntelMax";
-            this.lbIntelMax.Size = new System.Drawing.Size(19, 13);
-            this.lbIntelMax.TabIndex = 24;
-            this.lbIntelMax.Text = "00";
-            this.lbIntelMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbIntelMin
-            // 
-            this.lbIntelMin.Location = new System.Drawing.Point(92, 125);
-            this.lbIntelMin.Name = "lbIntelMin";
-            this.lbIntelMin.Size = new System.Drawing.Size(19, 13);
-            this.lbIntelMin.TabIndex = 23;
-            this.lbIntelMin.Text = "00";
-            this.lbIntelMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbCharMax
-            // 
-            this.lbCharMax.Location = new System.Drawing.Point(157, 99);
-            this.lbCharMax.Name = "lbCharMax";
-            this.lbCharMax.Size = new System.Drawing.Size(19, 13);
-            this.lbCharMax.TabIndex = 22;
-            this.lbCharMax.Text = "00";
-            this.lbCharMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbCharMin
-            // 
-            this.lbCharMin.Location = new System.Drawing.Point(92, 99);
-            this.lbCharMin.Name = "lbCharMin";
-            this.lbCharMin.Size = new System.Drawing.Size(19, 13);
-            this.lbCharMin.TabIndex = 21;
-            this.lbCharMin.Text = "00";
-            this.lbCharMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbEndurMax
-            // 
-            this.lbEndurMax.Location = new System.Drawing.Point(157, 73);
-            this.lbEndurMax.Name = "lbEndurMax";
-            this.lbEndurMax.Size = new System.Drawing.Size(19, 13);
-            this.lbEndurMax.TabIndex = 20;
-            this.lbEndurMax.Text = "00";
-            this.lbEndurMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbEndurMin
-            // 
-            this.lbEndurMin.Location = new System.Drawing.Point(92, 73);
-            this.lbEndurMin.Name = "lbEndurMin";
-            this.lbEndurMin.Size = new System.Drawing.Size(19, 13);
-            this.lbEndurMin.TabIndex = 19;
-            this.lbEndurMin.Text = "00";
-            this.lbEndurMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
             // lbLckMax
             // 
             this.lbLckMax.Location = new System.Drawing.Point(157, 177);
@@ -675,7 +494,6 @@
             this.lbEndMin.TabIndex = 19;
             this.lbEndMin.Text = "00";
             this.lbEndMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
- 
             // 
             // lbPerMax
             // 
@@ -751,19 +569,11 @@
             this.Load += new System.EventHandler(this.CharacterDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).EndInit();
-
-            ((System.ComponentModel.ISupportInitialize)(this.nudEndur)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudChar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudIntel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAgil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudLuck)).EndInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudInt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).EndInit();
- 
             this.gbSpecial.ResumeLayout(false);
             this.gbSpecial.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -777,13 +587,6 @@
 
         private System.Windows.Forms.NumericUpDown nudStr;
         private System.Windows.Forms.NumericUpDown nudPer;
-
-        private System.Windows.Forms.NumericUpDown nudEndur;
-        private System.Windows.Forms.NumericUpDown nudChar;
-        private System.Windows.Forms.NumericUpDown nudIntel;
-        private System.Windows.Forms.NumericUpDown nudAgil;
-        private System.Windows.Forms.NumericUpDown nudLuck;
-
         private System.Windows.Forms.NumericUpDown nudEnd;
         private System.Windows.Forms.NumericUpDown nudCha;
         private System.Windows.Forms.NumericUpDown nudInt;
@@ -818,17 +621,6 @@
         private System.Windows.Forms.Label lbPerMin;
         private System.Windows.Forms.Label lbStrMax;
         private System.Windows.Forms.Label lbStrMin;
-        private System.Windows.Forms.Label lbEndurMax;
-        private System.Windows.Forms.Label lbEndurMin;
-        private System.Windows.Forms.Label lbCharMax;
-        private System.Windows.Forms.Label lbCharMin;
-        private System.Windows.Forms.Label lbLuckMax;
-        private System.Windows.Forms.Label lbLuckMin;
-        private System.Windows.Forms.Label lbAgilMax;
-        private System.Windows.Forms.Label lbAgilMin;
-        private System.Windows.Forms.Label lbIntelMax;
-        private System.Windows.Forms.Label lbIntelMin;
-
         private System.Windows.Forms.Label lbEndMax;
         private System.Windows.Forms.Label lbEndMin;
         private System.Windows.Forms.Label lbChaMax;
@@ -839,7 +631,6 @@
         private System.Windows.Forms.Label lbAgiMin;
         private System.Windows.Forms.Label lbIntMax;
         private System.Windows.Forms.Label lbIntMin;
-
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

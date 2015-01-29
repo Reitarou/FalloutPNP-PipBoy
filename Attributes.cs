@@ -208,7 +208,7 @@ namespace FalloutPNP_PipBoy
             public const string DistributionCha = "Character_DistributionCha";
             public const string DistributionInt = "Character_DistributionInt";
             public const string DistributionAgi = "Character_DistributionAgi";
-            public const string DistributionLuc = "Character_DistributionLuc";
+            public const string DistributionLck = "Character_DistributionLck";
 
             public static List<Attribute> All
             {

@@ -22,10 +22,14 @@ namespace FalloutPNP_PipBoy.XmlCollections
             get;
         }
 
-        public void Assign(Item item)
+        /// <summary>
+        /// Очищает атрибуты и копирует их из otherEntry
+        /// </summary>
+        /// <param name="other"></param>
+        public void Assign(XmlEntry otherEntry)
         {
             AttributesList.Clear();
-            foreach (var attribute in item.AttributesList)
+            foreach (var attribute in otherEntry.AttributesList)
             {
                 AttributesList[attribute.Name] = attribute.Value;
             }
