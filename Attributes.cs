@@ -18,32 +18,32 @@ namespace FalloutPNP_PipBoy
         public static class SpecialAtt
         {
             public const string StrMin = "SPECIAL_Str_Min";
-            public const string StrInit = "SPECIAL_Str_Init";
+            public const string StrIni = "SPECIAL_Str_Ini";
             public const string StrMax = "SPECIAL_Str_Max";
 
             public const string PerMin = "SPECIAL_Per_Min";
-            public const string PerInit = "SPECIAL_Per_Init";
+            public const string PerIni = "SPECIAL_Per_Ini";
             public const string PerMax = "SPECIAL_Per_Max";
 
-            public const string EndurMin = "SPECIAL_Endur_Min";
-            public const string EndurStart = "SPECIAL_Endur_Init";
-            public const string EndurMax = "SPECIAL_Endur_Max";
+            public const string EndMin = "SPECIAL_End_Min";
+            public const string EndIni = "SPECIAL_End_Ini";
+            public const string EndMax = "SPECIAL_End_Max";
 
-            public const string CharMin = "SPECIAL_Char_Min";
-            public const string CharStart = "SPECIAL_Char_Init";
-            public const string CharMax = "SPECIAL_Char_Max";
+            public const string ChaMin = "SPECIAL_Cha_Min";
+            public const string ChaIni = "SPECIAL_Cha_Ini";
+            public const string ChaMax = "SPECIAL_Cha_Max";
 
             public const string IntMin = "SPECIAL_Int_Min";
-            public const string IntStart = "SPECIAL_Int_Init";
+            public const string IntIni = "SPECIAL_Int_Ini";
             public const string IntMax = "SPECIAL_Int_Max";
 
             public const string AgiMin = "SPECIAL_Agi_Min";
-            public const string AgiStart = "SPECIAL_Agi_Init";
+            public const string AgiIni = "SPECIAL_Agi_Ini";
             public const string AgiMax = "SPECIAL_Agi_Max";
 
-            public const string LuckMin = "SPECIAL_Luck_Min";
-            public const string LuckStart = "SPECIAL_Luck_Init";
-            public const string LuckMax = "SPECIAL_Luck_Max";
+            public const string LckMin = "SPECIAL_Lck_Min";
+            public const string LckIni = "SPECIAL_Lck_Ini";
+            public const string LckMax = "SPECIAL_Lck_Max";
 
             public static List<Attribute> All
             {
@@ -51,32 +51,32 @@ namespace FalloutPNP_PipBoy
                 {
                     var list = new List<Attribute>();
                     list.Add(new Attribute(StrMin));
-                    list.Add(new Attribute(StrInit));
+                    list.Add(new Attribute(StrIni));
                     list.Add(new Attribute(StrMax));
 
                     list.Add(new Attribute(PerMin));
-                    list.Add(new Attribute(PerInit));
+                    list.Add(new Attribute(PerIni));
                     list.Add(new Attribute(PerMax));
 
-                    list.Add(new Attribute(EndurMin));
-                    list.Add(new Attribute(EndurStart));
-                    list.Add(new Attribute(EndurMax));
+                    list.Add(new Attribute(EndMin));
+                    list.Add(new Attribute(EndIni));
+                    list.Add(new Attribute(EndMax));
 
-                    list.Add(new Attribute(CharMin));
-                    list.Add(new Attribute(CharStart));
-                    list.Add(new Attribute(CharMax));
+                    list.Add(new Attribute(ChaMin));
+                    list.Add(new Attribute(ChaIni));
+                    list.Add(new Attribute(ChaMax));
 
                     list.Add(new Attribute(IntMin));
-                    list.Add(new Attribute(IntStart));
+                    list.Add(new Attribute(IntIni));
                     list.Add(new Attribute(IntMax));
 
                     list.Add(new Attribute(AgiMin));
-                    list.Add(new Attribute(AgiStart));
+                    list.Add(new Attribute(AgiIni));
                     list.Add(new Attribute(AgiMax));
 
-                    list.Add(new Attribute(LuckMin));
-                    list.Add(new Attribute(LuckStart));
-                    list.Add(new Attribute(LuckMax));
+                    list.Add(new Attribute(LckMin));
+                    list.Add(new Attribute(LckIni));
+                    list.Add(new Attribute(LckMax));
                     return list;
                 }
             }

@@ -4,27 +4,27 @@
     <Race_Name>Человек</Race_Name>
     <SPECIAL_Str_Min>1</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>1</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>1</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
     
-    <SPECIAL_Str_Init>5</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>5</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>5</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>5</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>5</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>5</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>5</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>5</SPECIAL_Lck_Ini>
     
     <SPECIAL_Str_Max>10</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>10</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>10</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>10</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>10</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>10</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>10</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
     
     <ResistancePoison>0</ResistancePoison>
     <ResistanceRadiation>0</ResistanceRadiation>
@@ -51,27 +51,27 @@
     <Race_Name>Мертвяк</Race_Name>
     <SPECIAL_Str_Min>1</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>4</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>1</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>1</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>2</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>5</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>5</SPECIAL_Lck_Min>
     
-    <SPECIAL_Str_Init>3</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>8</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>4</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>6</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>4</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>7</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>3</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>8</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>4</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>6</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>4</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>7</SPECIAL_Lck_Ini>
     
     <SPECIAL_Str_Max>6</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>14</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>10</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>9</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>10</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>9</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>13</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>13</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>13</SPECIAL_Lck_Max>
     
     <ResistancePoison>10</ResistancePoison>
     <ResistanceRadiation>40</ResistanceRadiation>
@@ -98,27 +98,27 @@
     <Race_Name>Супермутант Альфа</Race_Name>
     <SPECIAL_Str_Min>4</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>3</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>3</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>7</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>3</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>7</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>5</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>5</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>5</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>3</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>5</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>12</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>8</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>12</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>8</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>11</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
 
     <ResistancePoison>20</ResistancePoison>
     <ResistanceRadiation>10</ResistanceRadiation>
@@ -148,27 +148,27 @@
     <Race_Name>Супермутант Бета</Race_Name>
     <SPECIAL_Str_Min>5</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>4</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>4</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>8</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>6</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>3</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>3</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>8</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>5</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>6</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>5</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>3</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>3</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>5</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>13</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>12</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>8</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>12</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>8</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>8</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
 
     <ResistancePoison>20</ResistancePoison>
     <ResistanceRadiation>10</ResistanceRadiation>
@@ -198,27 +198,27 @@
     <Race_Name>Полумутант</Race_Name>
     <SPECIAL_Str_Min>3</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>1</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>2</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>5</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>5</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>5</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>5</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>5</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>5</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>5</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>5</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>5</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>5</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>10</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>11</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>10</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>11</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>10</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>10</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>8</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
 
     <ResistancePoison>10</ResistancePoison>
     <ResistanceRadiation>5</ResistanceRadiation>
@@ -248,27 +248,27 @@
     <Race_Name>Коготь смерти</Race_Name>
     <SPECIAL_Str_Min>6</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>5</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>2</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>6</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>8</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>1</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>9</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>4</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>8</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>7</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>1</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>1</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>9</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>4</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>14</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>13</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>3</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>13</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>3</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>4</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>16</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
 
     <ResistancePoison>10</ResistancePoison>
     <ResistanceRadiation>5</ResistanceRadiation>
@@ -298,27 +298,27 @@
     <Race_Name>Коготь смерти (Серый)</Race_Name>
     <SPECIAL_Str_Min>6</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>5</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>2</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>6</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>6</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>7</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>4</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>6</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>7</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>1</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>5</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>7</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>4</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>11</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>3</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>11</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>3</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>8</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>16</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
 
     <ResistancePoison>10</ResistancePoison>
     <ResistanceRadiation>5</ResistanceRadiation>
@@ -348,27 +348,27 @@
     <Race_Name>Собака</Race_Name>
     <SPECIAL_Str_Min>6</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>5</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>2</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>2</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>6</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>1</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>1</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>6</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>5</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>7</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>4</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>6</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>7</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>5</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>1</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>5</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>7</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>4</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>11</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>3</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>11</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>3</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>8</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>16</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>10</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>10</SPECIAL_Lck_Max>
 
     <ResistancePoison>0</ResistancePoison>
     <ResistanceRadiation>0</ResistanceRadiation>
@@ -398,27 +398,27 @@
     <Race_Name>Робот-гуманоид</Race_Name>
     <SPECIAL_Str_Min>7</SPECIAL_Str_Min>
     <SPECIAL_Per_Min>7</SPECIAL_Per_Min>
-    <SPECIAL_Endur_Min>7</SPECIAL_Endur_Min>
-    <SPECIAL_Char_Min>1</SPECIAL_Char_Min>
+    <SPECIAL_End_Min>7</SPECIAL_End_Min>
+    <SPECIAL_Cha_Min>1</SPECIAL_Cha_Min>
     <SPECIAL_Int_Min>1</SPECIAL_Int_Min>
     <SPECIAL_Agi_Min>1</SPECIAL_Agi_Min>
-    <SPECIAL_Luck_Min>5</SPECIAL_Luck_Min>
+    <SPECIAL_Lck_Min>5</SPECIAL_Lck_Min>
 
-    <SPECIAL_Str_Init>7</SPECIAL_Str_Init>
-    <SPECIAL_Per_Init>7</SPECIAL_Per_Init>
-    <SPECIAL_Endur_Init>7</SPECIAL_Endur_Init>
-    <SPECIAL_Char_Init>1</SPECIAL_Char_Init>
-    <SPECIAL_Int_Init>5</SPECIAL_Int_Init>
-    <SPECIAL_Agi_Init>5</SPECIAL_Agi_Init>
-    <SPECIAL_Luck_Init>5</SPECIAL_Luck_Init>
+    <SPECIAL_Str_Ini>7</SPECIAL_Str_Ini>
+    <SPECIAL_Per_Ini>7</SPECIAL_Per_Ini>
+    <SPECIAL_End_Ini>7</SPECIAL_End_Ini>
+    <SPECIAL_Cha_Ini>1</SPECIAL_Cha_Ini>
+    <SPECIAL_Int_Ini>5</SPECIAL_Int_Ini>
+    <SPECIAL_Agi_Ini>5</SPECIAL_Agi_Ini>
+    <SPECIAL_Lck_Ini>5</SPECIAL_Lck_Ini>
 
     <SPECIAL_Str_Max>12</SPECIAL_Str_Max>
     <SPECIAL_Per_Max>12</SPECIAL_Per_Max>
-    <SPECIAL_Endur_Max>12</SPECIAL_Endur_Max>
-    <SPECIAL_Char_Max>1</SPECIAL_Char_Max>
+    <SPECIAL_End_Max>12</SPECIAL_End_Max>
+    <SPECIAL_Cha_Max>1</SPECIAL_Cha_Max>
     <SPECIAL_Int_Max>12</SPECIAL_Int_Max>
     <SPECIAL_Agi_Max>12</SPECIAL_Agi_Max>
-    <SPECIAL_Luck_Max>5</SPECIAL_Luck_Max>
+    <SPECIAL_Lck_Max>5</SPECIAL_Lck_Max>
 
     <ResistancePoison>100</ResistancePoison>
     <ResistanceRadiation>100</ResistanceRadiation>

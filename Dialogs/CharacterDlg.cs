@@ -19,7 +19,17 @@ namespace FalloutPNP_PipBoy
         private Races m_Races;
         private Items m_Items;
 
+        private int RaceStrMin, RaceStrIni, RaceStrMax,
+                RacePerMin, RacePerIni, RacePerMax,
+                RaceEndMin, RaceEndIni, RaceEndMax,
+                RaceChaMin, RaceChaIni, RaceChaMax,
+                RaceIntMin, RaceIntIni, RaceIntMax,
+                RaceAgiMin, RaceAgiIni, RaceAgiMax,
+                RaceLckMin, RaceLckIni, RaceLckMax;
 
+        private int DistrStr, DistrPer, DistrEnd, DistrCha, DistrInt, DistrAgi, DistrLck;
+
+        private decimal StrCur, PerCur, EndCur, ChaCur, IntCur, AgiCur, Lck;
 
         public CharacterDlg(Races races, Items items, Character character)
         {
@@ -40,11 +50,15 @@ namespace FalloutPNP_PipBoy
 
         private void RefreshChar()
         {
-            int RaceStrMin, RaceStrInit, RaceStrMax,
-                RacePerMin, RacePerInit, RacePerMax;
+            int StrMin, StrMax, PerMin, PerMax, EndMin, EndMax, ChaMin, ChaMax, IntMin, IntMax, AgiMin, AgiMax, LckMin, LckMax;
 
-            RaceStrMin = RaceStrInit = RaceStrMax =
-            RacePerMin = RacePerInit = RacePerMax =
+            RaceStrMin = RaceStrIni = RaceStrMax =
+            RacePerMin = RacePerIni = RacePerMax =
+            RaceEndMin = RaceEndIni = RaceEndMax =
+            RaceChaMin = RaceChaIni = RaceChaMax =
+            RaceIntMin = RaceIntIni = RaceIntMax =
+            RaceAgiMin = RaceAgiIni = RaceAgiMax =
+            RaceLckMin = RaceLckIni = RaceLckMax =
             0;
 
             var sRace = m_Character.AttributesList[Attributes.CharacterAtt.Race];
@@ -53,22 +67,69 @@ namespace FalloutPNP_PipBoy
                 if (race.Name == sRace)
                 {
                     RaceStrMin = race.AttributesList.GetInt(Attributes.SpecialAtt.StrMin);
-                    RaceStrInit = race.AttributesList.GetInt(Attributes.SpecialAtt.StrInit);
+                    RaceStrIni = race.AttributesList.GetInt(Attributes.SpecialAtt.StrIni);
                     RaceStrMax = race.AttributesList.GetInt(Attributes.SpecialAtt.StrMax);
+
                     RacePerMin = race.AttributesList.GetInt(Attributes.SpecialAtt.PerMin);
-                    RacePerInit = race.AttributesList.GetInt(Attributes.SpecialAtt.PerInit);
+                    RacePerIni = race.AttributesList.GetInt(Attributes.SpecialAtt.PerIni);
                     RacePerMax = race.AttributesList.GetInt(Attributes.SpecialAtt.PerMax);
+
+                    RaceEndMin = race.AttributesList.GetInt(Attributes.SpecialAtt.EndMin);
+                    RaceEndIni = race.AttributesList.GetInt(Attributes.SpecialAtt.EndIni);
+                    RaceEndMax = race.AttributesList.GetInt(Attributes.SpecialAtt.EndMax);
+
+                    RaceChaMin = race.AttributesList.GetInt(Attributes.SpecialAtt.ChaMin);
+                    RaceChaIni = race.AttributesList.GetInt(Attributes.SpecialAtt.ChaIni);
+                    RaceChaMax = race.AttributesList.GetInt(Attributes.SpecialAtt.ChaMax);
+
+                    RaceIntMin = race.AttributesList.GetInt(Attributes.SpecialAtt.IntMin);
+                    RaceIntIni = race.AttributesList.GetInt(Attributes.SpecialAtt.IntIni);
+                    RaceIntMax = race.AttributesList.GetInt(Attributes.SpecialAtt.IntMax);
+
+                    RaceAgiMin = race.AttributesList.GetInt(Attributes.SpecialAtt.AgiMin);
+                    RaceAgiIni = race.AttributesList.GetInt(Attributes.SpecialAtt.AgiIni);
+                    RaceAgiMax = race.AttributesList.GetInt(Attributes.SpecialAtt.AgiMax);
+
+                    RaceLckMin = race.AttributesList.GetInt(Attributes.SpecialAtt.LckMin);
+                    RaceLckIni = race.AttributesList.GetInt(Attributes.SpecialAtt.LckIni);
+                    RaceLckMax = race.AttributesList.GetInt(Attributes.SpecialAtt.LckMax);
                 }
             }
 
-            lbStrMin.Text = RaceStrMin.ToString();
-            nudStr.Value = RaceStrInit;
-            lbStrMax.Text = RaceStrMax.ToString();
+
+            StrMin = RaceStrMin;
+            StrCur = RaceStrIni;
+            StrMax = RaceStrMax;
+
+            lbStrMin.Text = StrMin.ToString();
+            nudStr.Minimum = StrMin;
+            nudStr.Value = StrCur;
+            nudStr.Maximum = StrMax;
+            lbStrMax.Text = StrMax.ToString();
+
             lbPerMin.Text = RacePerMin.ToString();
-            nudPer.Value = RacePerInit;
+            nudPer.Value = RacePerIni;
             lbPerMax.Text = RacePerMax.ToString();
 
+            lbEndMin.Text = RaceEndMin.ToString();
+            nudEnd.Value = RaceEndIni;
+            lbEndMax.Text = RaceEndMax.ToString();
 
+            lbChaMin.Text = RaceChaMin.ToString();
+            nudCha.Value = RaceChaIni;
+            lbChaMax.Text = RaceChaMax.ToString();
+
+            lbIntMin.Text = RaceIntMin.ToString();
+            nudInt.Value = RaceIntIni;
+            lbIntMax.Text = RaceIntMax.ToString();
+
+            lbAgiMin.Text = RaceAgiMin.ToString();
+            nudAgi.Value = RaceAgiIni;
+            lbAgiMax.Text = RaceAgiMax.ToString();
+
+            lbLckMin.Text = RaceLckMin.ToString();
+            nudLck.Value = RaceLckIni;
+            lbLckMax.Text = RaceLckMax.ToString();
         }
 
         private void cmbRaces_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,6 +175,11 @@ namespace FalloutPNP_PipBoy
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void nudStr_ValueChanged(object sender, EventArgs e)
+        {
+            var t = 0;
         }
 
     }
