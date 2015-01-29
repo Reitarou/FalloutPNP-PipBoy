@@ -30,11 +30,11 @@
         {
             this.nudStr = new System.Windows.Forms.NumericUpDown();
             this.nudPer = new System.Windows.Forms.NumericUpDown();
-            this.numericEndurance = new System.Windows.Forms.NumericUpDown();
-            this.numericCharisma = new System.Windows.Forms.NumericUpDown();
-            this.numericIntelligence = new System.Windows.Forms.NumericUpDown();
-            this.numericAgility = new System.Windows.Forms.NumericUpDown();
-            this.numericLuck = new System.Windows.Forms.NumericUpDown();
+            this.nudEndur = new System.Windows.Forms.NumericUpDown();
+            this.nudChar = new System.Windows.Forms.NumericUpDown();
+            this.nudIntel = new System.Windows.Forms.NumericUpDown();
+            this.nudAgil = new System.Windows.Forms.NumericUpDown();
+            this.nudLuck = new System.Windows.Forms.NumericUpDown();
             this.lbStr = new System.Windows.Forms.Label();
             this.lbPer = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,16 +60,16 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbRace = new System.Windows.Forms.Label();
             this.gbSpecial = new System.Windows.Forms.GroupBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lbLuckMax = new System.Windows.Forms.Label();
+            this.lbLuckMin = new System.Windows.Forms.Label();
+            this.lbAgilMax = new System.Windows.Forms.Label();
+            this.lbAgilMin = new System.Windows.Forms.Label();
+            this.lbIntelMax = new System.Windows.Forms.Label();
+            this.lbIntelMin = new System.Windows.Forms.Label();
+            this.lbCharMax = new System.Windows.Forms.Label();
+            this.lbCharMin = new System.Windows.Forms.Label();
+            this.lbEndurMax = new System.Windows.Forms.Label();
+            this.lbEndurMin = new System.Windows.Forms.Label();
             this.lbPerMax = new System.Windows.Forms.Label();
             this.lbPerMin = new System.Windows.Forms.Label();
             this.lbStrMax = new System.Windows.Forms.Label();
@@ -77,11 +77,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericEndurance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCharisma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericIntelligence)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAgility)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericLuck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEndur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIntel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLuck)).BeginInit();
             this.gbSpecial.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -102,45 +102,45 @@
             this.nudPer.TabIndex = 2;
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericEndurance
+            // nudEndur
             // 
-            this.numericEndurance.Location = new System.Drawing.Point(117, 71);
-            this.numericEndurance.Name = "numericEndurance";
-            this.numericEndurance.Size = new System.Drawing.Size(34, 20);
-            this.numericEndurance.TabIndex = 3;
-            this.numericEndurance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudEndur.Location = new System.Drawing.Point(117, 71);
+            this.nudEndur.Name = "nudEndur";
+            this.nudEndur.Size = new System.Drawing.Size(34, 20);
+            this.nudEndur.TabIndex = 3;
+            this.nudEndur.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericCharisma
+            // nudChar
             // 
-            this.numericCharisma.Location = new System.Drawing.Point(117, 97);
-            this.numericCharisma.Name = "numericCharisma";
-            this.numericCharisma.Size = new System.Drawing.Size(34, 20);
-            this.numericCharisma.TabIndex = 4;
-            this.numericCharisma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudChar.Location = new System.Drawing.Point(117, 97);
+            this.nudChar.Name = "nudChar";
+            this.nudChar.Size = new System.Drawing.Size(34, 20);
+            this.nudChar.TabIndex = 4;
+            this.nudChar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericIntelligence
+            // nudIntel
             // 
-            this.numericIntelligence.Location = new System.Drawing.Point(117, 123);
-            this.numericIntelligence.Name = "numericIntelligence";
-            this.numericIntelligence.Size = new System.Drawing.Size(34, 20);
-            this.numericIntelligence.TabIndex = 5;
-            this.numericIntelligence.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudIntel.Location = new System.Drawing.Point(117, 123);
+            this.nudIntel.Name = "nudIntel";
+            this.nudIntel.Size = new System.Drawing.Size(34, 20);
+            this.nudIntel.TabIndex = 5;
+            this.nudIntel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericAgility
+            // nudAgil
             // 
-            this.numericAgility.Location = new System.Drawing.Point(117, 149);
-            this.numericAgility.Name = "numericAgility";
-            this.numericAgility.Size = new System.Drawing.Size(34, 20);
-            this.numericAgility.TabIndex = 6;
-            this.numericAgility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudAgil.Location = new System.Drawing.Point(117, 149);
+            this.nudAgil.Name = "nudAgil";
+            this.nudAgil.Size = new System.Drawing.Size(34, 20);
+            this.nudAgil.TabIndex = 6;
+            this.nudAgil.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericLuck
+            // nudLuck
             // 
-            this.numericLuck.Location = new System.Drawing.Point(117, 175);
-            this.numericLuck.Name = "numericLuck";
-            this.numericLuck.Size = new System.Drawing.Size(34, 20);
-            this.numericLuck.TabIndex = 7;
-            this.numericLuck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nudLuck.Location = new System.Drawing.Point(117, 175);
+            this.nudLuck.Name = "nudLuck";
+            this.nudLuck.Size = new System.Drawing.Size(34, 20);
+            this.nudLuck.TabIndex = 7;
+            this.nudLuck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbStr
             // 
@@ -205,7 +205,7 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Удача";
             // 
-            // cbRace
+            // cmbRace
             // 
             this.cmbRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRace.FormattingEnabled = true;
@@ -219,7 +219,7 @@
             "Собака",
             "Робот Гуманоид"});
             this.cmbRace.Location = new System.Drawing.Point(256, 12);
-            this.cmbRace.Name = "cbRace";
+            this.cmbRace.Name = "cmbRace";
             this.cmbRace.Size = new System.Drawing.Size(158, 21);
             this.cmbRace.TabIndex = 15;
             this.cmbRace.SelectedIndexChanged += new System.EventHandler(this.cmbRaces_SelectedIndexChanged);
@@ -369,16 +369,16 @@
             // 
             // gbSpecial
             // 
-            this.gbSpecial.Controls.Add(this.label33);
-            this.gbSpecial.Controls.Add(this.label34);
-            this.gbSpecial.Controls.Add(this.label31);
-            this.gbSpecial.Controls.Add(this.label32);
-            this.gbSpecial.Controls.Add(this.label29);
-            this.gbSpecial.Controls.Add(this.label30);
-            this.gbSpecial.Controls.Add(this.label27);
-            this.gbSpecial.Controls.Add(this.label28);
-            this.gbSpecial.Controls.Add(this.label25);
-            this.gbSpecial.Controls.Add(this.label26);
+            this.gbSpecial.Controls.Add(this.lbLuckMax);
+            this.gbSpecial.Controls.Add(this.lbLuckMin);
+            this.gbSpecial.Controls.Add(this.lbAgilMax);
+            this.gbSpecial.Controls.Add(this.lbAgilMin);
+            this.gbSpecial.Controls.Add(this.lbIntelMax);
+            this.gbSpecial.Controls.Add(this.lbIntelMin);
+            this.gbSpecial.Controls.Add(this.lbCharMax);
+            this.gbSpecial.Controls.Add(this.lbCharMin);
+            this.gbSpecial.Controls.Add(this.lbEndurMax);
+            this.gbSpecial.Controls.Add(this.lbEndurMin);
             this.gbSpecial.Controls.Add(this.lbPerMax);
             this.gbSpecial.Controls.Add(this.lbPerMin);
             this.gbSpecial.Controls.Add(this.lbStrMax);
@@ -386,11 +386,11 @@
             this.gbSpecial.Controls.Add(this.lbStr);
             this.gbSpecial.Controls.Add(this.nudStr);
             this.gbSpecial.Controls.Add(this.nudPer);
-            this.gbSpecial.Controls.Add(this.numericEndurance);
-            this.gbSpecial.Controls.Add(this.numericCharisma);
-            this.gbSpecial.Controls.Add(this.numericIntelligence);
-            this.gbSpecial.Controls.Add(this.numericAgility);
-            this.gbSpecial.Controls.Add(this.numericLuck);
+            this.gbSpecial.Controls.Add(this.nudEndur);
+            this.gbSpecial.Controls.Add(this.nudChar);
+            this.gbSpecial.Controls.Add(this.nudIntel);
+            this.gbSpecial.Controls.Add(this.nudAgil);
+            this.gbSpecial.Controls.Add(this.nudLuck);
             this.gbSpecial.Controls.Add(this.lbPer);
             this.gbSpecial.Controls.Add(this.label3);
             this.gbSpecial.Controls.Add(this.label4);
@@ -404,127 +404,127 @@
             this.gbSpecial.TabStop = false;
             this.gbSpecial.Text = " S.P.E.C.I.A.L. ";
             // 
-            // label33
+            // lbLuckMax
             // 
-            this.label33.Location = new System.Drawing.Point(157, 177);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(19, 13);
-            this.label33.TabIndex = 28;
-            this.label33.Text = "00";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLuckMax.Location = new System.Drawing.Point(157, 177);
+            this.lbLuckMax.Name = "lbLuckMax";
+            this.lbLuckMax.Size = new System.Drawing.Size(19, 13);
+            this.lbLuckMax.TabIndex = 28;
+            this.lbLuckMax.Text = "00";
+            this.lbLuckMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label34
+            // lbLuckMin
             // 
-            this.label34.Location = new System.Drawing.Point(92, 177);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(19, 13);
-            this.label34.TabIndex = 27;
-            this.label34.Text = "00";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLuckMin.Location = new System.Drawing.Point(92, 177);
+            this.lbLuckMin.Name = "lbLuckMin";
+            this.lbLuckMin.Size = new System.Drawing.Size(19, 13);
+            this.lbLuckMin.TabIndex = 27;
+            this.lbLuckMin.Text = "00";
+            this.lbLuckMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label31
+            // lbAgilMax
             // 
-            this.label31.Location = new System.Drawing.Point(157, 151);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(19, 13);
-            this.label31.TabIndex = 26;
-            this.label31.Text = "00";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbAgilMax.Location = new System.Drawing.Point(157, 151);
+            this.lbAgilMax.Name = "lbAgilMax";
+            this.lbAgilMax.Size = new System.Drawing.Size(19, 13);
+            this.lbAgilMax.TabIndex = 26;
+            this.lbAgilMax.Text = "00";
+            this.lbAgilMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label32
+            // lbAgilMin
             // 
-            this.label32.Location = new System.Drawing.Point(92, 151);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(19, 13);
-            this.label32.TabIndex = 25;
-            this.label32.Text = "00";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbAgilMin.Location = new System.Drawing.Point(92, 151);
+            this.lbAgilMin.Name = "lbAgilMin";
+            this.lbAgilMin.Size = new System.Drawing.Size(19, 13);
+            this.lbAgilMin.TabIndex = 25;
+            this.lbAgilMin.Text = "00";
+            this.lbAgilMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label29
+            // lbIntelMax
             // 
-            this.label29.Location = new System.Drawing.Point(157, 125);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(19, 13);
-            this.label29.TabIndex = 24;
-            this.label29.Text = "00";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbIntelMax.Location = new System.Drawing.Point(157, 125);
+            this.lbIntelMax.Name = "lbIntelMax";
+            this.lbIntelMax.Size = new System.Drawing.Size(19, 13);
+            this.lbIntelMax.TabIndex = 24;
+            this.lbIntelMax.Text = "00";
+            this.lbIntelMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label30
+            // lbIntelMin
             // 
-            this.label30.Location = new System.Drawing.Point(92, 125);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(19, 13);
-            this.label30.TabIndex = 23;
-            this.label30.Text = "00";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbIntelMin.Location = new System.Drawing.Point(92, 125);
+            this.lbIntelMin.Name = "lbIntelMin";
+            this.lbIntelMin.Size = new System.Drawing.Size(19, 13);
+            this.lbIntelMin.TabIndex = 23;
+            this.lbIntelMin.Text = "00";
+            this.lbIntelMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label27
+            // lbCharMax
             // 
-            this.label27.Location = new System.Drawing.Point(157, 99);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(19, 13);
-            this.label27.TabIndex = 22;
-            this.label27.Text = "00";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCharMax.Location = new System.Drawing.Point(157, 99);
+            this.lbCharMax.Name = "lbCharMax";
+            this.lbCharMax.Size = new System.Drawing.Size(19, 13);
+            this.lbCharMax.TabIndex = 22;
+            this.lbCharMax.Text = "00";
+            this.lbCharMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // lbCharMin
             // 
-            this.label28.Location = new System.Drawing.Point(92, 99);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(19, 13);
-            this.label28.TabIndex = 21;
-            this.label28.Text = "00";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbCharMin.Location = new System.Drawing.Point(92, 99);
+            this.lbCharMin.Name = "lbCharMin";
+            this.lbCharMin.Size = new System.Drawing.Size(19, 13);
+            this.lbCharMin.TabIndex = 21;
+            this.lbCharMin.Text = "00";
+            this.lbCharMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label25
+            // lbEndurMax
             // 
-            this.label25.Location = new System.Drawing.Point(157, 73);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(19, 13);
-            this.label25.TabIndex = 20;
-            this.label25.Text = "00";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbEndurMax.Location = new System.Drawing.Point(157, 73);
+            this.lbEndurMax.Name = "lbEndurMax";
+            this.lbEndurMax.Size = new System.Drawing.Size(19, 13);
+            this.lbEndurMax.TabIndex = 20;
+            this.lbEndurMax.Text = "00";
+            this.lbEndurMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label26
+            // lbEndurMin
             // 
-            this.label26.Location = new System.Drawing.Point(92, 73);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(19, 13);
-            this.label26.TabIndex = 19;
-            this.label26.Text = "00";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbEndurMin.Location = new System.Drawing.Point(92, 73);
+            this.lbEndurMin.Name = "lbEndurMin";
+            this.lbEndurMin.Size = new System.Drawing.Size(19, 13);
+            this.lbEndurMin.TabIndex = 19;
+            this.lbEndurMin.Text = "00";
+            this.lbEndurMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbMaxPer
+            // lbPerMax
             // 
             this.lbPerMax.Location = new System.Drawing.Point(157, 47);
-            this.lbPerMax.Name = "lbMaxPer";
+            this.lbPerMax.Name = "lbPerMax";
             this.lbPerMax.Size = new System.Drawing.Size(19, 13);
             this.lbPerMax.TabIndex = 18;
             this.lbPerMax.Text = "00";
             this.lbPerMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbMinPer
+            // lbPerMin
             // 
             this.lbPerMin.Location = new System.Drawing.Point(92, 47);
-            this.lbPerMin.Name = "lbMinPer";
+            this.lbPerMin.Name = "lbPerMin";
             this.lbPerMin.Size = new System.Drawing.Size(19, 13);
             this.lbPerMin.TabIndex = 17;
             this.lbPerMin.Text = "00";
             this.lbPerMin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbMaxStr
+            // lbStrMax
             // 
             this.lbStrMax.Location = new System.Drawing.Point(157, 21);
-            this.lbStrMax.Name = "lbMaxStr";
+            this.lbStrMax.Name = "lbStrMax";
             this.lbStrMax.Size = new System.Drawing.Size(19, 13);
             this.lbStrMax.TabIndex = 16;
             this.lbStrMax.Text = "00";
             this.lbStrMax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbMinStr
+            // lbStrMin
             // 
             this.lbStrMin.Location = new System.Drawing.Point(92, 21);
-            this.lbStrMin.Name = "lbMinStr";
+            this.lbStrMin.Name = "lbStrMin";
             this.lbStrMin.Size = new System.Drawing.Size(19, 13);
             this.lbStrMin.TabIndex = 15;
             this.lbStrMin.Text = "00";
@@ -568,11 +568,11 @@
             this.Load += new System.EventHandler(this.CharacterDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericEndurance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericCharisma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericIntelligence)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAgility)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericLuck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEndur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudChar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudIntel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudLuck)).EndInit();
             this.gbSpecial.ResumeLayout(false);
             this.gbSpecial.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -586,11 +586,11 @@
 
         private System.Windows.Forms.NumericUpDown nudStr;
         private System.Windows.Forms.NumericUpDown nudPer;
-        private System.Windows.Forms.NumericUpDown numericEndurance;
-        private System.Windows.Forms.NumericUpDown numericCharisma;
-        private System.Windows.Forms.NumericUpDown numericIntelligence;
-        private System.Windows.Forms.NumericUpDown numericAgility;
-        private System.Windows.Forms.NumericUpDown numericLuck;
+        private System.Windows.Forms.NumericUpDown nudEndur;
+        private System.Windows.Forms.NumericUpDown nudChar;
+        private System.Windows.Forms.NumericUpDown nudIntel;
+        private System.Windows.Forms.NumericUpDown nudAgil;
+        private System.Windows.Forms.NumericUpDown nudLuck;
         private System.Windows.Forms.Label lbStr;
         private System.Windows.Forms.Label lbPer;
         private System.Windows.Forms.Label label3;
@@ -620,16 +620,16 @@
         private System.Windows.Forms.Label lbPerMin;
         private System.Windows.Forms.Label lbStrMax;
         private System.Windows.Forms.Label lbStrMin;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lbEndurMax;
+        private System.Windows.Forms.Label lbEndurMin;
+        private System.Windows.Forms.Label lbCharMax;
+        private System.Windows.Forms.Label lbCharMin;
+        private System.Windows.Forms.Label lbLuckMax;
+        private System.Windows.Forms.Label lbLuckMin;
+        private System.Windows.Forms.Label lbAgilMax;
+        private System.Windows.Forms.Label lbAgilMin;
+        private System.Windows.Forms.Label lbIntelMax;
+        private System.Windows.Forms.Label lbIntelMin;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
