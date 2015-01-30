@@ -38,12 +38,7 @@ namespace FalloutPNP_PipBoy
         private const string cSpecialOverDistrib = " ПРЕВЫШЕНО {0} оч.";
 
         private const string cLbSkillName = "lb{0}";
-        private const string cLbSkillName = "lb{0}";
-        private const string cLbSkillName = "lb{0}";
-        private const string cLbSkillName = "lb{0}";
-        private const string cLbSkillName = "lb{0}";
-        private const string cLbSkillName = "lb{0}";
-        private const string cLbSkillName = "lb{0}";
+        
 
         private decimal StrCur, PerCur, EndCur, ChaCur, IntCur, AgiCur, LckCur;
 
