@@ -204,9 +204,9 @@
             this.lbInt.AutoSize = true;
             this.lbInt.Location = new System.Drawing.Point(6, 125);
             this.lbInt.Name = "lbInt";
-            this.lbInt.Size = new System.Drawing.Size(55, 13);
+            this.lbInt.Size = new System.Drawing.Size(61, 13);
             this.lbInt.TabIndex = 12;
-            this.lbInt.Text = "Интелект";
+            this.lbInt.Text = "Интеллект";
             // 
             // lbAgi
             // 

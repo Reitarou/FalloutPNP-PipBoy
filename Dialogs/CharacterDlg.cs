@@ -37,9 +37,6 @@ namespace FalloutPNP_PipBoy
         private const string cControlName_LbSkillDestr_126_150 = "lbSkill{0}";
         private const string cControlName_LbSkillDestr_151_175 = "lbSkill{0}";
         private const string cControlName_LbSkillDestr_176_200 = "lbSkill{0}";
-        
-
-        private int StrCur, PerCur, EndCur, ChaCur, IntCur, AgiCur, LckCur;
 
         public CharacterDlg(Races races, Items items, Character character)
         {
@@ -68,181 +65,78 @@ namespace FalloutPNP_PipBoy
 
         private void RefreshChar()
         {
+            m_Character.Refresh();
 
-            #region Declare
-
-            int RaceStrMin, RaceStrIni, RaceStrMax,
-                RacePerMin, RacePerIni, RacePerMax,
-                RaceEndMin, RaceEndIni, RaceEndMax,
-                RaceChaMin, RaceChaIni, RaceChaMax,
-                RaceIntMin, RaceIntIni, RaceIntMax,
-                RaceAgiMin, RaceAgiIni, RaceAgiMax,
-                RaceLckMin, RaceLckIni, RaceLckMax;
-
-            int DistrStr, DistrPer, DistrEnd, DistrCha, DistrInt, DistrAgi, DistrLck;
-
-
-            int StrMin, StrMax, PerMin, PerMax, EndMin, EndMax, ChaMin, ChaMax, IntMin, IntMax, AgiMin, AgiMax, LckMin, LckMax;
-
-            #endregion
-
-            #region Load
-
-            var charRaceName = m_Character.AttributesList[Attributes.CharacterAtt.Race];
-            var CharRace = new Race();
-
-            foreach (var race in m_Races)
+            int totalDistrSumm = 5;
+            for (int i = 0; i < 7; i++)
             {
-                if (race.Name == charRaceName)
-                {
-                    CharRace.Assign(race);
-                    break;
-                }
+                var stat = m_Character.CharStats[i];
+                totalDistrSumm -= stat.Distibution;
             }
-
-            //S.P.E.C.I.A.L. от Расы
-            RaceStrMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.StrMin);
-            RaceStrIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.StrIni);
-            RaceStrMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.StrMax);
-
-            RacePerMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.PerMin);
-            RacePerIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.PerIni);
-            RacePerMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.PerMax);
-
-            RaceEndMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.EndMin);
-            RaceEndIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.EndIni);
-            RaceEndMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.EndMax);
-
-            RaceChaMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.ChaMin);
-            RaceChaIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.ChaIni);
-            RaceChaMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.ChaMax);
-
-            RaceIntMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.IntMin);
-            RaceIntIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.IntIni);
-            RaceIntMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.IntMax);
-
-            RaceAgiMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.AgiMin);
-            RaceAgiIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.AgiIni);
-            RaceAgiMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.AgiMax);
-
-            RaceLckMin = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.LckMin);
-            RaceLckIni = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.LckIni);
-            RaceLckMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.LckMax);
-
-            //Распределение на текущем чаре
-            DistrStr = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Str.ToString()));
-            DistrPer = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Per.ToString()));
-            DistrEnd = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.End.ToString()));
-            DistrCha = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Cha.ToString()));
-            DistrInt = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Int.ToString()));
-            DistrAgi = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Agi.ToString()));
-            DistrLck = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Lck.ToString()));
-
-            #endregion
-
-            #region Calculation
-
-            StrMin = RaceStrMin;
-            StrCur = RaceStrIni + DistrStr;
-            StrMax = RaceStrMax;
-
-            PerMin = RacePerMin;
-            PerCur = RacePerIni + DistrPer;
-            PerMax = RacePerMax;
-
-            EndMin = RaceEndMin;
-            EndCur = RaceEndIni + DistrEnd;
-            EndMax = RaceEndMax;
-
-            ChaMin = RaceChaMin;
-            ChaCur = RaceChaIni + DistrCha;
-            ChaMax = RaceChaMax;
-
-            IntMin = RaceIntMin;
-            IntCur = RaceIntIni + DistrInt;
-            IntMax = RaceIntMax;
-
-            AgiMin = RaceAgiMin;
-            AgiCur = RaceAgiIni + DistrAgi;
-            AgiMax = RaceAgiMax;
-
-            LckMin = RaceLckMin;
-            LckCur = RaceLckIni + DistrLck;
-            LckMax = RaceLckMax;
-
-            int TotalDistrSumm = 5 - (DistrStr + DistrPer + DistrEnd + DistrCha + DistrInt + DistrAgi + DistrLck);
-
-            #endregion
 
             #region PostToControls
 
             ChangedByUser = false;
 
-            cmbRace.Text = CharRace.Name;
+            cmbRace.Text = m_Character.CharRace.Name;
 
-            if (TotalDistrSumm > 0)
+            if (totalDistrSumm > 0)
             {
-                gbSpecial.Text = string.Format(cSpecialCanDistrib, TotalDistrSumm.ToString());
+                gbSpecial.Text = string.Format(cSpecialCanDistrib, totalDistrSumm.ToString());
             }
-            else if (TotalDistrSumm == 0)
+            else if (totalDistrSumm == 0)
             {
-                gbSpecial.Text = string.Format(cSpecial, TotalDistrSumm.ToString());
+                gbSpecial.Text = string.Format(cSpecial, totalDistrSumm.ToString());
             }
             else //if (TotalDistrSumm < 0)
             {
-                gbSpecial.Text = string.Format(cSpecialOverDistrib, (TotalDistrSumm*-1).ToString());
+                gbSpecial.Text = string.Format(cSpecialOverDistrib, (totalDistrSumm*-1).ToString());
             }
 
-            //Когда параметры будут в пачках, можно будет сделать так.
-            //for (int i = 0; i < 7; i++)
-            //{
-            //    SetSpecialParams(((Attributes.SPECIAL)i).ToString(), minValue, curValue, maxValue);
-            //}
-
-            SetSpecialParams(Attributes.SPECIAL.Str.ToString(), StrMin, StrCur, StrMax);
-            SetSpecialParams(Attributes.SPECIAL.Per.ToString(), PerMin, PerCur, PerMax);
-            SetSpecialParams(Attributes.SPECIAL.End.ToString(), EndMin, EndCur, EndMax);
-            SetSpecialParams(Attributes.SPECIAL.Cha.ToString(), ChaMin, ChaCur, ChaMax);
-            SetSpecialParams(Attributes.SPECIAL.Int.ToString(), IntMin, IntCur, IntMax);
-            SetSpecialParams(Attributes.SPECIAL.Agi.ToString(), AgiMin, AgiCur, AgiMax);
-            SetSpecialParams(Attributes.SPECIAL.Lck.ToString(), LckMin, LckCur, LckMax);
+            SetSpecialParams(m_Character);
 
             ChangedByUser = true;
 
             #endregion
         }
 
-        private void SetSpecialParams(string statName, int minValue, int curValue, int maxValue)
+        private void SetSpecialParams(Character character)
         {
-            var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
-            if (control != null)
+            for (int i = 0; i < 7; i++)
             {
-                var nud = control as NumericUpDown;
-                if (nud != null)
-                {
-                    nud.Minimum = minValue;
-                    nud.Maximum = maxValue;
-                    nud.Value = curValue;
-                }
-            }
+                var statName = ((Attributes.SPECIAL)i).ToString();
+                var stat = character.CharStats[i];
 
-            control = gbSpecial.Controls[string.Format(cControlName_LbSpecialMinName, statName)];
-            if (control != null)
-            {
-                var lb = control as Label;
-                if (lb != null)
+                var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
+                if (control != null)
                 {
-                    lb.Text = minValue.ToString();
+                    var nud = control as NumericUpDown;
+                    if (nud != null)
+                    {
+                        nud.Minimum = Math.Min(stat.MinValue, stat.CurValue);
+                        nud.Maximum = Math.Max(stat.MaxValue, stat.CurValue);
+                        nud.Value = stat.CurValue;
+                    }
                 }
-            }
 
-            control = gbSpecial.Controls[string.Format(cControlName_LbSpecialMaxName, statName)];
-            if (control != null)
-            {
-                var lb = control as Label;
-                if (lb != null)
+                control = gbSpecial.Controls[string.Format(cControlName_LbSpecialMinName, statName)];
+                if (control != null)
                 {
-                    lb.Text = maxValue.ToString();
+                    var lb = control as Label;
+                    if (lb != null)
+                    {
+                        lb.Text = stat.MinValue.ToString();
+                    }
+                }
+
+                control = gbSpecial.Controls[string.Format(cControlName_LbSpecialMaxName, statName)];
+                if (control != null)
+                {
+                    var lb = control as Label;
+                    if (lb != null)
+                    {
+                        lb.Text = stat.MaxValue.ToString();
+                    }
                 }
             }
         }
@@ -255,7 +149,7 @@ namespace FalloutPNP_PipBoy
 
                 for (int i = 0; i < 7; i++)
                 {
-                    m_Character.AttributesList[string.Format(Attributes.CharacterAtt.Distribution, ((Attributes.SPECIAL)i).ToString())] = "0";
+                    m_Character.AttributesList[Attributes.CharacterAtt.Distribution(i)] = "0";
                 }
                 RefreshChar();
             }
@@ -275,10 +169,10 @@ namespace FalloutPNP_PipBoy
                     var prevValue = int.Parse(nud.Text);
                     var currValue = nud.Value;
                     
-                    var curDistr = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, statName));
+                    var curDistr = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.cDistribution, statName));
                     var newDistr = curDistr + (currValue - prevValue);
                     
-                    m_Character.AttributesList[string.Format(Attributes.CharacterAtt.Distribution, statName)] = newDistr.ToString();
+                    m_Character.AttributesList[string.Format(Attributes.CharacterAtt.cDistribution, statName)] = newDistr.ToString();
                     RefreshChar();
                 }
             }

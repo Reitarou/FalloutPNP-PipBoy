@@ -56,7 +56,7 @@ namespace FalloutPNP_PipBoy
 
         private void btnCreateCharacter_Click(object sender, EventArgs e)
         {
-            var character = new Character();
+            var character = new Character(m_Races, m_Items);
             var characterDlg = new CharacterDlg(m_Races, m_Items, character);
             characterDlg.Show();
         }

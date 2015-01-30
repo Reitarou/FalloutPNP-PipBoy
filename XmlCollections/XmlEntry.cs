@@ -23,9 +23,12 @@ namespace FalloutPNP_PipBoy.XmlCollections
         /// </summary>
         public abstract void FillList();
 
-        public abstract string Name
+        public virtual string Name
         {
-            get;
+            get
+            {
+                return string.Empty;
+            }
         }
 
         /// <summary>

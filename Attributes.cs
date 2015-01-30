@@ -57,11 +57,17 @@ namespace FalloutPNP_PipBoy
         {
             [Description("Сила")]
             Str,
+            [Description("Восприятие")]
             Per,
+            [Description("Выносливость")]
             End,
+            [Description("Обаяние")]
             Cha,
+            [Description("Интеллект")]
             Int,
+            [Description("Ловкость")]
             Agi,
+            [Description("Удача")]
             Lck
         }
         
@@ -71,66 +77,36 @@ namespace FalloutPNP_PipBoy
 
         public static class SpecialAtt
         {
-            public const string StrMin = "SPECIAL_Str_Min";
-            public const string StrIni = "SPECIAL_Str_Ini";
-            public const string StrMax = "SPECIAL_Str_Max";
+            public const string cMin = "SPECIAL_{0}_Min";
+            public const string cIni = "SPECIAL_{0}_Ini";
+            public const string cMax = "SPECIAL_{0}_Max";
 
-            public const string PerMin = "SPECIAL_Per_Min";
-            public const string PerIni = "SPECIAL_Per_Ini";
-            public const string PerMax = "SPECIAL_Per_Max";
+            public static string MinValue(int special)
+            {
+                return string.Format(cMin, ((SPECIAL)special).ToString());
+            }
 
-            public const string EndMin = "SPECIAL_End_Min";
-            public const string EndIni = "SPECIAL_End_Ini";
-            public const string EndMax = "SPECIAL_End_Max";
+            public static string IniValue(int special)
+            {
+                return string.Format(cIni, ((SPECIAL)special).ToString());
+            }
 
-            public const string ChaMin = "SPECIAL_Cha_Min";
-            public const string ChaIni = "SPECIAL_Cha_Ini";
-            public const string ChaMax = "SPECIAL_Cha_Max";
-
-            public const string IntMin = "SPECIAL_Int_Min";
-            public const string IntIni = "SPECIAL_Int_Ini";
-            public const string IntMax = "SPECIAL_Int_Max";
-
-            public const string AgiMin = "SPECIAL_Agi_Min";
-            public const string AgiIni = "SPECIAL_Agi_Ini";
-            public const string AgiMax = "SPECIAL_Agi_Max";
-
-            public const string LckMin = "SPECIAL_Lck_Min";
-            public const string LckIni = "SPECIAL_Lck_Ini";
-            public const string LckMax = "SPECIAL_Lck_Max";
+            public static string MaxValue(int special)
+            {
+                return string.Format(cMax, ((SPECIAL)special).ToString());
+            }
 
             public static List<Attribute> All
             {
                 get
                 {
                     var list = new List<Attribute>();
-                    list.Add(new Attribute(StrMin));
-                    list.Add(new Attribute(StrIni));
-                    list.Add(new Attribute(StrMax));
-
-                    list.Add(new Attribute(PerMin));
-                    list.Add(new Attribute(PerIni));
-                    list.Add(new Attribute(PerMax));
-
-                    list.Add(new Attribute(EndMin));
-                    list.Add(new Attribute(EndIni));
-                    list.Add(new Attribute(EndMax));
-
-                    list.Add(new Attribute(ChaMin));
-                    list.Add(new Attribute(ChaIni));
-                    list.Add(new Attribute(ChaMax));
-
-                    list.Add(new Attribute(IntMin));
-                    list.Add(new Attribute(IntIni));
-                    list.Add(new Attribute(IntMax));
-
-                    list.Add(new Attribute(AgiMin));
-                    list.Add(new Attribute(AgiIni));
-                    list.Add(new Attribute(AgiMax));
-
-                    list.Add(new Attribute(LckMin));
-                    list.Add(new Attribute(LckIni));
-                    list.Add(new Attribute(LckMax));
+                    for (int i = 0; i < 7; i++)
+                    {
+                        list.Add(new Attribute(MinValue(i)));
+                        list.Add(new Attribute(IniValue(i)));
+                        list.Add(new Attribute(MaxValue(i)));
+                    }
                     return list;
                 }
             }
@@ -256,7 +232,12 @@ namespace FalloutPNP_PipBoy
             public const string Race = "Race_Name";
             public const string CreationComplete = "Character_Creation_Complete";
 
-            public const string Distribution = "Character_Distribution_{0}";
+            public const string cDistribution = "Character_Distribution_{0}";
+
+            public static string Distribution(int special)
+            {
+                return string.Format(cDistribution, ((SPECIAL)special).ToString());
+            }
 
             public static List<Attribute> All
             {
@@ -268,7 +249,7 @@ namespace FalloutPNP_PipBoy
                     list.Add(new Attribute(CreationComplete));
                     for (int i = 0; i < 7; i++)
                     {
-                        list.Add(new Attribute(string.Format(Distribution, ((SPECIAL)i).ToString())));
+                        list.Add(new Attribute(string.Format(cDistribution, ((SPECIAL)i).ToString())));
                     }
                     return list;
                 }
