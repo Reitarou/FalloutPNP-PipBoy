@@ -65,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character_Kamidzu.cs" />
+    <Compile Include="Dialogs\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlCollections\Character.cs" />
     <Compile Include="Dialogs\CharactersDlg.cs">
       <SubType>Form</SubType>
