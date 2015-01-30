@@ -52,6 +52,18 @@ namespace FalloutPNP_PipBoy
             [Description("Скиталец")]
             Outdoorsman
         }
+
+        public enum SPECIAL
+        {
+            [Description("Сила")]
+            Str,
+            Per,
+            End,
+            Cha,
+            Int,
+            Agi,
+            Lck
+        }
         
         /* Сюда вбивать атрибуты.
          * Названия атрибутов должны быть уникальными.
@@ -244,13 +256,7 @@ namespace FalloutPNP_PipBoy
             public const string Race = "Race_Name";
             public const string CreationComplete = "Character_Creation_Complete";
 
-            public const string DistributionStr = "Character_DistributionStr";
-            public const string DistributionPer = "Character_DistributionPer";
-            public const string DistributionEnd = "Character_DistributionEnd";
-            public const string DistributionCha = "Character_DistributionCha";
-            public const string DistributionInt = "Character_DistributionInt";
-            public const string DistributionAgi = "Character_DistributionAgi";
-            public const string DistributionLck = "Character_DistributionLck";
+            public const string Distribution = "Character_Distribution_{0}";
 
             public static List<Attribute> All
             {
@@ -259,6 +265,11 @@ namespace FalloutPNP_PipBoy
                     var list = new List<Attribute>();
                     list.Add(new Attribute(Name));
                     list.Add(new Attribute(Race));
+                    list.Add(new Attribute(CreationComplete));
+                    for (int i = 0; i < 7; i++)
+                    {
+                        list.Add(new Attribute(string.Format(Distribution, ((SPECIAL)i).ToString())));
+                    }
                     return list;
                 }
             }

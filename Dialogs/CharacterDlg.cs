@@ -16,17 +16,6 @@ namespace FalloutPNP_PipBoy
 
     public partial class CharacterDlg : Form
     {
-        public enum SPECIAL
-        {
-            Str,
-            Per,
-            End,
-            Cha,
-            Int,
-            Agi,
-            Lck
-        }
-
         private Character m_Character;
         private Races m_Races;
         private Items m_Items;
@@ -37,10 +26,20 @@ namespace FalloutPNP_PipBoy
         private const string cSpecialCanDistrib =  " Доступно {0} оч.";
         private const string cSpecialOverDistrib = " ПРЕВЫШЕНО {0} оч.";
 
-        private const string cLbSkillName = "lb{0}";
+        private const string cControlName_LbSpecialMinName = "lb{0}Min";
+        private const string cControlName_LbSpecialMaxName = "lb{0}Max";
+        private const string cControlName_NudSpecialName = "nud{0}";
+
+        private const string cControlName_LbSkillName = "lbSkill{0}";
+        private const string cControlName_LbSkillResult = "lbSkill{0}";
+        private const string cControlName_LbSkillDestr_1_100 = "lbSkill{0}";
+        private const string cControlName_LbSkillDestr_101_125 = "lbSkill{0}";
+        private const string cControlName_LbSkillDestr_126_150 = "lbSkill{0}";
+        private const string cControlName_LbSkillDestr_151_175 = "lbSkill{0}";
+        private const string cControlName_LbSkillDestr_176_200 = "lbSkill{0}";
         
 
-        private decimal StrCur, PerCur, EndCur, ChaCur, IntCur, AgiCur, LckCur;
+        private int StrCur, PerCur, EndCur, ChaCur, IntCur, AgiCur, LckCur;
 
         public CharacterDlg(Races races, Items items, Character character)
         {
@@ -131,15 +130,13 @@ namespace FalloutPNP_PipBoy
             RaceLckMax = CharRace.AttributesList.GetInt(Attributes.SpecialAtt.LckMax);
 
             //Распределение на текущем чаре
-            DistrStr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionStr);
-            DistrPer = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionPer);
-            DistrEnd = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionEnd);
-            DistrCha = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionCha);
-            DistrInt = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionInt);
-            DistrAgi = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionAgi);
-            DistrLck = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionLck);
-
-
+            DistrStr = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Str.ToString()));
+            DistrPer = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Per.ToString()));
+            DistrEnd = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.End.ToString()));
+            DistrCha = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Cha.ToString()));
+            DistrInt = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Int.ToString()));
+            DistrAgi = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Agi.ToString()));
+            DistrLck = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, Attributes.SPECIAL.Lck.ToString()));
 
             #endregion
 
@@ -196,51 +193,58 @@ namespace FalloutPNP_PipBoy
                 gbSpecial.Text = string.Format(cSpecialOverDistrib, (TotalDistrSumm*-1).ToString());
             }
 
-            lbStrMin.Text = StrMin.ToString();
-            nudStr.Minimum = StrMin;
-            nudStr.Maximum = StrMax;
-            nudStr.Value = StrCur;
-            lbStrMax.Text = StrMax.ToString();
+            //Когда параметры будут в пачках, можно будет сделать так.
+            //for (int i = 0; i < 7; i++)
+            //{
+            //    SetSpecialParams(((Attributes.SPECIAL)i).ToString(), minValue, curValue, maxValue);
+            //}
 
-            lbPerMin.Text = PerMin.ToString();
-            nudPer.Minimum = PerMin;
-            nudPer.Maximum = PerMax;
-            nudPer.Value = PerCur;
-            lbPerMax.Text = PerMax.ToString();
-
-            lbEndMin.Text = EndMin.ToString();
-            nudEnd.Minimum = EndMin;
-            nudEnd.Maximum = EndMax;
-            nudEnd.Value = EndCur;
-            lbEndMax.Text = EndMax.ToString();
-
-            lbChaMin.Text = ChaMin.ToString();
-            nudCha.Minimum = ChaMin;
-            nudCha.Maximum = ChaMax;
-            nudCha.Value = ChaCur;
-            lbChaMax.Text = ChaMax.ToString();
-
-            lbIntMin.Text = IntMin.ToString();
-            nudInt.Minimum = IntMin;
-            nudInt.Maximum = IntMax;
-            nudInt.Value = IntCur;
-            lbIntMax.Text = IntMax.ToString();
-
-            lbAgiMin.Text = AgiMin.ToString();
-            nudAgi.Minimum = AgiMin;
-            nudAgi.Maximum = AgiMax;
-            nudAgi.Value = AgiCur;
-            lbAgiMax.Text = AgiMax.ToString();
-
-            lbLckMin.Text = LckMin.ToString();
-            nudLck.Minimum = LckMin;
-            nudLck.Maximum = LckMax;
-            nudLck.Value = LckCur;
-            lbLckMax.Text = LckMax.ToString();
+            SetSpecialParams(Attributes.SPECIAL.Str.ToString(), StrMin, StrCur, StrMax);
+            SetSpecialParams(Attributes.SPECIAL.Per.ToString(), PerMin, PerCur, PerMax);
+            SetSpecialParams(Attributes.SPECIAL.End.ToString(), EndMin, EndCur, EndMax);
+            SetSpecialParams(Attributes.SPECIAL.Cha.ToString(), ChaMin, ChaCur, ChaMax);
+            SetSpecialParams(Attributes.SPECIAL.Int.ToString(), IntMin, IntCur, IntMax);
+            SetSpecialParams(Attributes.SPECIAL.Agi.ToString(), AgiMin, AgiCur, AgiMax);
+            SetSpecialParams(Attributes.SPECIAL.Lck.ToString(), LckMin, LckCur, LckMax);
 
             ChangedByUser = true;
 
             #endregion
+        }
+
+        private void SetSpecialParams(string statName, int minValue, int curValue, int maxValue)
+        {
+            var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
+            if (control != null)
+            {
+                var nud = control as NumericUpDown;
+                if (nud != null)
+                {
+                    nud.Minimum = minValue;
+                    nud.Maximum = maxValue;
+                    nud.Value = curValue;
+                }
+            }
+
+            control = gbSpecial.Controls[string.Format(cControlName_LbSpecialMinName, statName)];
+            if (control != null)
+            {
+                var lb = control as Label;
+                if (lb != null)
+                {
+                    lb.Text = minValue.ToString();
+                }
+            }
+
+            control = gbSpecial.Controls[string.Format(cControlName_LbSpecialMaxName, statName)];
+            if (control != null)
+            {
+                var lb = control as Label;
+                if (lb != null)
+                {
+                    lb.Text = maxValue.ToString();
+                }
+            }
         }
 
         private void cmbRaces_SelectedIndexChanged(object sender, EventArgs e)
@@ -249,136 +253,34 @@ namespace FalloutPNP_PipBoy
             {
                 m_Character.AttributesList[Attributes.CharacterAtt.Race] = cmbRace.Text;
 
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionStr] = "0";
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionPer] = "0";
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionEnd] = "0";
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionCha] = "0";
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionInt] = "0";
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionAgi] = "0";
-                m_Character.AttributesList[Attributes.CharacterAtt.DistributionLck] = "0";
-
+                for (int i = 0; i < 7; i++)
+                {
+                    m_Character.AttributesList[string.Format(Attributes.CharacterAtt.Distribution, ((Attributes.SPECIAL)i).ToString())] = "0";
+                }
                 RefreshChar();
             }
         }
 
         #region SPECIAL Numerics
 
-        private void nudSPECIAL_ValueChanged(SPECIAL stat, NumericUpDown control)
-        {
-            var prevValue = int.Parse(control.Text);
-            var currValue = control.Value;
-            int curDistr = 0;
-
-            switch (stat)
-            {
-                case SPECIAL.Str:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionStr);
-                    break;
-                case SPECIAL.Per:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionPer);
-                    break;
-                case SPECIAL.End:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionEnd);
-                    break;
-                case SPECIAL.Cha:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionCha);
-                    break;
-                case SPECIAL.Int:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionInt);
-                    break;
-                case SPECIAL.Agi:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionAgi);
-                    break;
-                case SPECIAL.Lck:
-                    curDistr = m_Character.AttributesList.GetInt(Attributes.CharacterAtt.DistributionLck);
-                    break;
-            }
-
-            var newDistr = curDistr + (currValue - prevValue);
-
-            switch (stat)
-            {
-                case SPECIAL.Str:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionStr] = newDistr.ToString();
-                    break;
-                case SPECIAL.Per:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionPer] = newDistr.ToString();
-                    break;
-                case SPECIAL.End:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionEnd] = newDistr.ToString();
-                    break;
-                case SPECIAL.Cha:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionCha] = newDistr.ToString();
-                    break;
-                case SPECIAL.Int:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionInt] = newDistr.ToString();
-                    break;
-                case SPECIAL.Agi:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionAgi] = newDistr.ToString();
-                    break;
-                case SPECIAL.Lck:
-                    m_Character.AttributesList[Attributes.CharacterAtt.DistributionLck] = newDistr.ToString();
-                    break;
-
-            }
-
-            RefreshChar();
-        }
-
-        private void nudStr_ValueChanged(object sender, EventArgs e)
+        private void nudSpecial_ValueChanged(object sender, EventArgs e)
         {
             if (ChangedByUser)
             {
-                nudSPECIAL_ValueChanged(SPECIAL.Str, nudStr);
-            }
-        }
+                var nud = sender as NumericUpDown;
+                if (nud != null)
+                {
+                    var statName = nud.Tag.ToString();
 
-
-        private void nudPer_ValueChanged(object sender, EventArgs e)
-        {
-            if (ChangedByUser)
-            {
-                nudSPECIAL_ValueChanged(SPECIAL.Per, nudPer);
-            }
-        }
-
-        private void nudEnd_ValueChanged(object sender, EventArgs e)
-        {
-            if (ChangedByUser)
-            {
-                nudSPECIAL_ValueChanged(SPECIAL.End, nudEnd);
-            }
-        }
-
-        private void nudCha_ValueChanged(object sender, EventArgs e)
-        {
-            if (ChangedByUser)
-            {
-                nudSPECIAL_ValueChanged(SPECIAL.Cha, nudCha);
-            }
-        }
-
-        private void nudInt_ValueChanged(object sender, EventArgs e)
-        {
-            if (ChangedByUser)
-            {
-                nudSPECIAL_ValueChanged(SPECIAL.Int, nudInt);
-            }
-        }
-
-        private void nudAgi_ValueChanged(object sender, EventArgs e)
-        {
-            if (ChangedByUser)
-            {
-                nudSPECIAL_ValueChanged(SPECIAL.Agi, nudAgi);
-            }
-        }
-
-        private void nudLck_ValueChanged(object sender, EventArgs e)
-        {
-            if (ChangedByUser)
-            {
-                nudSPECIAL_ValueChanged(SPECIAL.Lck, nudLck);
+                    var prevValue = int.Parse(nud.Text);
+                    var currValue = nud.Value;
+                    
+                    var curDistr = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.Distribution, statName));
+                    var newDistr = curDistr + (currValue - prevValue);
+                    
+                    m_Character.AttributesList[string.Format(Attributes.CharacterAtt.Distribution, statName)] = newDistr.ToString();
+                    RefreshChar();
+                }
             }
         }
 
@@ -394,14 +296,14 @@ namespace FalloutPNP_PipBoy
             for (int i = 0; i < 19; i++)
             {
                 var label = new Label();
-                label.Name = string.Format("lb{0}", ((Attributes.SkillNames)i).ToString());
+                label.Name = string.Format(cControlName_LbSkillName, ((Attributes.SkillNames)i).ToString());
                 label.Size = new Size(100, 13);
                 label.Text = ((Attributes.SkillNames)i).Description();
                 label.Location = new Point(10, y);
                 gbSkills.Controls.Add(label);
 
                 label = new Label();
-                label.Name = string.Format("lb{0}CurValue", ((Attributes.SkillNames)i).ToString());
+                label.Name = string.Format(cControlName_LbSkillResult, ((Attributes.SkillNames)i).ToString());
                 label.Size = new Size(25, 13);
                 label.Text = "200";
                 label.Location = new Point(110, y);

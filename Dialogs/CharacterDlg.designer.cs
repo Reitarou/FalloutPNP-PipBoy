@@ -93,8 +93,9 @@
             this.nudStr.ReadOnly = true;
             this.nudStr.Size = new System.Drawing.Size(34, 20);
             this.nudStr.TabIndex = 1;
+            this.nudStr.Tag = "Str";
             this.nudStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudStr.ValueChanged += new System.EventHandler(this.nudStr_ValueChanged);
+            this.nudStr.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // nudPer
             // 
@@ -103,8 +104,9 @@
             this.nudPer.ReadOnly = true;
             this.nudPer.Size = new System.Drawing.Size(34, 20);
             this.nudPer.TabIndex = 2;
+            this.nudPer.Tag = "Per";
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudPer.ValueChanged += new System.EventHandler(this.nudPer_ValueChanged);
+            this.nudPer.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // nudEnd
             // 
@@ -113,8 +115,9 @@
             this.nudEnd.ReadOnly = true;
             this.nudEnd.Size = new System.Drawing.Size(34, 20);
             this.nudEnd.TabIndex = 3;
+            this.nudEnd.Tag = "End";
             this.nudEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudEnd.ValueChanged += new System.EventHandler(this.nudEnd_ValueChanged);
+            this.nudEnd.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // nudCha
             // 
@@ -123,8 +126,9 @@
             this.nudCha.ReadOnly = true;
             this.nudCha.Size = new System.Drawing.Size(34, 20);
             this.nudCha.TabIndex = 4;
+            this.nudCha.Tag = "Cha";
             this.nudCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudCha.ValueChanged += new System.EventHandler(this.nudCha_ValueChanged);
+            this.nudCha.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // nudInt
             // 
@@ -133,8 +137,9 @@
             this.nudInt.ReadOnly = true;
             this.nudInt.Size = new System.Drawing.Size(34, 20);
             this.nudInt.TabIndex = 5;
+            this.nudInt.Tag = "Int";
             this.nudInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudInt.ValueChanged += new System.EventHandler(this.nudInt_ValueChanged);
+            this.nudInt.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // nudAgi
             // 
@@ -143,8 +148,9 @@
             this.nudAgi.ReadOnly = true;
             this.nudAgi.Size = new System.Drawing.Size(34, 20);
             this.nudAgi.TabIndex = 6;
+            this.nudAgi.Tag = "Agi";
             this.nudAgi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudAgi.ValueChanged += new System.EventHandler(this.nudAgi_ValueChanged);
+            this.nudAgi.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // nudLck
             // 
@@ -153,8 +159,9 @@
             this.nudLck.ReadOnly = true;
             this.nudLck.Size = new System.Drawing.Size(34, 20);
             this.nudLck.TabIndex = 7;
+            this.nudLck.Tag = "Lck";
             this.nudLck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nudLck.ValueChanged += new System.EventHandler(this.nudLck_ValueChanged);
+            this.nudLck.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
             // lbStr
             // 
