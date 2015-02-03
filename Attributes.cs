@@ -53,6 +53,15 @@ namespace FalloutPNP_PipBoy
             Outdoorsman
         }
 
+        public enum SkillTiers
+        {
+            t1_100 = 1,
+            t101_125 = 2,
+            t126_150 = 3,
+            t151_175 = 4,
+            t176_200 = 5
+        }
+
         public enum SPECIAL
         {
             [Description("Сила")]
@@ -110,6 +119,11 @@ namespace FalloutPNP_PipBoy
                     return list;
                 }
             }
+        }
+
+        public static class SkillAtt
+        {
+
         }
 
         public static class ItemsCommonAtt
@@ -233,6 +247,7 @@ namespace FalloutPNP_PipBoy
             public const string CreationComplete = "Character_Creation_Complete";
 
             public const string cDistribution = "Character_Distribution_{0}";
+
 
             public static string Distribution(int special)
             {

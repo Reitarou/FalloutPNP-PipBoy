@@ -74,11 +74,90 @@ namespace FalloutPNP_PipBoy.XmlCollections
 
                 public void SetInitials(Stats stats)
                 {
+                    var Str = stats[(int)Attributes.SPECIAL.Str].CurValue;
+                    var Per = stats[(int)Attributes.SPECIAL.Per].CurValue;
+                    var End = stats[(int)Attributes.SPECIAL.End].CurValue;
+                    var Cha = stats[(int)Attributes.SPECIAL.Cha].CurValue;
+                    var Int = stats[(int)Attributes.SPECIAL.Int].CurValue;
+                    var Agi = stats[(int)Attributes.SPECIAL.Agi].CurValue;
+                    var Lck = stats[(int)Attributes.SPECIAL.Lck].CurValue;
+
                     switch (m_EnumSkillName)
                     {
                         case Attributes.SkillNames.SmallGuns:
-                            IniValue = 5;
-                            IniValue += stats[(int)Attributes.SPECIAL.Agi].CurValue * 4;
+                            IniValue = 5 + 4 * Agi;
+                            break;
+
+                        case Attributes.SkillNames.BigGuns:
+                            IniValue = 0 + 2 * Agi;
+                            break;
+
+                        case Attributes.SkillNames.EnergyWeapons:
+                            IniValue = 0 + 2 * Agi;
+                            break;
+
+                        case Attributes.SkillNames.Unarmed:
+                            IniValue = 30 + 2 * (Str + Agi);
+                            break;
+
+                        case Attributes.SkillNames.MeleeWeapons:
+                            IniValue = 20 + 2 * (Str + Agi);
+                            break;
+
+                        case Attributes.SkillNames.Throwing:
+                            IniValue = 0 + 4 * Agi;
+                            break;
+
+                        case Attributes.SkillNames.FirstAid:
+                            IniValue = 0 + 2 * (Per + Int) ;
+                            break;
+
+                        case Attributes.SkillNames.Doctor:
+                            IniValue = 5 + 1 * (Per + Int);
+                            break;
+
+                        case Attributes.SkillNames.Sneak:
+                            IniValue = 5 + 3 * Agi;
+                            break;
+
+                        case Attributes.SkillNames.Lockpick:
+                            IniValue = 10 + 1 * (Per + Agi);
+                            break;
+
+                        case Attributes.SkillNames.Steal:
+                            IniValue = 0 + 3 * Agi;
+                            break;
+
+                        case Attributes.SkillNames.Trap:
+                            IniValue = 10 + 1 * (Per + Agi);
+                            break;
+
+                        case Attributes.SkillNames.Science:
+                            IniValue = 0 + 4 * Int;
+                            break;
+
+                        case Attributes.SkillNames.Repair:
+                            IniValue = 0 + 3 * Int;
+                            break;
+
+                        case Attributes.SkillNames.Pilot:
+                            IniValue = 0 + 2 * (Per + Agi) ;
+                            break;
+
+                        case Attributes.SkillNames.Speech:
+                            IniValue = 0 + 5 * Cha;
+                            break;
+
+                        case Attributes.SkillNames.Barter:
+                            IniValue = 0 + 4 * Cha;
+                            break;
+
+                        case Attributes.SkillNames.Gambling:
+                            IniValue = 0 + 5 * Lck;
+                            break;
+
+                        case Attributes.SkillNames.Outdoorsman:
+                            IniValue = 0 + 2 * (Per + Int);
                             break;
                     }
                 }
