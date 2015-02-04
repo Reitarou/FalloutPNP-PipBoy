@@ -8,7 +8,7 @@
     <ProjectGuid>{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FalloutPNP_PipBoy</RootNamespace>
+    <RootNamespace>FalloutPNP_PipBoy.Dialogs</RootNamespace>
     <AssemblyName>FalloutPNP_PipBoy</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AttributeNames.cs" />
     <Compile Include="Character_Kamidzu.cs" />
     <Compile Include="Dialogs\Test.cs">
       <SubType>Form</SubType>
@@ -71,7 +72,7 @@
     <Compile Include="Dialogs\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="XmlCollections\Character.cs" />
+    <Compile Include="Character.cs" />
     <Compile Include="Dialogs\CharactersDlg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,9 +109,7 @@
     <Compile Include="Dialogs\CharacterDlg.designer.cs">
       <DependentUpon>CharacterDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="XmlCollections\Item.cs" />
     <Compile Include="Attributes.cs" />
-    <Compile Include="XmlCollections\Items.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dialogs\EditItemDlg.resx">
@@ -150,10 +149,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="XmlCollections\Race.cs" />
-    <Compile Include="XmlCollections\Races.cs" />
-    <Compile Include="XmlCollections\XmlEntries.cs" />
-    <Compile Include="XmlCollections\XmlEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -192,6 +187,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Xmls\races.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Xmls\traits.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

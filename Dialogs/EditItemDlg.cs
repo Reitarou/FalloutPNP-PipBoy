@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-using FalloutPNP_PipBoy.Properties;
-using FalloutPNP_PipBoy.XmlCollections;
+using FalloutPNP_PipBoy.Dialogs.Properties;
 
-namespace FalloutPNP_PipBoy.Dialogs
+namespace FalloutPNP_PipBoy.Dialogs.Dialogs
 {
     public partial class EditItemDlg : Form
     {
-        private static Item m_Item;
-        private bool m_NonUserChange = false;
+        //private static Item m_Item;
+        //private bool m_NonUserChange = false;
 
         public EditItemDlg()
         {
@@ -76,51 +75,52 @@ namespace FalloutPNP_PipBoy.Dialogs
             //Attributes.GetCategory(cbCategory.Text);
         }
 
-        public static bool Execute(ref Item item)
+        public static bool Execute()//ref Item item)
         {
-            using (var dlg = new EditItemDlg())
-            {
-                m_Item = new Item();
-                m_Item.Assign(item);
-                dlg.DoInit();
-                while (true)
-                {
-                    switch (dlg.ShowDialog())
-                    {
-                        case DialogResult.Cancel:
-                            return false;
+            //using (var dlg = new EditItemDlg())
+            //{
+            //    m_Item = new Item();
+            //    m_Item.Assign(item);
+            //    dlg.DoInit();
+            //    while (true)
+            //    {
+            //        switch (dlg.ShowDialog())
+            //        {
+            //            case DialogResult.Cancel:
+            //                return false;
 
-                        case DialogResult.OK:
-                            dlg.DoCommit();
-                            item.Assign(m_Item);
-                            return true;
+            //            case DialogResult.OK:
+            //                dlg.DoCommit();
+            //                item.Assign(m_Item);
+            //                return true;
 
-                        case DialogResult.Retry:
-                            break;
+            //            case DialogResult.Retry:
+            //                break;
 
-                        default:
-                            Debug.Assert(false);
-                            break;
-                    }
+            //            default:
+            //                Debug.Assert(false);
+            //                break;
+            //        }
 
 
-                }
-            }
+            //    }
+            //}
+            return false;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (tbName.Text == string.Empty)
-            {
-                MessageBox.Show("Введите название");
-                return;
-            }
-            DialogResult = DialogResult.OK;
+            //if (tbName.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Введите название");
+            //    return;
+            //}
+            //DialogResult = DialogResult.OK;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            //DialogResult = DialogResult.Cancel;
         }
 
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)

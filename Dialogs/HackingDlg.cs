@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using FalloutPNP_PipBoy.Properties;
+using FalloutPNP_PipBoy.Dialogs.Properties;
 
-namespace FalloutPNP_PipBoy
+namespace FalloutPNP_PipBoy.Dialogs
 {
     public partial class HackingDlg : Form
     {

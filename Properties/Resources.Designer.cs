@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FalloutPNP_PipBoy.Properties {
+namespace FalloutPNP_PipBoy.Dialogs.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace FalloutPNP_PipBoy.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FalloutPNP_PipBoy.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FalloutPNP_PipBoy.Dialogs.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,11 @@ namespace FalloutPNP_PipBoy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Файл с описаниями предметов не найден..
+        ///   Looks up a localized string similar to Не найден файл {0}.
         /// </summary>
-        internal static string eItemsFileNotFound {
+        internal static string eNoFile {
             get {
-                return ResourceManager.GetString("eItemsFileNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Файл с описаниями рас не найден..
-        /// </summary>
-        internal static string eRacesFileNotFound {
-            get {
-                return ResourceManager.GetString("eRacesFileNotFound", resourceCulture);
+                return ResourceManager.GetString("eNoFile", resourceCulture);
             }
         }
         

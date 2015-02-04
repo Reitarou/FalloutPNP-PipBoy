@@ -8,42 +8,43 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using FalloutPNP_PipBoy.XmlCollections;
-using FalloutPNP_PipBoy.Properties;
+using FalloutPNP_PipBoy.Dialogs.Properties;
 
-namespace FalloutPNP_PipBoy
+namespace FalloutPNP_PipBoy.Dialogs
 {
 
     public partial class CharacterDlg : Form
     {
         private Character m_Character;
-        private Races m_Races;
-        private Items m_Items;
+        private List<Attributes> m_Items;
+        private List<Attributes> m_Races;
+        private List<Attributes> m_Traits;
 
         private bool ChangedByUser = true;
 
         private const string cSpecial = " S.P.E.C.I.A.L. ";
-        private const string cSpecialCanDistrib =  " Доступно {0} оч.";
+        private const string cSpecialCanDistrib = " Доступно {0} оч.";
         private const string cSpecialOverDistrib = " ПРЕВЫШЕНО {0} оч.";
 
         private const string cControlName_LbSpecialMinName = "lb{0}Min";
         private const string cControlName_LbSpecialMaxName = "lb{0}Max";
         private const string cControlName_NudSpecialName = "nud{0}";
 
-        private const string cControlName_LbSkillName = "lbSkill{0}";
-        private const string cControlName_LbSkillResult = "lbSkill{0}";
-        private const string cControlName_LbSkillDestr_1_100 = "lbSkill{0}";
-        private const string cControlName_LbSkillDestr_101_125 = "lbSkill{0}";
-        private const string cControlName_LbSkillDestr_126_150 = "lbSkill{0}";
-        private const string cControlName_LbSkillDestr_151_175 = "lbSkill{0}";
-        private const string cControlName_LbSkillDestr_176_200 = "lbSkill{0}";
+        private const string cControlName_LbSkillName = "lbSkill{0}Name";
+        private const string cControlName_LbSkillResult = "lbSkill{0}Value";
+        private const string cControlName_LbSkillDestr_1_100 = "lbSkillD1{0}D1";
+        private const string cControlName_LbSkillDestr_101_125 = "lbSkill{0}D2";
+        private const string cControlName_LbSkillDestr_126_150 = "lbSkill{0}D3";
+        private const string cControlName_LbSkillDestr_151_175 = "lbSkill{0}D4";
+        private const string cControlName_LbSkillDestr_176_200 = "lbSkill{0}D5";
 
-        public CharacterDlg(Races races, Items items, Character character)
+        public CharacterDlg(Character character, List<Attributes> items, List<Attributes> races, List<Attributes> traits)
         {
             InitializeComponent();
-            m_Races = races;
-            m_Items = items;
             m_Character = character;
+            m_Items = items;
+            m_Races = races;
+            m_Traits = traits;
 
             CreateControls();
 
@@ -57,7 +58,7 @@ namespace FalloutPNP_PipBoy
             cmbRace.Items.Clear();
             foreach (var race in m_Races)
             {
-                cmbRace.Items.Add(race.Name);
+                cmbRace.Items.Add(race[AttributeNames.RaceAttrib.RaceName]);
             }
 
             ChangedByUser = true;
@@ -78,7 +79,7 @@ namespace FalloutPNP_PipBoy
 
             ChangedByUser = false;
 
-            cmbRace.Text = m_Character.CharRace.Name;
+            cmbRace.Text = m_Character.CharAttribs[AttributeNames.CharacterAttrib.CharacterRace];
 
             if (totalDistrSumm > 0)
             {
@@ -90,10 +91,11 @@ namespace FalloutPNP_PipBoy
             }
             else //if (TotalDistrSumm < 0)
             {
-                gbSpecial.Text = string.Format(cSpecialOverDistrib, (totalDistrSumm*-1).ToString());
+                gbSpecial.Text = string.Format(cSpecialOverDistrib, (totalDistrSumm * -1).ToString());
             }
 
             SetSpecialParams(m_Character);
+            SetSkills(m_Character);
 
             ChangedByUser = true;
 
@@ -104,7 +106,7 @@ namespace FalloutPNP_PipBoy
         {
             for (int i = 0; i < 7; i++)
             {
-                var statName = ((Attributes.SPECIAL)i).ToString();
+                var statName = ((AttributeNames.ESpecial)i).ToString();
                 var stat = character.CharStats[i];
 
                 var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
@@ -141,15 +143,35 @@ namespace FalloutPNP_PipBoy
             }
         }
 
+        private void SetSkills(Character character)
+        {
+            for (int i = 0; i < 19; i++)
+            {
+                var skillName = ((AttributeNames.ESkills)i).ToString();
+                var skill = character.CharSkills[i];
+
+                var control = gbSkills.Controls[string.Format(cControlName_LbSkillResult, skillName)];
+                if (control != null)
+                {
+                    var lb = control as Label;
+                    if (lb != null)
+                    {
+                        lb.Text = skill.IniValue.ToString();
+                    }
+                }
+            }
+        }
+
+
         private void cmbRaces_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ChangedByUser)
             {
-                m_Character.AttributesList[Attributes.CharacterAtt.Race] = cmbRace.Text;
+                m_Character.CharAttribs[AttributeNames.CharacterAttrib.CharacterRace] = cmbRace.Text;
 
                 for (int i = 0; i < 7; i++)
                 {
-                    m_Character.AttributesList[Attributes.CharacterAtt.Distribution(i)] = "0";
+                    m_Character.CharAttribs[AttributeNames.CharacterAttrib.Distribution(i)] = "0";
                 }
                 RefreshChar();
             }
@@ -168,11 +190,11 @@ namespace FalloutPNP_PipBoy
 
                     var prevValue = int.Parse(nud.Text);
                     var currValue = nud.Value;
-                    
-                    var curDistr = m_Character.AttributesList.GetInt(string.Format(Attributes.CharacterAtt.cDistribution, statName));
+
+                    var curDistr = m_Character.CharAttribs.GetInt(string.Format(AttributeNames.CharacterAttrib.cSpecialDistribution, statName));
                     var newDistr = curDistr + (currValue - prevValue);
-                    
-                    m_Character.AttributesList[string.Format(Attributes.CharacterAtt.cDistribution, statName)] = newDistr.ToString();
+
+                    m_Character.CharAttribs[string.Format(AttributeNames.CharacterAttrib.cSpecialDistribution, statName)] = newDistr.ToString();
                     RefreshChar();
                 }
             }
@@ -189,15 +211,17 @@ namespace FalloutPNP_PipBoy
             int y = 20;
             for (int i = 0; i < 19; i++)
             {
+                var skillName = ((AttributeNames.ESkills)i).ToString();
+
                 var label = new Label();
-                label.Name = string.Format(cControlName_LbSkillName, ((Attributes.SkillNames)i).ToString());
+                label.Name = string.Format(cControlName_LbSkillName, skillName);
                 label.Size = new Size(100, 13);
-                label.Text = ((Attributes.SkillNames)i).Description();
+                label.Text = ((AttributeNames.ESkills)i).Description();
                 label.Location = new Point(10, y);
                 gbSkills.Controls.Add(label);
 
                 label = new Label();
-                label.Name = string.Format(cControlName_LbSkillResult, ((Attributes.SkillNames)i).ToString());
+                label.Name = string.Format(cControlName_LbSkillResult, skillName);
                 label.Size = new Size(25, 13);
                 label.Text = "200";
                 label.Location = new Point(110, y);
@@ -217,7 +241,7 @@ namespace FalloutPNP_PipBoy
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

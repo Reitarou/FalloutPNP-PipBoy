@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FalloutPNP_PipBoy.Dialogs
+namespace FalloutPNP_PipBoy.Dialogs.Dialogs
 {
     public partial class CharactersDlg : Form
     {

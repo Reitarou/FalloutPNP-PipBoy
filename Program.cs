@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace FalloutPNP_PipBoy
+namespace FalloutPNP_PipBoy.Dialogs
 {
     static class Program
     {

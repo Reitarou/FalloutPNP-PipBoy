@@ -6,19 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using FalloutPNP_PipBoy.Properties;
-using FalloutPNP_PipBoy.XmlCollections;
+using FalloutPNP_PipBoy.Dialogs.Properties;
 
-namespace FalloutPNP_PipBoy.Dialogs
+namespace FalloutPNP_PipBoy.Dialogs.Dialogs
 {
     public partial class ItemsDlg : Form
     {
-        private Items m_Items;
-        private Item m_SelectedItem = null;
+        //private Items m_Items;
+        //private Item m_SelectedItem = null;
 
-        public ItemsDlg(Items items)
+        public ItemsDlg()//Items items)
         {
-            m_Items = items;
+            //m_Items = items;
             InitializeComponent();
         }
 
@@ -29,77 +28,77 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void RefreshItems()
         {
-            m_Items = new Items("items.xml");
+            //m_Items = new Items("items.xml");
         }
 
         private void UpdateControls()
         {
-            lbItems.Items.Clear();
-            foreach (var item in m_Items)
-            {
-                lbItems.Items.Add(item.Name);
-            }
+            //lbItems.Items.Clear();
+            //foreach (var item in m_Items)
+            //{
+            //    lbItems.Items.Add(item.Name);
+            //}
 
-            if (m_SelectedItem != null)
-            {
-                lbItemName.Text = m_SelectedItem.Name;
+            //if (m_SelectedItem != null)
+            //{
+            //    lbItemName.Text = m_SelectedItem.Name;
 
-                lbItemWeight.Text = string.Format(Resources.sWeight, m_SelectedItem.AttributesList[Attributes.ItemsCommonAtt.Weight]);
-                lbItemPrice.Text = string.Format(Resources.sPrice, m_SelectedItem.AttributesList[Attributes.ItemsCommonAtt.Price]);
+            //    lbItemWeight.Text = string.Format(Resources.sWeight, m_SelectedItem.AttributesList[AttributeNames.ItemsCommonAtt.Weight]);
+            //    lbItemPrice.Text = string.Format(Resources.sPrice, m_SelectedItem.AttributesList[AttributeNames.ItemsCommonAtt.Price]);
 
-                //foreach (var obj in this.Controls)
-                //{
-                //    var control = obj as Control;
-                //    if (control != null)
-                //    {
-                //        if (control.Tag.ToString() != string.Empty)
-                //        {
-                //            if (control.Tag.ToString() == m_SelectedItem.Category.GetDescription())
-                //            {
-                //                control.Visible = true;
-                //            }
-                //            else
-                //            {
-                //                control.Visible = false;
-                //            }
-                //        }
-                //    }
-                //}
-            }
-            else
-            {
-                lbItemName.Text = string.Empty;
+            //    //foreach (var obj in this.Controls)
+            //    //{
+            //    //    var control = obj as Control;
+            //    //    if (control != null)
+            //    //    {
+            //    //        if (control.Tag.ToString() != string.Empty)
+            //    //        {
+            //    //            if (control.Tag.ToString() == m_SelectedItem.Category.GetDescription())
+            //    //            {
+            //    //                control.Visible = true;
+            //    //            }
+            //    //            else
+            //    //            {
+            //    //                control.Visible = false;
+            //    //            }
+            //    //        }
+            //    //    }
+            //    //}
+            //}
+            //else
+            //{
+            //    lbItemName.Text = string.Empty;
 
-                lbItemWeight.Text = string.Empty;
-                lbItemPrice.Text = string.Empty;
+            //    lbItemWeight.Text = string.Empty;
+            //    lbItemPrice.Text = string.Empty;
 
-                foreach (var obj in this.Controls)
-                {
-                    var control = obj as Control;
-                    if (control != null)
-                    {
-                        if (control.Tag.ToString() != string.Empty)
-                        {
-                            control.Visible = false;
-                        }
-                    }
-                }
-            }
+            //    foreach (var obj in this.Controls)
+            //    {
+            //        var control = obj as Control;
+            //        if (control != null)
+            //        {
+            //            if (control.Tag.ToString() != string.Empty)
+            //            {
+            //                control.Visible = false;
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void lbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = lbItems.SelectedIndex;
-            if (index >= 0)
-            {
-                var name = lbItems.Items[index].ToString();
-                var item = m_Items[name];
-                if (item != null)
-                {
-                    m_SelectedItem = item;
-                }
-            }
-            UpdateControls();
+            //var index = lbItems.SelectedIndex;
+            //if (index >= 0)
+            //{
+            //    var name = lbItems.Items[index].ToString();
+            //    var item = m_Items[name];
+            //    if (item != null)
+            //    {
+            //        m_SelectedItem = item;
+            //    }
+            //}
+            //UpdateControls();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

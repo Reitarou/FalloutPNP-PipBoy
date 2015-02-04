@@ -1,4 +1,4 @@
-﻿namespace FalloutPNP_PipBoy.Dialogs
+﻿namespace FalloutPNP_PipBoy.Dialogs.Dialogs
 {
     partial class ItemsDlg
     {

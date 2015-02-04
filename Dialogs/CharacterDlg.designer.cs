@@ -1,4 +1,4 @@
-﻿namespace FalloutPNP_PipBoy
+﻿namespace FalloutPNP_PipBoy.Dialogs
 {
     partial class CharacterDlg
     {
