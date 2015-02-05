@@ -24,20 +24,19 @@ namespace FalloutPNP_PipBoy.Dialogs
                 }
             }
 
-            private Character m_Character;
             private Stat[] m_Stats = new Stat[7];
 
             public Stats(Character character)
             {
-                m_Character = character;
                 for (int i = 0; i < 7; i++)
                 {
                     var stat = new Stat(i);
-                    stat.MinValue = m_Character.RaceAttribs.GetInt(AttributeNames.SpecialAttrib.MinValue(i));
-                    var RaceIni = m_Character.RaceAttribs.GetInt(AttributeNames.SpecialAttrib.IniValue(i));
-                    stat.MaxValue = m_Character.RaceAttribs.GetInt(AttributeNames.SpecialAttrib.MaxValue(i));
-                    stat.Distibution = m_Character.CharAttribs.GetInt(AttributeNames.CharacterAttrib.Distribution(i));
-                    stat.CurValue = RaceIni + stat.Distibution;
+                    stat.MinValue = character.Race.GetInt(AttributeNames.SpecialAttrib.MinValue(i));
+                    var raceIni = character.Race.GetInt(AttributeNames.SpecialAttrib.IniValue(i));
+                    stat.Distibution = character.CharAttribs.GetInt(AttributeNames.SpecialAttrib.DistribValue(i));
+                    var bonus = character.BonusAttr(AttributeNames.SpecialAttrib.BonusValue(i));
+                    stat.CurValue = raceIni + stat.Distibution;
+                    stat.MaxValue = character.Race.GetInt(AttributeNames.SpecialAttrib.MaxValue(i));
                     m_Stats[i] = stat;
                 }
             }
@@ -57,7 +56,7 @@ namespace FalloutPNP_PipBoy.Dialogs
             {
                 public string SkillName;
                 private AttributeNames.ESkills m_EnumSkillName;
-                public int IniValue = 0;
+                public int Value = 0;
                 public bool Tag = false;
 
                 public Skill(int enumSkillName)
@@ -79,90 +78,89 @@ namespace FalloutPNP_PipBoy.Dialogs
                     switch (m_EnumSkillName)
                     {
                         case AttributeNames.ESkills.SmallGuns:
-                            IniValue = 5 + 4 * Agi;
+                            Value = 5 + 4 * Agi;
                             break;
 
                         case AttributeNames.ESkills.BigGuns:
-                            IniValue = 0 + 2 * Agi;
+                            Value = 0 + 2 * Agi;
                             break;
 
                         case AttributeNames.ESkills.EnergyWeapons:
-                            IniValue = 0 + 2 * Agi;
+                            Value = 0 + 2 * Agi;
                             break;
 
                         case AttributeNames.ESkills.Unarmed:
-                            IniValue = 30 + 2 * (Str + Agi);
+                            Value = 30 + 2 * (Str + Agi);
                             break;
 
                         case AttributeNames.ESkills.MeleeWeapons:
-                            IniValue = 20 + 2 * (Str + Agi);
+                            Value = 20 + 2 * (Str + Agi);
                             break;
 
                         case AttributeNames.ESkills.Throwing:
-                            IniValue = 0 + 4 * Agi;
+                            Value = 0 + 4 * Agi;
                             break;
 
                         case AttributeNames.ESkills.FirstAid:
-                            IniValue = 0 + 2 * (Per + Int) ;
+                            Value = 0 + 2 * (Per + Int) ;
                             break;
 
                         case AttributeNames.ESkills.Doctor:
-                            IniValue = 5 + 1 * (Per + Int);
+                            Value = 5 + 1 * (Per + Int);
                             break;
 
                         case AttributeNames.ESkills.Sneak:
-                            IniValue = 5 + 3 * Agi;
+                            Value = 5 + 3 * Agi;
                             break;
 
                         case AttributeNames.ESkills.Lockpick:
-                            IniValue = 10 + 1 * (Per + Agi);
+                            Value = 10 + 1 * (Per + Agi);
                             break;
 
                         case AttributeNames.ESkills.Steal:
-                            IniValue = 0 + 3 * Agi;
+                            Value = 0 + 3 * Agi;
                             break;
 
                         case AttributeNames.ESkills.Trap:
-                            IniValue = 10 + 1 * (Per + Agi);
+                            Value = 10 + 1 * (Per + Agi);
                             break;
 
                         case AttributeNames.ESkills.Science:
-                            IniValue = 0 + 4 * Int;
+                            Value = 0 + 4 * Int;
                             break;
 
                         case AttributeNames.ESkills.Repair:
-                            IniValue = 0 + 3 * Int;
+                            Value = 0 + 3 * Int;
                             break;
 
                         case AttributeNames.ESkills.Pilot:
-                            IniValue = 0 + 2 * (Per + Agi) ;
+                            Value = 0 + 2 * (Per + Agi) ;
                             break;
 
                         case AttributeNames.ESkills.Speech:
-                            IniValue = 0 + 5 * Cha;
+                            Value = 0 + 5 * Cha;
                             break;
 
                         case AttributeNames.ESkills.Barter:
-                            IniValue = 0 + 4 * Cha;
+                            Value = 0 + 4 * Cha;
                             break;
 
                         case AttributeNames.ESkills.Gambling:
-                            IniValue = 0 + 5 * Lck;
+                            Value = 0 + 5 * Lck;
                             break;
 
                         case AttributeNames.ESkills.Outdoorsman:
-                            IniValue = 0 + 2 * (Per + Int);
+                            Value = 0 + 2 * (Per + Int);
                             break;
                     }
                 }
             }
 
-            private Character m_Character;
             private Skill[] m_Skills = new Skill[19];
 
             public Skills(Character character)
             {
-                m_Character = character;
+                var tags = character.CharAttribs.Element.Elements(AttributeNames.cTag);
                 for (int i = 0; i < 19; i++)
                 {
                     m_Skills[i] = new Skill(i);
@@ -171,7 +169,15 @@ namespace FalloutPNP_PipBoy.Dialogs
                 for (int i = 0; i < 19; i++)
                 {
                     var skill = m_Skills[i];
-                    skill.SetInitials(m_Character.CharStats);
+                    skill.SetInitials(character.CharStats);
+                    foreach (var tag in tags)
+                    {
+                        if (tag.Value == i.ToString())
+                        {
+                            skill.Tag = true;
+                            skill.Value += 20;
+                        }
+                    }
                     //skill.MinValue = m_Character.CharRace.AttributesList.GetInt(Attributes.SpecialAtt.MinValue(i));
                     //var RaceIni = m_Character.CharRace.AttributesList.GetInt(Attributes.SpecialAtt.IniValue(i));
                     //skill.MaxValue = m_Character.CharRace.AttributesList.GetInt(Attributes.SpecialAtt.MaxValue(i));
@@ -189,43 +195,107 @@ namespace FalloutPNP_PipBoy.Dialogs
             }
         }
 
-        private XElement m_Element;
-        private List<Attributes> m_Items;
-        private List<Attributes> m_Races;
-        private List<Attributes> m_Traits;
-
+        //private XElement m_Element;
 
         public Stats CharStats = null;
         public Skills CharSkills = null;
-        public Attributes RaceAttribs;
         public Attributes CharAttribs;
 
-        public Character(XElement element, List<Attributes> items, List<Attributes> races, List<Attributes> traits)
+        public Character(XElement element)
             :base()
         {
-            m_Element = element;
-            m_Items = items;
-            m_Races = races;
-            m_Traits = traits;
+            //m_Element = element;
             CharAttribs = new Attributes(element);
-            RaceAttribs = new Attributes(new XElement("race"));
         }
+
+        public Attributes Race
+        {
+            get
+            {
+                var xe = CharAttribs.Element.Element("race");
+                if (xe != null)
+                {
+                    return new Attributes(xe);
+                }
+                return new Attributes(new XElement("race"));
+            }
+            set
+            {
+                foreach (var xe in CharAttribs.Element.Elements("race"))
+                {
+                    xe.Remove();
+                }
+                CharAttribs.Element.Add(value.Element);
+            }
+        }
+
+        public Attributes TraitFirst
+        {
+            get
+            {
+                var xe = CharAttribs.Element.Element("trait1");
+                if (xe != null)
+                {
+                    return new Attributes(xe);
+                }
+                return new Attributes(new XElement("trait1"));
+            }
+            set
+            {
+                foreach (var xe in CharAttribs.Element.Elements("trait1"))
+                {
+                    xe.Remove();
+                }
+                CharAttribs.Element.Add(value.Element);
+            }
+        }
+
+        public Attributes TraitSecond
+        {
+            get
+            {
+                var xe = CharAttribs.Element.Element("trait2");
+                if (xe != null)
+                {
+                    return new Attributes(xe);
+                }
+                return new Attributes(new XElement("trait2"));
+            }
+            set
+            {
+                foreach (var xe in CharAttribs.Element.Elements("trait2"))
+                {
+                    xe.Remove();
+                }
+                CharAttribs.Element.Add(value.Element);
+            }
+        }
+
 
         public void Refresh()
         {
-            var charRaceName = CharAttribs[AttributeNames.CharacterAttrib.CharacterRace];
+            CharStats = new Stats(this);
+            CharSkills = new Skills(this);
+        }
 
-            foreach (var race in m_Races)
+        public int BonusAttr(string attrName)
+        {
+            var bonus = 0;
+
+            foreach (var trait in CharAttribs.Element.Elements("trait"))
             {
-                if (race[AttributeNames.RaceAttrib.RaceName] == charRaceName)
+                var attr = trait.Attribute(attrName);
+                if (attr != null)
                 {
-                    RaceAttribs = race;
-                    break;
+                    int value;
+                    if (int.TryParse(attr.Value, out value))
+                    {
+                        bonus += value;
+                    }
                 }
             }
 
-                CharStats = new Stats(this);
-                CharSkills = new Skills(this);
+            return bonus;
         }
     }
 }

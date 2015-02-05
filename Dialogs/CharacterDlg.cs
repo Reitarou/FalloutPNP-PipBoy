@@ -23,13 +23,18 @@ namespace FalloutPNP_PipBoy.Dialogs
         private bool ChangedByUser = true;
 
         private const string cSpecial = " S.P.E.C.I.A.L. ";
-        private const string cSpecialCanDistrib = " Доступно {0} оч.";
-        private const string cSpecialOverDistrib = " ПРЕВЫШЕНО {0} оч.";
+        private const string cSpecialCanDistrib = " Доступно {0} оч. ";
+        private const string cSpecialOverDistrib = " ПРЕВЫШЕНО {0} оч. ";
+
+        private const string cSkills = " Умения ";
+        private const string cTagsCanDistrib = " Умения (Доступно особых умений: {0}) ";
+        private const string cTagsOverDistrib = " Умения (ЛИШНИХ особых умений: {0}) ";
 
         private const string cControlName_LbSpecialMinName = "lb{0}Min";
         private const string cControlName_LbSpecialMaxName = "lb{0}Max";
         private const string cControlName_NudSpecialName = "nud{0}";
 
+        private const string cControlName_CbSkillName = "cbSkill{0}Name";
         private const string cControlName_LbSkillName = "lbSkill{0}Name";
         private const string cControlName_LbSkillResult = "lbSkill{0}Value";
         private const string cControlName_LbSkillDestr_1_100 = "lbSkillD1{0}D1";
@@ -58,56 +63,50 @@ namespace FalloutPNP_PipBoy.Dialogs
             cmbRace.Items.Clear();
             foreach (var race in m_Races)
             {
-                cmbRace.Items.Add(race[AttributeNames.RaceAttrib.RaceName]);
+                cmbRace.Items.Add(race[AttributeNames.cName]);
+            }
+
+            cmbTraitFirst.Items.Clear();
+            cmbTraitSecond.Items.Clear();
+            cmbTraitFirst.Items.Add("");
+            cmbTraitSecond.Items.Add("");
+            foreach (var trait in m_Traits)
+            {
+                cmbTraitFirst.Items.Add(trait[AttributeNames.cName]);
+                cmbTraitSecond.Items.Add(trait[AttributeNames.cName]);
             }
 
             ChangedByUser = true;
         }
+
+        #region Отображение Character`а
 
         private void RefreshChar()
         {
             m_Character.Refresh();
 
-            int totalDistrSumm = 5;
-            for (int i = 0; i < 7; i++)
-            {
-                var stat = m_Character.CharStats[i];
-                totalDistrSumm -= stat.Distibution;
-            }
-
-            #region PostToControls
-
             ChangedByUser = false;
 
-            cmbRace.Text = m_Character.CharAttribs[AttributeNames.CharacterAttrib.CharacterRace];
-
-            if (totalDistrSumm > 0)
-            {
-                gbSpecial.Text = string.Format(cSpecialCanDistrib, totalDistrSumm.ToString());
-            }
-            else if (totalDistrSumm == 0)
-            {
-                gbSpecial.Text = string.Format(cSpecial, totalDistrSumm.ToString());
-            }
-            else //if (TotalDistrSumm < 0)
-            {
-                gbSpecial.Text = string.Format(cSpecialOverDistrib, (totalDistrSumm * -1).ToString());
-            }
-
-            SetSpecialParams(m_Character);
-            SetSkills(m_Character);
+            RefreshControls();
+            SetSpecialParams();
+            SetSkills();
 
             ChangedByUser = true;
-
-            #endregion
         }
 
-        private void SetSpecialParams(Character character)
+        private void RefreshControls()
+        {
+            cmbRace.Text = m_Character.Race[AttributeNames.cName];
+
+            
+        }
+
+        private void SetSpecialParams()
         {
             for (int i = 0; i < 7; i++)
             {
                 var statName = ((AttributeNames.ESpecial)i).ToString();
-                var stat = character.CharStats[i];
+                var stat = m_Character.CharStats[i];
 
                 var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
                 if (control != null)
@@ -141,43 +140,114 @@ namespace FalloutPNP_PipBoy.Dialogs
                     }
                 }
             }
+
+            int totalDistrSumm = 5;
+            for (int i = 0; i < 7; i++)
+            {
+                var stat = m_Character.CharStats[i];
+                totalDistrSumm -= stat.Distibution;
+            }
+            if (totalDistrSumm > 0)
+            {
+                gbSpecial.Text = string.Format(cSpecialCanDistrib, totalDistrSumm.ToString());
+            }
+            else if (totalDistrSumm == 0)
+            {
+                gbSpecial.Text = cSpecial;
+            }
+            else //if (TotalDistrSumm < 0)
+            {
+                gbSpecial.Text = string.Format(cSpecialOverDistrib, (totalDistrSumm * -1).ToString());
+            }
         }
 
-        private void SetSkills(Character character)
+        private void SetSkills()
         {
             for (int i = 0; i < 19; i++)
             {
                 var skillName = ((AttributeNames.ESkills)i).ToString();
-                var skill = character.CharSkills[i];
+                var skill = m_Character.CharSkills[i];
 
-                var control = gbSkills.Controls[string.Format(cControlName_LbSkillResult, skillName)];
-                if (control != null)
+                var lbName = gbSkills.Controls[string.Format(cControlName_LbSkillName, skillName)] as Label;
+                var lbValue = gbSkills.Controls[string.Format(cControlName_LbSkillResult, skillName)] as Label;
+                lbValue.Text = skill.Value.ToString();
+                if (skill.Tag == true)
                 {
-                    var lb = control as Label;
-                    if (lb != null)
-                    {
-                        lb.Text = skill.IniValue.ToString();
-                    }
+                    lbName.Font = new Font(lbName.Font, FontStyle.Bold);
                 }
+                else
+                {
+                    lbName.Font = new Font(lbName.Font, FontStyle.Regular);
+                }
+            }
+
+            int availableTags = 3;
+            var tags = m_Character.CharAttribs.Element.Elements(AttributeNames.cTag);
+            availableTags -= tags.Count();
+            if (availableTags > 0)
+            {
+                gbSkills.Text = string.Format(cTagsCanDistrib, availableTags.ToString());
+            }
+            else if (availableTags == 0)
+            {
+                gbSkills.Text = string.Format(cSkills);
+            }
+            else //if (TotalDistrSumm < 0)
+            {
+                gbSkills.Text = string.Format(cTagsOverDistrib, (availableTags * -1).ToString());
             }
         }
 
+        #endregion
+
+        #region Изменение Control`ов
 
         private void cmbRaces_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ChangedByUser)
             {
-                m_Character.CharAttribs[AttributeNames.CharacterAttrib.CharacterRace] = cmbRace.Text;
+                foreach (var race in m_Races)
+                {
+                    if (race[AttributeNames.cName] == cmbRace.Text)
+                    {
+                        m_Character.Race = race;
+                        break;
+                    }
+                }
 
                 for (int i = 0; i < 7; i++)
                 {
-                    m_Character.CharAttribs[AttributeNames.CharacterAttrib.Distribution(i)] = "0";
+                    m_Character.CharAttribs[AttributeNames.SpecialAttrib.DistribValue(i)] = "0";
                 }
                 RefreshChar();
             }
         }
 
-        #region SPECIAL Numerics
+        private void cmbTrait_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ChangedByUser)
+            {
+                foreach (var trait in m_Traits)
+                {
+                    var descr = convertXmlDescription(trait[AttributeNames.cDescription]);
+                    if (trait[AttributeNames.cName] == cmbTraitFirst.Text)
+                    {
+                        m_Character.TraitFirst = trait;
+                        //descr = descr.Replace("          ", "\n");
+                        rtbTraitFirst.Text = descr;
+                        break;
+                    }
+
+                    if (trait[AttributeNames.cName] == cmbTraitSecond.Text)
+                    {
+                        m_Character.TraitSecond = trait;
+                        rtbTraitSecond.Text = descr;
+                        break;
+                    }
+                }
+                RefreshChar();
+            }
+        }
 
         private void nudSpecial_ValueChanged(object sender, EventArgs e)
         {
@@ -186,23 +256,45 @@ namespace FalloutPNP_PipBoy.Dialogs
                 var nud = sender as NumericUpDown;
                 if (nud != null)
                 {
-                    var statName = nud.Tag.ToString();
+                    var i = int.Parse(nud.Tag.ToString());
 
                     var prevValue = int.Parse(nud.Text);
                     var currValue = nud.Value;
 
-                    var curDistr = m_Character.CharAttribs.GetInt(string.Format(AttributeNames.CharacterAttrib.cSpecialDistribution, statName));
+                    var curDistr = m_Character.CharAttribs.GetInt(AttributeNames.SpecialAttrib.DistribValue(i));
                     var newDistr = curDistr + (currValue - prevValue);
 
-                    m_Character.CharAttribs[string.Format(AttributeNames.CharacterAttrib.cSpecialDistribution, statName)] = newDistr.ToString();
+                    m_Character.CharAttribs[AttributeNames.SpecialAttrib.DistribValue(i)] = newDistr.ToString();
                     RefreshChar();
                 }
             }
         }
 
+        private void cbSkillTag_CheckedChanged(object sender, EventArgs e)
+        {
+            var cb = sender as CheckBox;
+            if (cb != null)
+            {
+                var tag = cb.Tag.ToString();
+                var xes = m_Character.CharAttribs.Element.Elements(AttributeNames.cTag);
+                foreach (var xe in xes)
+                {
+                    if (xe.Value == tag)
+                    {
+                        xe.Remove(); 
+                    }
+                }
+                if (cb.Checked)
+                {
+                    m_Character.CharAttribs.Element.Add(new XElement(AttributeNames.cTag, tag));
+                }
+                RefreshChar();
+            }
+        }
+
         #endregion
 
-        #region CreateControls
+        #region Создание Control`ов
 
         private void CreateControls()
         {
@@ -213,18 +305,26 @@ namespace FalloutPNP_PipBoy.Dialogs
             {
                 var skillName = ((AttributeNames.ESkills)i).ToString();
 
+                var cb = new CheckBox();
+                cb.Name = string.Format(cControlName_CbSkillName, skillName);
+                cb.Size = new Size(13, 13);
+                cb.Location = new Point(8, y);
+                cb.CheckedChanged += cbSkillTag_CheckedChanged;
+                cb.Tag = i.ToString();
+                gbSkills.Controls.Add(cb);
+
                 var label = new Label();
                 label.Name = string.Format(cControlName_LbSkillName, skillName);
                 label.Size = new Size(100, 13);
                 label.Text = ((AttributeNames.ESkills)i).Description();
-                label.Location = new Point(10, y);
+                label.Location = new Point(25, y);
                 gbSkills.Controls.Add(label);
 
                 label = new Label();
                 label.Name = string.Format(cControlName_LbSkillResult, skillName);
                 label.Size = new Size(25, 13);
                 label.Text = "200";
-                label.Location = new Point(110, y);
+                label.Location = new Point(130, y);
                 gbSkills.Controls.Add(label);
 
                 y += 20;
@@ -239,9 +339,25 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        #region Доп. методы
 
+        private string convertXmlDescription(string s)
+        {
+            var changed = true;
+            while (changed)
+            {
+                changed = false;
+                var t = s.Replace(".  ", ". ");
+                if (!t.Equals(s))
+                {
+                    s = t;
+                    changed = true;
+                }
+            }
+            s = s.Replace(". ", ".\n");
+            return s;
         }
+
+        #endregion
     }
 }

@@ -18,6 +18,14 @@ namespace FalloutPNP_PipBoy.Dialogs
             m_Element = element;
         }
 
+        public XElement Element
+        {
+            get
+            {
+                return m_Element;
+            }
+        }
+
         public string this[string name]
         {
             get

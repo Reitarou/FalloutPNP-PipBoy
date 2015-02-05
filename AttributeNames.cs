@@ -5,10 +5,17 @@ using System.Text;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace FalloutPNP_PipBoy.Dialogs
+namespace FalloutPNP_PipBoy
 {
     public static class AttributeNames
     {
+        public const string cName = "name";
+        public const string cDescription = "description";
+        public const string cRace = "race";
+        public const string cTrait = "trait";
+        public const string cTag = "tag";
+
+
         public enum ESkills
         {
             [Description("Легкое оружие")]
@@ -85,114 +92,41 @@ namespace FalloutPNP_PipBoy.Dialogs
         public static class CharacterAttrib
         {
             public const string Name = "Character_Name";
-            public const string CharacterRace = "Character_Name";
             public const string CreationComplete = "Character_Creation_Complete";
-
-            public const string cSpecialDistribution = "Character_Distribution_{0}";
-
-            public static string Distribution(int special)
-            {
-                return string.Format(cSpecialDistribution, ((ESpecial)special).ToString());
-            }
-
-            public static List<string> All
-            {
-                get
-                {
-                    var list = new List<string>();
-
-                    list.Add(Name);
-                    list.Add(CharacterRace);
-                    list.Add(CreationComplete);
-
-                    for (int i = 0; i < 7; i++)
-                    {
-                        list.Add(string.Format(cSpecialDistribution, ((ESpecial)i).ToString()));
-                    }
-                    return list;
-                }
-            }
         }
 
-        public static class RaceAttrib
+        public static class SkillAttrib
         {
-            public const string RaceName = "Race_Name";
 
-            public static List<string> All
-            {
-                get
-                {
-                    var list = new List<string>();
-                    list.Add(RaceName);
-                    return list;
-                }
-            }
         }
 
         public static class SpecialAttrib
         {
             private const string cMin = "SPECIAL_{0}_Min";
             private const string cIni = "SPECIAL_{0}_Ini";
-            private const string cAdd = "SPECIAL_{0}_Add";
             private const string cMax = "SPECIAL_{0}_Max";
+            private const string cBonus = "SPECIAL_{0}_Bonus";
+            private const string cDistrib = "SPECIAL_{0}_Distrib";
 
-            public static string MinValue(int special)
+            public static string MinValue(int eSpecial)
             {
-                return string.Format(cMin, ((ESpecial)special).ToString());
+                return string.Format(cMin, ((ESpecial)eSpecial).ToString());
             }
-
-            public static string IniValue(int special)
+            public static string IniValue(int eSpecial)
             {
-                return string.Format(cIni, ((ESpecial)special).ToString());
+                return string.Format(cIni, ((ESpecial)eSpecial).ToString());
             }
-
-            public static string AddValue(int special)
+            public static string MaxValue(int eSpecial)
             {
-                return string.Format(cAdd, ((ESpecial)special).ToString());
+                return string.Format(cMax, ((ESpecial)eSpecial).ToString());
             }
-
-            public static string MaxValue(int special)
+            public static string BonusValue(int eSpecial)
             {
-                return string.Format(cMax, ((ESpecial)special).ToString());
+                return string.Format(cBonus, ((ESpecial)eSpecial).ToString());
             }
-
-            public static List<string> All
+            public static string DistribValue(int eSpecial)
             {
-                get
-                {
-                    var list = new List<string>();
-                    for (int i = 0; i < 7; i++)
-                    {
-                        list.Add(MinValue(i));
-                        list.Add(IniValue(i));
-                        list.Add(AddValue(i));
-                        list.Add(MaxValue(i));
-                    }
-                    return list;
-                }
-            }
-        }
-
-        public static List<string> AllNames
-        {
-            get
-            {
-                var list = new List<string>();
-                
-                foreach (var att in CharacterAttrib.All)
-                {
-                    list.Add(att);
-                }
-                foreach (var att in RaceAttrib.All)
-                {
-                    list.Add(att);
-                }
-                foreach (var att in SpecialAttrib.All)
-                {
-                    list.Add(att);
-                }
-
-                return list;
+                return string.Format(cDistrib, ((ESpecial)eSpecial).ToString());
             }
         }
 

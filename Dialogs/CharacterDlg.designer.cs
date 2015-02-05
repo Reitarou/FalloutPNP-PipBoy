@@ -74,7 +74,15 @@
             this.lbStrMin = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbSkills = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tcEffects = new System.Windows.Forms.TabControl();
+            this.tcpTraits = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.rtbTraitSecond = new System.Windows.Forms.RichTextBox();
+            this.rtbTraitFirst = new System.Windows.Forms.RichTextBox();
+            this.cmbTraitSecond = new System.Windows.Forms.ComboBox();
+            this.cmbTraitFirst = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEnd)).BeginInit();
@@ -84,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudLck)).BeginInit();
             this.gbSpecial.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tcEffects.SuspendLayout();
+            this.tcpTraits.SuspendLayout();
             this.SuspendLayout();
             // 
             // nudStr
@@ -93,7 +103,7 @@
             this.nudStr.ReadOnly = true;
             this.nudStr.Size = new System.Drawing.Size(34, 20);
             this.nudStr.TabIndex = 1;
-            this.nudStr.Tag = "Str";
+            this.nudStr.Tag = "0";
             this.nudStr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudStr.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -104,7 +114,7 @@
             this.nudPer.ReadOnly = true;
             this.nudPer.Size = new System.Drawing.Size(34, 20);
             this.nudPer.TabIndex = 2;
-            this.nudPer.Tag = "Per";
+            this.nudPer.Tag = "1";
             this.nudPer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudPer.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -115,7 +125,7 @@
             this.nudEnd.ReadOnly = true;
             this.nudEnd.Size = new System.Drawing.Size(34, 20);
             this.nudEnd.TabIndex = 3;
-            this.nudEnd.Tag = "End";
+            this.nudEnd.Tag = "2";
             this.nudEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudEnd.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -126,7 +136,7 @@
             this.nudCha.ReadOnly = true;
             this.nudCha.Size = new System.Drawing.Size(34, 20);
             this.nudCha.TabIndex = 4;
-            this.nudCha.Tag = "Cha";
+            this.nudCha.Tag = "3";
             this.nudCha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudCha.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -137,7 +147,7 @@
             this.nudInt.ReadOnly = true;
             this.nudInt.Size = new System.Drawing.Size(34, 20);
             this.nudInt.TabIndex = 5;
-            this.nudInt.Tag = "Int";
+            this.nudInt.Tag = "4";
             this.nudInt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudInt.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -148,7 +158,7 @@
             this.nudAgi.ReadOnly = true;
             this.nudAgi.Size = new System.Drawing.Size(34, 20);
             this.nudAgi.TabIndex = 6;
-            this.nudAgi.Tag = "Agi";
+            this.nudAgi.Tag = "5";
             this.nudAgi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudAgi.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -159,7 +169,7 @@
             this.nudLck.ReadOnly = true;
             this.nudLck.Size = new System.Drawing.Size(34, 20);
             this.nudLck.TabIndex = 7;
-            this.nudLck.Tag = "Lck";
+            this.nudLck.Tag = "6";
             this.nudLck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nudLck.ValueChanged += new System.EventHandler(this.nudSpecial_ValueChanged);
             // 
@@ -561,22 +571,106 @@
             this.gbSkills.TabStop = false;
             this.gbSkills.Text = " Умения ";
             // 
-            // button1
+            // tcEffects
             // 
-            this.button1.Location = new System.Drawing.Point(501, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 46;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.tcEffects.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tcEffects.Controls.Add(this.tcpTraits);
+            this.tcEffects.Controls.Add(this.tabPage2);
+            this.tcEffects.Location = new System.Drawing.Point(464, 48);
+            this.tcEffects.Multiline = true;
+            this.tcEffects.Name = "tcEffects";
+            this.tcEffects.SelectedIndex = 0;
+            this.tcEffects.Size = new System.Drawing.Size(350, 467);
+            this.tcEffects.TabIndex = 47;
+            // 
+            // tcpTraits
+            // 
+            this.tcpTraits.BackColor = System.Drawing.Color.Transparent;
+            this.tcpTraits.Controls.Add(this.label1);
+            this.tcpTraits.Controls.Add(this.richTextBox3);
+            this.tcpTraits.Controls.Add(this.rtbTraitSecond);
+            this.tcpTraits.Controls.Add(this.rtbTraitFirst);
+            this.tcpTraits.Controls.Add(this.cmbTraitSecond);
+            this.tcpTraits.Controls.Add(this.cmbTraitFirst);
+            this.tcpTraits.Location = new System.Drawing.Point(23, 4);
+            this.tcpTraits.Name = "tcpTraits";
+            this.tcpTraits.Padding = new System.Windows.Forms.Padding(3);
+            this.tcpTraits.Size = new System.Drawing.Size(323, 459);
+            this.tcpTraits.TabIndex = 0;
+            this.tcpTraits.Text = "tabPage1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 233);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Имя";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(6, 287);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(311, 82);
+            this.richTextBox3.TabIndex = 4;
+            this.richTextBox3.Text = "";
+            // 
+            // rtbTraitSecond
+            // 
+            this.rtbTraitSecond.Location = new System.Drawing.Point(6, 148);
+            this.rtbTraitSecond.Name = "rtbTraitSecond";
+            this.rtbTraitSecond.ReadOnly = true;
+            this.rtbTraitSecond.Size = new System.Drawing.Size(311, 82);
+            this.rtbTraitSecond.TabIndex = 3;
+            this.rtbTraitSecond.Text = "";
+            // 
+            // rtbTraitFirst
+            // 
+            this.rtbTraitFirst.Location = new System.Drawing.Point(6, 33);
+            this.rtbTraitFirst.Name = "rtbTraitFirst";
+            this.rtbTraitFirst.ReadOnly = true;
+            this.rtbTraitFirst.Size = new System.Drawing.Size(311, 82);
+            this.rtbTraitFirst.TabIndex = 2;
+            this.rtbTraitFirst.Text = "";
+            // 
+            // cmbTraitSecond
+            // 
+            this.cmbTraitSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTraitSecond.FormattingEnabled = true;
+            this.cmbTraitSecond.Location = new System.Drawing.Point(6, 121);
+            this.cmbTraitSecond.Name = "cmbTraitSecond";
+            this.cmbTraitSecond.Size = new System.Drawing.Size(311, 21);
+            this.cmbTraitSecond.TabIndex = 1;
+            this.cmbTraitSecond.SelectedIndexChanged += new System.EventHandler(this.cmbTrait_SelectedIndexChanged);
+            // 
+            // cmbTraitFirst
+            // 
+            this.cmbTraitFirst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTraitFirst.FormattingEnabled = true;
+            this.cmbTraitFirst.Location = new System.Drawing.Point(6, 6);
+            this.cmbTraitFirst.Name = "cmbTraitFirst";
+            this.cmbTraitFirst.Size = new System.Drawing.Size(311, 21);
+            this.cmbTraitFirst.TabIndex = 0;
+            this.cmbTraitFirst.SelectedIndexChanged += new System.EventHandler(this.cmbTrait_SelectedIndexChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage2.Location = new System.Drawing.Point(23, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(323, 459);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
             // 
             // CharacterDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 625);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(903, 625);
+            this.Controls.Add(this.tcEffects);
             this.Controls.Add(this.gbSkills);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbSpecial);
@@ -584,6 +678,7 @@
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.cmbRace);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "CharacterDlg";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.CharacterDlg_Load);
@@ -598,6 +693,9 @@
             this.gbSpecial.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tcEffects.ResumeLayout(false);
+            this.tcpTraits.ResumeLayout(false);
+            this.tcpTraits.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,7 +752,15 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox gbSkills;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabControl tcEffects;
+        private System.Windows.Forms.TabPage tcpTraits;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox cmbTraitSecond;
+        private System.Windows.Forms.ComboBox cmbTraitFirst;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox rtbTraitSecond;
+        private System.Windows.Forms.RichTextBox rtbTraitFirst;
     }
 }
 

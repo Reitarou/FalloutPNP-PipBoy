@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <races>
   <race
-    Race_Name="Человек"
+    name="Человек"
     SPECIAL_Str_Min="1"
     SPECIAL_Per_Min="1"
     SPECIAL_End_Min="1"
@@ -48,7 +48,7 @@
   ></race>
 
   <race
-    Race_Name="Мертвяк"
+    name="Мертвяк"
     SPECIAL_Str_Min="1"
     SPECIAL_Per_Min="4"
     SPECIAL_End_Min="1"
@@ -95,7 +95,7 @@
   ></race>
 
   <race
-    Race_Name="Супермутант Альфа"
+    name="Супермутант Альфа"
     SPECIAL_Str_Min="4"
     SPECIAL_Per_Min="1"
     SPECIAL_End_Min="3"
@@ -145,7 +145,7 @@
   ></race>
 
   <race
-    Race_Name="Супермутант Бета"
+    name="Супермутант Бета"
     SPECIAL_Str_Min="5"
     SPECIAL_Per_Min="1"
     SPECIAL_End_Min="4"
@@ -195,7 +195,7 @@
   ></race>
 
   <race
-    Race_Name="Полумутант"
+    name="Полумутант"
     SPECIAL_Str_Min="3"
     SPECIAL_Per_Min="1"
     SPECIAL_End_Min="2"
@@ -245,7 +245,7 @@
   ></race>
 
   <race
-    Race_Name="Коготь смерти"
+    name="Коготь смерти"
     SPECIAL_Str_Min="6"
     SPECIAL_Per_Min="5"
     SPECIAL_End_Min="2"
@@ -295,7 +295,7 @@
   ></race>
 
   <race
-    Race_Name="Коготь смерти (Серый)"
+    name="Коготь смерти (Серый)"
     SPECIAL_Str_Min="6"
     SPECIAL_Per_Min="5"
     SPECIAL_End_Min="2"
@@ -345,7 +345,7 @@
   ></race>
 
   <race
-    Race_Name="Собака"
+    name="Собака"
     SPECIAL_Str_Min="6"
     SPECIAL_Per_Min="5"
     SPECIAL_End_Min="2"
@@ -395,7 +395,7 @@
   ></race>
 
   <race
-    Race_Name="Робот-гуманоид"
+    name="Робот-гуманоид"
     SPECIAL_Str_Min="7"
     SPECIAL_Per_Min="7"
     SPECIAL_End_Min="7"

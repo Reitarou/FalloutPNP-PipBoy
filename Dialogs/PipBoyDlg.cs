@@ -76,7 +76,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private void btnCreateCharacter_Click(object sender, EventArgs e)
         {
             var element = new XElement("char");
-            var character = new Character(element, m_Items, m_Races, m_Traits);
+            var character = new Character(element);
             var characterDlg = new CharacterDlg(character, m_Items, m_Races, m_Traits);
             characterDlg.Show();
         }
