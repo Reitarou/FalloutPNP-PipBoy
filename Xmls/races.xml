@@ -26,25 +26,9 @@
     SPECIAL_Agi_Max="10"
     SPECIAL_Lck_Max="10"
     
-    ResistancePoison="0"
-    ResistanceRadiation="0"
     ResistanceElectric="10"
-    ResistanceGas="0/0"
-    ResistanceNormal="0"
-    ResistanceLaser="0"
-    ResistanceFire="0"
-    ResistancePlasma="0"
-    ResistanceBlast="0"
-    ThresholdNormal="0"
-    ThresholdLaser="0"
-    ThresholdFire="0"
-    ThresholdPlasma="0"
-    ThresholdBlast="0"
-    PerkPerLvl="3"
-    BonusMeele="0"
-    BonusHP="0"
-    BonusHpPerLvl="3"
-    BonusSkillPoint="0"
+    
+    Param_PerkPerLevel_Mod="3"
   ></race>
 
   <race
@@ -73,25 +57,13 @@
     SPECIAL_Agi_Max="8"
     SPECIAL_Lck_Max="13"
     
-    ResistancePoison="10"
-    ResistanceRadiation="40"
     ResistanceElectric="10"
-    ResistanceGas="0/0"
-    ResistanceNormal="0"
-    ResistanceLaser="0"
-    ResistanceFire="0"
-    ResistancePlasma="0"
-    ResistanceBlast="0"
     ThresholdNormal="10"
-    ThresholdLaser="0"
-    ThresholdFire="0"
-    ThresholdPlasma="0"
-    ThresholdBlast="0"
-    PerkPerLvl="4"
-    BonusMeele="0"
-    BonusHP="-5"
-    BonusHpPerLvl="0"
-    BonusSkillPoint="0"
+    
+    Param_PoisonResistance_Mod="10"
+    Param_RadiationResistance_Mod="40"
+    Param_PerkPerLevel_Mod="4"
+    Param_MaxHP_Mod="-5"
   ></race>
 
   <race
@@ -138,10 +110,10 @@
     ThresholdBlast="10"
     
     PerkPerLvl="4"
-    BonusMeele="0"
-    BonusHP="10"
-    BonusHpPerLvl="2"
-    BonusSkillPoint="0"
+    ModMeele="0"
+    ModHP="10"
+    ModHpPerLvl="2"
+    ModSkillPoint="0"
   ></race>
 
   <race
@@ -188,10 +160,10 @@
     ThresholdBlast="10"
 
     PerkPerLvl="4"
-    BonusMeele="0"
-    BonusHP="10"
-    BonusHpPerLvl="2"
-    BonusSkillPoint="0"
+    ModMeele="0"
+    ModHP="10"
+    ModHpPerLvl="2"
+    ModSkillPoint="0"
   ></race>
 
   <race
@@ -238,10 +210,10 @@
     ThresholdBlast="10"
 
     PerkPerLvl="3"
-    BonusMeele="0"
-    BonusHP="0"
-    BonusHpPerLvl="0"
-    BonusSkillPoint="0"
+    ModMeele="0"
+    ModHP="0"
+    ModHpPerLvl="0"
+    ModSkillPoint="0"
   ></race>
 
   <race
@@ -288,10 +260,10 @@
     ThresholdBlast="10"
 
     PerkPerLvl="4"
-    BonusMeele="5"
-    BonusHP="15"
-    BonusHpPerLvl="2"
-    BonusSkillPoint="0"
+    ModMeele="5"
+    ModHP="15"
+    ModHpPerLvl="2"
+    ModSkillPoint="0"
   ></race>
 
   <race
@@ -338,10 +310,10 @@
     ThresholdBlast="10"
 
     PerkPerLvl="4"
-    BonusMeele="5"
-    BonusHP="15"
-    BonusHpPerLvl="2"
-    BonusSkillPoint="0"
+    ModMeele="5"
+    ModHP="15"
+    ModHpPerLvl="2"
+    ModSkillPoint="0"
   ></race>
 
   <race
@@ -388,10 +360,10 @@
     ThresholdBlast="0"
 
     PerkPerLvl="2"
-    BonusMeele="0"
-    BonusHP="-7"
-    BonusHpPerLvl="2"
-    BonusSkillPoint="0"
+    ModMeele="0"
+    ModHP="-7"
+    ModHpPerLvl="2"
+    ModSkillPoint="0"
   ></race>
 
   <race
@@ -438,9 +410,9 @@
     ThresholdBlast="15"
 
     PerkPerLvl="100"
-    BonusMeele="0"
-    BonusHP="-15"
-    BonusHpPerLvl="0"
-    BonusSkillPoint="5"
+    ModMeele="0"
+    ModHP="-15"
+    ModHpPerLvl="0"
+    ModSkillPoint="5"
   ></race>
 </races>

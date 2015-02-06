@@ -43,6 +43,10 @@ namespace FalloutPNP_PipBoy.Dialogs
         private const string cControlName_LbSkillDestr_151_175 = "lbSkill{0}D4";
         private const string cControlName_LbSkillDestr_176_200 = "lbSkill{0}D5";
 
+        private const string cControlName_LbParameterName = "lbParameter{0}Name";
+        private const string cControlName_LbParameterResult = "lbParameter{0}Value";
+        
+
         public CharacterDlg(Character character, List<Attributes> items, List<Attributes> races, List<Attributes> traits)
         {
             InitializeComponent();
@@ -78,8 +82,9 @@ namespace FalloutPNP_PipBoy.Dialogs
             ChangedByUser = false;
 
             RefreshControls();
-            SetSpecialParams();
+            SetSpecials();
             SetSkills();
+            SetParameters();
 
             ChangedByUser = true;
         }
@@ -121,12 +126,12 @@ namespace FalloutPNP_PipBoy.Dialogs
             cmbTraitSecond.SelectedIndex = cmbTraitSecond.Items.IndexOf(traitSecond);
         }
 
-        private void SetSpecialParams()
+        private void SetSpecials()
         {
             for (int i = 0; i < 7; i++)
             {
                 var statName = ((AttributeNames.ESpecials)i).ToString();
-                var stat = m_Character.CharStats[i];
+                var stat = m_Character.Stats[i];
 
                 var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
                 if (control != null)
@@ -164,7 +169,7 @@ namespace FalloutPNP_PipBoy.Dialogs
             int totalDistrSumm = 5;
             for (int i = 0; i < 7; i++)
             {
-                var stat = m_Character.CharStats[i];
+                var stat = m_Character.Stats[i];
                 totalDistrSumm -= stat.Distibution;
             }
             if (totalDistrSumm > 0)
@@ -186,7 +191,7 @@ namespace FalloutPNP_PipBoy.Dialogs
             for (int i = 0; i < 19; i++)
             {
                 var skillName = ((AttributeNames.ESkills)i).ToString();
-                var skill = m_Character.CharSkills[i];
+                var skill = m_Character.Skills[i];
 
                 var lbName = gbSkills.Controls[string.Format(cControlName_LbSkillName, skillName)] as Label;
                 var lbValue = gbSkills.Controls[string.Format(cControlName_LbSkillResult, skillName)] as Label;
@@ -202,7 +207,7 @@ namespace FalloutPNP_PipBoy.Dialogs
             }
 
             int availableTags = 3;
-            var tags = m_Character.CharAttribs.Element.Elements(AttributeNames.cTag);
+            var tags = m_Character.Attribs.Element.Elements(AttributeNames.cTag);
             availableTags -= tags.Count();
             if (availableTags > 0)
             {
@@ -215,6 +220,19 @@ namespace FalloutPNP_PipBoy.Dialogs
             else //if (TotalDistrSumm < 0)
             {
                 gbSkills.Text = string.Format(cTagsOverDistrib, (availableTags * -1).ToString());
+            }
+        }
+
+        private void SetParameters()
+        {
+            for (int i = 0; i < (int)(AttributeNames.EParameters.Count); i++)
+            {
+                var parameterName = ((AttributeNames.EParameters)i).ToString();
+                var parameter = m_Character.Parameters[i];
+
+                var lbName = gbParameters.Controls[string.Format(cControlName_LbParameterName, parameterName)] as Label;
+                var lbValue = gbParameters.Controls[string.Format(cControlName_LbParameterResult, parameterName)] as Label;
+                lbValue.Text = parameter.Value.ToString();
             }
         }
 
@@ -237,7 +255,7 @@ namespace FalloutPNP_PipBoy.Dialogs
 
                 for (int i = 0; i < 7; i++)
                 {
-                    m_Character.CharAttribs[AttributeNames.SpecialAttrib.DistribValue(i)] = "0";
+                    m_Character.Attribs[AttributeNames.SpecialAttrib.DistribValue(i)] = "0";
                 }
                 RefreshChar();
             }
@@ -295,10 +313,10 @@ namespace FalloutPNP_PipBoy.Dialogs
                     var prevValue = int.Parse(nud.Text);
                     var currValue = nud.Value;
 
-                    var curDistr = m_Character.CharAttribs.GetInt(AttributeNames.SpecialAttrib.DistribValue(i));
+                    var curDistr = m_Character.Attribs.GetInt(AttributeNames.SpecialAttrib.DistribValue(i));
                     var newDistr = curDistr + (currValue - prevValue);
 
-                    m_Character.CharAttribs[AttributeNames.SpecialAttrib.DistribValue(i)] = newDistr.ToString();
+                    m_Character.Attribs[AttributeNames.SpecialAttrib.DistribValue(i)] = newDistr.ToString();
                     RefreshChar();
                 }
             }
@@ -310,7 +328,7 @@ namespace FalloutPNP_PipBoy.Dialogs
             if (cb != null)
             {
                 var tag = cb.Tag.ToString();
-                var xes = m_Character.CharAttribs.Element.Elements(AttributeNames.cTag);
+                var xes = m_Character.Attribs.Element.Elements(AttributeNames.cTag);
                 foreach (var xe in xes)
                 {
                     if (xe.Value == tag)
@@ -320,7 +338,7 @@ namespace FalloutPNP_PipBoy.Dialogs
                 }
                 if (cb.Checked)
                 {
-                    m_Character.CharAttribs.Element.Add(new XElement(AttributeNames.cTag, tag));
+                    m_Character.Attribs.Element.Add(new XElement(AttributeNames.cTag, tag));
                 }
                 RefreshChar();
             }
@@ -366,6 +384,32 @@ namespace FalloutPNP_PipBoy.Dialogs
                 {
                     y += 10;
                 }
+            }
+
+            #endregion
+
+            #region Parameters
+
+            y = 20;
+            for (int i = 0; i < (int)(AttributeNames.EParameters.Count); i++)
+            {
+                var parameterName = ((AttributeNames.EParameters)i).ToString();
+
+                var label = new Label();
+                label.Name = string.Format(cControlName_LbParameterName, parameterName);
+                label.Size = new Size(100, 13);
+                label.Text = ((AttributeNames.EParameters)i).Description();
+                label.Location = new Point(8, y);
+                gbParameters.Controls.Add(label);
+
+                label = new Label();
+                label.Name = string.Format(cControlName_LbParameterResult, parameterName);
+                label.Size = new Size(25, 13);
+                label.Text = "200";
+                label.Location = new Point(130, y);
+                gbParameters.Controls.Add(label);
+
+                y += 20;
             }
 
             #endregion

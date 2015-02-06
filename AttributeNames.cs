@@ -85,22 +85,49 @@ namespace FalloutPNP_PipBoy
             Lck
         }
 
+        public enum EParameters
+        {
+            MaxHP,
+            HPperLVL,
+            ArmorClass,
+            ActionPoints,
+            CarryWeight,
+            MeleeDamage,
+            PoisonResistance,
+            RadiationResistance,
+            GasResistance,
+            Sequence,
+            HealingRate,
+            CriticalChance,
+            SkillPointsPerLevel,
+            PerkPerLevel,
+            Count
+        }
+
         /* Сюда вбивать атрибуты.
          * Названия атрибутов должны быть уникальными.
          * В названии свойства не должно быть пробелов.*/
 
         public static class CharacterAttrib
         {
-            public const string Name = "Character_Name";
-            public const string CreationComplete = "Character_Creation_Complete";
+            private const string cMod = "Param_{0}_Mod";
+            private const string cFix = "Param_{0}_Fix";
+            public static string ModValue(int eParam)
+            {
+                return string.Format(cMod, ((EParameters)eParam).ToString());
+            }
+            public static string FixValue(int eParam)
+            {
+                return string.Format(cFix, ((EParameters)eParam).ToString());
+            }
         }
 
         public static class SkillAttrib
         {
-            private const string cBonus = "Skill_{0}_Bonus";
-            public static string BonusValue(int eSkill)
+            private const string cMod = "Skill_{0}_Mod";
+            public static string ModValue(int eSkill)
             {
-                return string.Format(cBonus, ((ESkills)eSkill).ToString());
+                return string.Format(cMod, ((ESkills)eSkill).ToString());
             }
         }
 
@@ -109,7 +136,7 @@ namespace FalloutPNP_PipBoy
             private const string cMin = "SPECIAL_{0}_Min";
             private const string cIni = "SPECIAL_{0}_Ini";
             private const string cMax = "SPECIAL_{0}_Max";
-            private const string cBonus = "SPECIAL_{0}_Bonus";
+            private const string cMod = "SPECIAL_{0}_Mod";
             private const string cDistrib = "SPECIAL_{0}_Distrib";
 
             public static string MinValue(int eSpecial)
@@ -124,9 +151,9 @@ namespace FalloutPNP_PipBoy
             {
                 return string.Format(cMax, ((ESpecials)eSpecial).ToString());
             }
-            public static string BonusValue(int eSpecial)
+            public static string ModValue(int eSpecial)
             {
-                return string.Format(cBonus, ((ESpecials)eSpecial).ToString());
+                return string.Format(cMod, ((ESpecials)eSpecial).ToString());
             }
             public static string DistribValue(int eSpecial)
             {
