@@ -76,8 +76,6 @@
             this.gbSkills = new System.Windows.Forms.GroupBox();
             this.tcEffects = new System.Windows.Forms.TabControl();
             this.tcpTraits = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.rtbTraitSecond = new System.Windows.Forms.RichTextBox();
             this.rtbTraitFirst = new System.Windows.Forms.RichTextBox();
             this.cmbTraitSecond = new System.Windows.Forms.ComboBox();
@@ -586,8 +584,6 @@
             // tcpTraits
             // 
             this.tcpTraits.BackColor = System.Drawing.Color.Transparent;
-            this.tcpTraits.Controls.Add(this.label1);
-            this.tcpTraits.Controls.Add(this.richTextBox3);
             this.tcpTraits.Controls.Add(this.rtbTraitSecond);
             this.tcpTraits.Controls.Add(this.rtbTraitFirst);
             this.tcpTraits.Controls.Add(this.cmbTraitSecond);
@@ -597,31 +593,14 @@
             this.tcpTraits.Padding = new System.Windows.Forms.Padding(3);
             this.tcpTraits.Size = new System.Drawing.Size(323, 459);
             this.tcpTraits.TabIndex = 0;
-            this.tcpTraits.Text = "tabPage1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Имя";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(6, 287);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(311, 82);
-            this.richTextBox3.TabIndex = 4;
-            this.richTextBox3.Text = "";
+            this.tcpTraits.Text = "Уникумы";
             // 
             // rtbTraitSecond
             // 
-            this.rtbTraitSecond.Location = new System.Drawing.Point(6, 148);
+            this.rtbTraitSecond.Location = new System.Drawing.Point(6, 258);
             this.rtbTraitSecond.Name = "rtbTraitSecond";
             this.rtbTraitSecond.ReadOnly = true;
-            this.rtbTraitSecond.Size = new System.Drawing.Size(311, 82);
+            this.rtbTraitSecond.Size = new System.Drawing.Size(311, 192);
             this.rtbTraitSecond.TabIndex = 3;
             this.rtbTraitSecond.Text = "";
             // 
@@ -630,7 +609,7 @@
             this.rtbTraitFirst.Location = new System.Drawing.Point(6, 33);
             this.rtbTraitFirst.Name = "rtbTraitFirst";
             this.rtbTraitFirst.ReadOnly = true;
-            this.rtbTraitFirst.Size = new System.Drawing.Size(311, 82);
+            this.rtbTraitFirst.Size = new System.Drawing.Size(311, 192);
             this.rtbTraitFirst.TabIndex = 2;
             this.rtbTraitFirst.Text = "";
             // 
@@ -638,7 +617,7 @@
             // 
             this.cmbTraitSecond.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTraitSecond.FormattingEnabled = true;
-            this.cmbTraitSecond.Location = new System.Drawing.Point(6, 121);
+            this.cmbTraitSecond.Location = new System.Drawing.Point(6, 231);
             this.cmbTraitSecond.Name = "cmbTraitSecond";
             this.cmbTraitSecond.Size = new System.Drawing.Size(311, 21);
             this.cmbTraitSecond.TabIndex = 1;
@@ -680,7 +659,7 @@
             this.Controls.Add(this.cmbRace);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "CharacterDlg";
-            this.Text = "Form1";
+            this.Text = "Страница персонажа";
             this.Load += new System.EventHandler(this.CharacterDlg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudStr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPer)).EndInit();
@@ -695,7 +674,6 @@
             this.groupBox1.PerformLayout();
             this.tcEffects.ResumeLayout(false);
             this.tcpTraits.ResumeLayout(false);
-            this.tcpTraits.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -757,8 +735,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ComboBox cmbTraitSecond;
         private System.Windows.Forms.ComboBox cmbTraitFirst;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox rtbTraitSecond;
         private System.Windows.Forms.RichTextBox rtbTraitFirst;
     }

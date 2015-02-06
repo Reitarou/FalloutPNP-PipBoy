@@ -67,7 +67,7 @@ namespace FalloutPNP_PipBoy
             t176_200 = 5
         }
 
-        public enum ESpecial
+        public enum ESpecials
         {
             [Description("Сила")]
             Str,
@@ -97,7 +97,11 @@ namespace FalloutPNP_PipBoy
 
         public static class SkillAttrib
         {
-
+            private const string cBonus = "Skill_{0}_Bonus";
+            public static string BonusValue(int eSkill)
+            {
+                return string.Format(cBonus, ((ESkills)eSkill).ToString());
+            }
         }
 
         public static class SpecialAttrib
@@ -110,23 +114,23 @@ namespace FalloutPNP_PipBoy
 
             public static string MinValue(int eSpecial)
             {
-                return string.Format(cMin, ((ESpecial)eSpecial).ToString());
+                return string.Format(cMin, ((ESpecials)eSpecial).ToString());
             }
             public static string IniValue(int eSpecial)
             {
-                return string.Format(cIni, ((ESpecial)eSpecial).ToString());
+                return string.Format(cIni, ((ESpecials)eSpecial).ToString());
             }
             public static string MaxValue(int eSpecial)
             {
-                return string.Format(cMax, ((ESpecial)eSpecial).ToString());
+                return string.Format(cMax, ((ESpecials)eSpecial).ToString());
             }
             public static string BonusValue(int eSpecial)
             {
-                return string.Format(cBonus, ((ESpecial)eSpecial).ToString());
+                return string.Format(cBonus, ((ESpecials)eSpecial).ToString());
             }
             public static string DistribValue(int eSpecial)
             {
-                return string.Format(cDistrib, ((ESpecial)eSpecial).ToString());
+                return string.Format(cDistrib, ((ESpecials)eSpecial).ToString());
             }
         }
 

@@ -66,16 +66,6 @@ namespace FalloutPNP_PipBoy.Dialogs
                 cmbRace.Items.Add(race[AttributeNames.cName]);
             }
 
-            cmbTraitFirst.Items.Clear();
-            cmbTraitSecond.Items.Clear();
-            cmbTraitFirst.Items.Add("");
-            cmbTraitSecond.Items.Add("");
-            foreach (var trait in m_Traits)
-            {
-                cmbTraitFirst.Items.Add(trait[AttributeNames.cName]);
-                cmbTraitSecond.Items.Add(trait[AttributeNames.cName]);
-            }
-
             ChangedByUser = true;
         }
 
@@ -96,16 +86,46 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void RefreshControls()
         {
-            cmbRace.Text = m_Character.Race[AttributeNames.cName];
-
+            var charRace = m_Character.Race[AttributeNames.cName];
+            cmbRace.Text = charRace;
             
+            var traitFirst = m_Character.TraitFirst[AttributeNames.cName];
+            var traitSecond = m_Character.TraitSecond[AttributeNames.cName];
+            
+            cmbTraitFirst.Items.Clear();
+            cmbTraitSecond.Items.Clear();
+            foreach (var trait in m_Traits)
+            {
+                var traitName = trait[AttributeNames.cName];
+                var races = trait.Element.Elements(AttributeNames.cRace);
+                foreach (var race in races)
+                {
+                    if (race.Value == charRace)
+                    {
+                        if (traitSecond != traitName)
+                        {
+                            cmbTraitFirst.Items.Add(traitName);
+                        }
+                        if (traitFirst != traitName)
+                        {
+                            cmbTraitSecond.Items.Add(traitName);
+                        }
+                        break;
+                    }
+                }
+            }
+            cmbTraitFirst.Items.Insert(0, "");
+            cmbTraitSecond.Items.Insert(0, "");
+
+            cmbTraitFirst.SelectedIndex = cmbTraitFirst.Items.IndexOf(traitFirst);
+            cmbTraitSecond.SelectedIndex = cmbTraitSecond.Items.IndexOf(traitSecond);
         }
 
         private void SetSpecialParams()
         {
             for (int i = 0; i < 7; i++)
             {
-                var statName = ((AttributeNames.ESpecial)i).ToString();
+                var statName = ((AttributeNames.ESpecials)i).ToString();
                 var stat = m_Character.CharStats[i];
 
                 var control = gbSpecial.Controls[string.Format(cControlName_NudSpecialName, statName)];
@@ -227,24 +247,38 @@ namespace FalloutPNP_PipBoy.Dialogs
         {
             if (ChangedByUser)
             {
+                rtbTraitFirst.Text = "";
+                rtbTraitSecond.Text = "";
+                Attributes traitFirst = null;
+                Attributes traitSecond = null;
                 foreach (var trait in m_Traits)
                 {
-                    var descr = convertXmlDescription(trait[AttributeNames.cDescription]);
                     if (trait[AttributeNames.cName] == cmbTraitFirst.Text)
                     {
-                        m_Character.TraitFirst = trait;
-                        //descr = descr.Replace("          ", "\n");
-                        rtbTraitFirst.Text = descr;
-                        break;
+                        traitFirst = trait;
                     }
 
                     if (trait[AttributeNames.cName] == cmbTraitSecond.Text)
                     {
-                        m_Character.TraitSecond = trait;
-                        rtbTraitSecond.Text = descr;
-                        break;
+                        traitSecond = trait;
                     }
                 }
+
+                if (traitFirst != null)
+                {
+                    var descr = convertXmlDescription(traitFirst[AttributeNames.cDescription]);
+                    rtbTraitFirst.Text = descr;
+                }
+
+                if (traitSecond != null)
+                {
+                    var descr = convertXmlDescription(traitSecond[AttributeNames.cDescription]);
+                    rtbTraitSecond.Text = descr;
+                }
+
+                m_Character.TraitFirst = traitFirst;
+                m_Character.TraitSecond = traitSecond;
+
                 RefreshChar();
             }
         }
