@@ -8,7 +8,7 @@
     <ProjectGuid>{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FalloutPNP_PipBoy.Dialogs</RootNamespace>
+    <RootNamespace>FalloutPNP_PipBoy</RootNamespace>
     <AssemblyName>FalloutPNP_PipBoy</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -47,6 +47,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Stg, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Storage\bin\Debug\Stg.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -65,7 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributeNames.cs" />
+    <Compile Include="Char.cs" />
     <Compile Include="Character_Kamidzu.cs" />
+    <Compile Include="CharFile.cs" />
+    <Compile Include="Dialogs\CharacterCreationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CharacterCreationDlg.designer.cs">
+      <DependentUpon>CharacterCreationDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,15 +115,21 @@
     <Compile Include="Dialogs\HackingDlg.Designer.cs">
       <DependentUpon>HackingDlg.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\CharacterDlg.cs">
+    <Compile Include="Dialogs\OldCharacterDlg.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialogs\CharacterDlg.designer.cs">
-      <DependentUpon>CharacterDlg.cs</DependentUpon>
+    <Compile Include="Dialogs\OldCharacterDlg.designer.cs">
+      <DependentUpon>OldCharacterDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Attributes.cs" />
+    <Compile Include="Params\Race.cs" />
+    <Compile Include="Params\Resistances.cs" />
+    <Compile Include="Params\Stats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\CharacterCreationDlg.resx">
+      <DependentUpon>CharacterCreationDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\EditItemDlg.resx">
       <DependentUpon>EditItemDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,8 +142,8 @@
     <EmbeddedResource Include="Dialogs\HackingDlg.resx">
       <DependentUpon>HackingDlg.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\CharacterDlg.resx">
-      <DependentUpon>CharacterDlg.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\OldCharacterDlg.resx">
+      <DependentUpon>OldCharacterDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

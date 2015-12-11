@@ -1,35 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<races>
+<body>
   <race
-    name="Человек"
-    SPECIAL_Str_Min="1"
-    SPECIAL_Per_Min="1"
-    SPECIAL_End_Min="1"
-    SPECIAL_Cha_Min="1"
-    SPECIAL_Int_Min="1"
-    SPECIAL_Agi_Min="1"
-    SPECIAL_Lck_Min="1"
-    
-    SPECIAL_Str_Ini="5"
-    SPECIAL_Per_Ini="5"
-    SPECIAL_End_Ini="5"
-    SPECIAL_Cha_Ini="5"
-    SPECIAL_Int_Ini="5"
-    SPECIAL_Agi_Ini="5"
-    SPECIAL_Lck_Ini="5"
-    
-    SPECIAL_Str_Max="10"
-    SPECIAL_Per_Max="10"
-    SPECIAL_End_Max="10"
-    SPECIAL_Cha_Max="10"
-    SPECIAL_Int_Max="10"
-    SPECIAL_Agi_Max="10"
-    SPECIAL_Lck_Max="10"
-    
+    Name="Человек"
     ResistanceElectric="10"
-    
     Param_PerkPerLevel_Mod="3"
-  ></race>
+  >
+    <MinStats
+      Strength = "1"
+      Perception = "1"
+      Endurance = "1"
+      Charisma = "1"
+      Intelligence = "1"
+      Agility = "1"
+      Luck = "1"
+    ></MinStats>
+    <IniStats
+      Strength = "5"
+      Perception = "5"
+      Endurance = "5"
+      Charisma = "5"
+      Intelligence = "5"
+      Agility = "5"
+      Luck = "5"
+    ></IniStats>
+    <MaxStats
+      Strength = "10"
+      Perception = "10"
+      Endurance = "10"
+      Charisma = "10"
+      Intelligence = "10"
+      Agility = "10"
+      Luck = "10"
+    ></MaxStats>
+  </race>
 
   <race
     name="Мертвяк"
@@ -415,4 +418,4 @@
     ModHpPerLvl="0"
     ModSkillPoint="5"
   ></race>
-</races>
+</body>

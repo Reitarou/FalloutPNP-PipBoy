@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Reflection;
-using FalloutPNP_PipBoy.Dialogs.Properties;
+using FalloutPNP_PipBoy.Properties;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace FalloutPNP_PipBoy.Dialogs
+namespace FalloutPNP_PipBoy
 {
     public class Attributes
     {
         private XElement m_Element;
+
         public Attributes(XElement element)
         {
             m_Element = element;

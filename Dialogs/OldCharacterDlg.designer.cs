@@ -1,6 +1,6 @@
 ﻿namespace FalloutPNP_PipBoy.Dialogs
 {
-    partial class CharacterDlg
+    partial class OldCharacterDlg
     {
         /// <summary>
         /// Требуется переменная конструктора.

@@ -8,12 +8,12 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using FalloutPNP_PipBoy.Dialogs.Properties;
+using FalloutPNP_PipBoy.Properties;
 
 namespace FalloutPNP_PipBoy.Dialogs
 {
 
-    public partial class CharacterDlg : Form
+    public partial class OldCharacterDlg : Form
     {
         private Character m_Character;
         private List<Attributes> m_Items;
@@ -47,7 +47,7 @@ namespace FalloutPNP_PipBoy.Dialogs
         private const string cControlName_LbParameterResult = "lbParameter{0}Value";
         
 
-        public CharacterDlg(Character character, List<Attributes> items, List<Attributes> races, List<Attributes> traits)
+        public OldCharacterDlg(Character character, List<Attributes> items, List<Attributes> races, List<Attributes> traits)
         {
             InitializeComponent();
             m_Character = character;

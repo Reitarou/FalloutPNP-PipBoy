@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
-using FalloutPNP_PipBoy.Dialogs.Properties;
+using FalloutPNP_PipBoy.Properties;
 
 namespace FalloutPNP_PipBoy.Dialogs.Dialogs
 {

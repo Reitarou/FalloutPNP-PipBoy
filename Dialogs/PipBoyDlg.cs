@@ -8,46 +8,32 @@ using System.Text;
 using System.Windows.Forms;
 using FalloutPNP_PipBoy.Dialogs.Dialogs;
 using System.IO;
-using FalloutPNP_PipBoy.Dialogs.Properties;
+using FalloutPNP_PipBoy.Properties;
 using System.Xml.Linq;
+using FalloutPNP_PipBoy.Params;
+using Stg;
 
 namespace FalloutPNP_PipBoy.Dialogs
 {
     public partial class PipBoyDlg : Form
     {
-        private List<Attributes> m_Items;
-        private List<Attributes> m_Races;
-        private List<Attributes> m_Traits;
-        //private Characters m_Characters;
+        private const string c_RacesPath = "Xmls\\races.xml";
+        private const string c_TraitsPath = "Xmls\\traits.xml";
+        private const string c_ItemsPath = "Xmls\\items.xml";
+        private List<Race> m_Races;
 
         public PipBoyDlg()
         {
             InitializeComponent();
-            m_Items = LoadFromXml("Xmls\\items.xml", "item");
-            m_Races = LoadFromXml("Xmls\\races.xml", "race");
-            m_Traits = LoadFromXml("Xmls\\traits.xml", "trait");
-        }
-
-        private List<Attributes> LoadFromXml(string path, string key)
-        {
-            if (!File.Exists(path))
+            m_Races = new List<Race>();
+            var doc = new StgDocument(c_RacesPath);
+            var nodes = doc.Body.GetNodes("race");
+            foreach (var node in nodes)
             {
-                MessageBox.Show(string.Format(Resources.eNoFile, path));
-                return null;
+                var race = new Race(node);
+                m_Races.Add(race);
             }
-            var list = new List<Attributes>();
-            var doc = XDocument.Load(path);
-            foreach (var xe in doc.Root.Elements())
-            {
-                if (xe.Name == key)
-                {
-                    list.Add(new Attributes(xe));
-                }
-            }
-
-            return list;
         }
-
 
         private void btnTerminalEasy_Click(object sender, EventArgs e)
         {
@@ -75,9 +61,8 @@ namespace FalloutPNP_PipBoy.Dialogs
 
         private void btnCreateCharacter_Click(object sender, EventArgs e)
         {
-            var element = new XElement("char");
-            var character = new Character(element);
-            var characterDlg = new CharacterDlg(character, m_Items, m_Races, m_Traits);
+            var character = new Char();
+            var characterDlg = new CharacterCreationDlg(character, m_Races);
             characterDlg.Show();
         }
     }

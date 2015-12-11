@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FalloutPNPPip-Boy", "FalloutPNPPip-Boy.csproj", "{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stg", "..\Storage\Stg.csproj", "{CC23A1DE-4A3F-488A-91B2-F3801233EAE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BEDB3F2-9F8D-465D-9392-EA413557A1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC23A1DE-4A3F-488A-91B2-F3801233EAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC23A1DE-4A3F-488A-91B2-F3801233EAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC23A1DE-4A3F-488A-91B2-F3801233EAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC23A1DE-4A3F-488A-91B2-F3801233EAE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
